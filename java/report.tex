@@ -1,0 +1,208 @@
+\documentclass[a4paper,11pt,dvipdfmx]{jsarticle}
+
+
+% 数式
+\usepackage{amsmath,amsfonts}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{mathtools}
+% 画像
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{circuitikz}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{askmaps}
+\usepackage{multirow}
+\usepackage{bigstrut}
+\usepackage{rotating}
+\usepackage{listings}
+\usepackage{subcaption}
+% 表
+\usepackage{makecell}
+% その他
+\usepackage{url}
+\usepackage{ascmac}
+\usepackage{cases}
+\usepackage{here}
+\usepackage{upgreek}
+\usepackage{tocloft}  % tocloftパッケージを使う
+\usepackage{titlesec} % titlesecパッケージを使う（セクションタイトルのカスタマイズ）
+
+% 画像挿入コマンド
+\newcommand{\Figure}[4]{
+\begin{figure}[H]
+\centering
+\includegraphics[width=#1\linewidth]{./images/#2}
+\caption{#3}
+\label{fig:#4}
+\end{figure}
+}
+
+\lstset{
+basicstyle={\ttfamily},
+identifierstyle={\small},
+commentstyle={\smallitshape},
+keywordstyle={\small\bfseries},
+ndkeywordstyle={\small},
+stringstyle={\small\ttfamily},
+frame={tb},
+breaklines=true,
+columns=[l]{fullflexible},
+numbers=left,
+xrightmargin=0zw,
+xleftmargin=3zw,
+numberstyle={\scriptsize},
+stepnumber=1,
+numbersep=1zw,
+lineskip=-0.5ex
+}
+\renewcommand{\lstlistingname}{リスト}
+
+\begin{document}
+
+\title{starategy}
+\author{学籍番号:22120 \\ 組番号:222 \\名前:塚田 勇人}
+\date{\today}
+\maketitle
+
+\newpage
+
+\section{プログラミングリスト}
+playerクラスをリスト\ref{player}に示す。
+\begin{lstlisting}[caption=playerクラス,label=player]
+  class player {
+    private String name;// プレイヤー名を記憶する
+    private Strategy strategy;// 戦略のインスタンス
+    private int wincount;// 勝った回数を記憶する
+    private int losecount;// 負けた回数を記憶する
+    // プレイヤーをインスタンス化するときに，名前と戦略を決める
+
+    player(String name, Strategy strategy) {
+        this.name = name;
+        this.strategy = strategy;
+    }
+
+    // i 回戦の対戦カードを出す
+    public int nextNumber(int i) {
+        return strategy.nextNumber(i);
+    }
+
+    // 敵が出したカードの数を渡される
+    public void learning(int enemy) {
+        strategy.learning(enemy);
+    }
+
+    // 勝ったら勝ち回数をインクリメントする
+    public void win() {
+        wincount++;
+    }
+
+    // 負けたら負け回数をインクリメントする
+    public void lose() {
+        losecount++;
+    }
+
+    // 呼ばれたときの勝ち数と負け数の文字列を返す
+    public String toString() {
+        return (wincount + "勝" + losecount + "敗");
+    }
+
+    // プレイヤーの名前を返す
+    public String getName() {
+        return name;
+    }
+}
+\end{lstlisting}
+
+strategyクラスをリスト\ref{strategy}に示す。
+
+\begin{lstlisting}[caption=strategyクラス,label=strategy]
+  interface Strategy {
+    public abstract Integer nextNumber(int i);
+
+    public abstract void learning(int enemyNumber);
+}
+\end{lstlisting}
+
+strategyFollowクラスをリスト\ref{strategyFollow}に示す。
+
+\begin{lstlisting}[caption=strategyFollowクラス,label=strategyFollow]
+  import java.util.ArrayList;
+  import java.util.List;
+  
+  class strategyFollow implements Strategy {
+      // 直前に相手が出した番号を記憶しておくフィールド
+      private int preValue = 1;
+      // 手持ちの札を覚えておくリスト
+      private List<Integer> cards = new ArrayList<Integer>();
+  
+      strategyFollow() {
+          cards.add(1);
+          cards.add(2);
+          cards.add(3);
+          cards.add(4);
+          cards.add(5);
+      }
+  
+      @Override
+      public Integer nextNumber(int i) {
+          int returnValue = 1;
+          if (cards.indexOf(preValue) != -1)// 出すカードがあるか調べる
+          {// 該当のカードが手持ちにあれば，そのカードを出す
+              returnValue = preValue;
+          } else {// 該当するカードがない時には，0 番目にあるカードを出す
+              returnValue = cards.get(0);
+          }
+          int index = cards.indexOf(returnValue);
+          cards.remove(index);// 出した数字を削除する．数字は0 番から格納されている．
+          return returnValue;
+      }
+  
+      @Override
+      public void learning(int enemyNumber) {// 出したカードを記憶しておく
+          preValue = enemyNumber;
+      }
+  }
+\end{lstlisting}
+
+strategyRandomクラスをリスト\ref{strategyRandom}に示す。
+
+\begin{lstlisting}[caption=strategyRandomクラス,label=strategyRandom]
+  import java.util.ArrayList;
+  import java.util.Collections;
+  import java.util.List;
+  
+  public class strategyRandom implements Strategy {
+          // 数値を格納するリストをつくる
+          private List<Integer> cards = new ArrayList<Integer>();
+  
+          strategyRandom() {
+                  // リストに数値を順に入れていく
+                  cards.add(1);
+                  cards.add(2);
+                  cards.add(3);
+                  cards.add(4);
+                  cards.add(5);
+                  // コレクションのシャッフル機能を使ってシャッフルする
+                  Collections.shuffle(cards);//
+          }
+  
+          // リストから順番に数値を出す
+          public Integer nextNumber(int i) {
+                  return cards.get(i);
+          }
+  
+          // 過去の出し手を利用しないので何も操作しない実装をする
+          @Override
+          public void learning(int enemy) {
+          }
+  }
+\end{lstlisting}
+
+
+
+
+
+\end{document}

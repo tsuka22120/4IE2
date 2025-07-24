@@ -1,0 +1,161 @@
+\documentclass[a4paper,11pt,dvipdfmx]{jsarticle}
+
+% 数式
+\usepackage{amsmath,amsfonts}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{mathtools}
+% 画像
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{circuitikz}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{askmaps}
+\usepackage{multirow}
+\usepackage{bigstrut}
+\usepackage{rotating}
+\usepackage{listings}
+\usepackage{subcaption}
+% 表
+\usepackage{makecell}
+% その他
+\usepackage{url}
+\usepackage{ascmac}
+\usepackage{cases}
+\usepackage{here}
+\usepackage{upgreek}
+\usepackage{titlesec} % titlesecパッケージを使う（セクションタイトルのカスタマイズ）
+
+% 画像挿入コマンド
+\newcommand{\Figure}[4]{
+\begin{figure}[H]
+\centering
+\includegraphics[width=#1\linewidth]{./images/#2}
+\caption{#3}
+\label{fig:#4}
+\end{figure}
+}
+
+\begin{document}
+
+\section{要旨}
+分光計を用いてガラスプリズムの頂角と最小偏角を測定し、波長によるガラスの屈折率を算出した。本実験では、ガラスプリズムの頂角は \ang{59;54;45}、赤色光の最小偏角は \ang{50;19;30}、青色光の最小偏角は \ang{52;37;15} であった。これにより、赤色光の屈折率は $n_r = 1.64285$、青色光の屈折率は $n_b = 1.66547$ と算出された。この結果から、波長が短い光ほど屈折率が高くなるという分散の現象が確認できた。
+
+\section{目的}
+本実験の目的は、分光計を用いてガラスプリズムの頂角および最小偏角を測定し、波長によるガラスの屈折率を算出することである。
+
+\section{実験方法}
+実験指導書\cite{key1}（pp.88--93）に従い実施した。一部手順については補足説明を加える。
+
+\subsection{頂角\boldmath$\alpha$の測定方法}
+プリズムをコリメータに向けて設置し、望遠鏡をのぞいて十字線の交点を光の左側の反射像に合わせ、副尺$V$および$V'$を測定する。副尺差は\ang{2}以内に収め、超える場合は再測定を行った。
+
+\section{実験結果}
+測定した頂角$\alpha$、最小偏角$\delta_r$（赤色光）、$\delta_b$（青色光）と、それらから算出した屈折率$n$の結果を以下に示す。
+
+\subsection{頂角$\alpha$の測定結果}
+\begin{table}[H]
+\centering
+\caption{頂角$\alpha$の測定結果}
+\label{tab:angle_measurement}
+\begin{tabular}{|c|c|c|c|}
+\hline
+副尺 & T1 & T2 & $\beta = \text{T1} - \text{T2}$ \\
+\hline
+V  & \ang{282;35;00} & \ang{162;44;00} & \ang{119;51;00} \\
+\hline
+V' & \ang{102;34;00} & \ang{342;46;00} & \ang{119;48;00} \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{align}
+\beta_{\mathrm{ave}} &= \frac{\ang{119;51;00} + \ang{119;48;00}}{2} = \ang{119;49;30} \\
+\alpha &= \frac{\beta_{\mathrm{ave}}}{2} = \frac{\ang{119;49;30}}{2} = \ang{59;54;45}
+\end{align}
+
+\subsection{最小偏角の測定結果}
+\begin{table}[H]
+\centering
+\caption{赤色光の最小偏角測定結果}
+\label{tab:red_light_measurement}
+\begin{tabular}{|c|c|c|c|}
+\hline
+副尺 & T1 & T2 & $\Delta_r = \text{T1} - \text{T2}$ \\
+\hline
+V  & \ang{269;33;00} & \ang{168;54;00} & \ang{100;39;00} \\
+\hline
+V' & \ang{89;33;00}  & \ang{348;54;00} & \ang{100;39;00} \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{青色光の最小偏角測定結果}
+\label{tab:blue_light_measurement}
+\begin{tabular}{|c|c|c|c|}
+\hline
+副尺 & T1 & T2 & $\Delta_b = \text{T1} - \text{T2}$ \\
+\hline
+V  & \ang{271;50;00} & \ang{166;34;00} & \ang{105;16;00} \\
+\hline
+V' & \ang{91;49;00}  & \ang{346;36;00} & \ang{105;13;00} \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{align}
+\Delta_{r,\mathrm{ave}} &= \ang{100;39;00} \\
+\Delta_{b,\mathrm{ave}} &= \frac{\ang{105;16;00} + \ang{105;13;00}}{2} = \ang{105;14;30} \\
+\delta_r &= \frac{\Delta_{r,\mathrm{ave}}}{2} = \ang{50;19;30} \\
+\delta_b &= \frac{\Delta_{b,\mathrm{ave}}}{2} = \ang{52;37;15}
+\end{align}
+
+\subsection{屈折率$\boldmath n$の算出}
+\begin{equation}
+n = \frac{\sin\left(\frac{\delta_{\mathrm{min}} + \alpha}{2}\right)}{\sin\left(\frac{\alpha}{2}\right)}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{屈折率の算出結果}
+\label{tab:refractive_index}
+\begin{tabular}{|c|c|}
+\hline
+色 & 屈折率 $n$ \\
+\hline
+赤色 & $n_r = 1.64285$ \\
+\hline
+青色 & $n_b = 1.66547$ \\
+\hline
+\end{tabular}
+\end{table}
+
+空気の屈折率$n_0 = 1.00028$より、絶対屈折率は次の通り：
+\begin{align*}
+n_r' &= n_r \cdot n_0 = 1.64315 \\
+n_b' &= n_b \cdot n_0 = 1.66577
+\end{align*}
+
+\section{考察}
+本実験により、波長に依存して屈折率が変化する分散現象を確認した。測定値は文献値や理論値とおおよそ一致し、測定精度は高いと判断される。
+
+考えられる誤差要因：
+\begin{itemize}
+  \item プリズム設置のずれ（アライメント不良）
+  \item 目視による副尺読み取り誤差
+  \item 光源のスペクトル純度不足
+  \item 温度・気圧変化による屈折率変動
+\end{itemize}
+
+測定精度向上のためには、繰り返し測定や熟練した視準操作が有効である。
+
+\begin{thebibliography}{9}
+\bibitem{key1}
+物理学実験指導書編集委員会編『新物理学実験』，学術図書出版社，2024年。
+\end{thebibliography}
+
+\end{document}

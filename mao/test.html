@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>千代田区の人口表示（2020国勢調査）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+  <style>
+    #map { width: 100%; height: 500px; }
+    body { font-family: Arial, sans-serif; }
+  </style>
+</head>
+<body>
+  <h2>千代田区の人口（2020年国勢調査）</h2>
+  <div id="map"></div>
+
+  <script>
+    const ESTAT_APP_ID = "10c4c396799b67c9ed94de89fe177abed0254854";
+    const STAT_ID = "0003411957"; // 小地域（町丁字等別）人口統計
+    const CHIYODA_PREFIX = "13101"; // 千代田区コード
+
+    const map = L.map("map").setView([35.6938, 139.7536], 13);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: "© OpenStreetMap contributors"
+    }).addTo(map);
+
+    // 千代田区の町丁字コードに該当する総人口（cat01 = A1101）を合計
+    const url = `https://api.e-stat.go.jp/rest/3.0/app/json/getStatsData?appId=${ESTAT_APP_ID}&statsDataId=${STAT_ID}`;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const values = data.GET_STATS_DATA?.STATISTICAL_DATA?.DATA_INF?.VALUE;
+        if (!values || values.length === 0) {
+          alert("人口データが見つかりませんでした。");
+          console.error("VALUEが存在しない", data);
+          return;
+        }
+
+        const filtered = values.filter(v =>
+          v["@area"]?.startsWith(CHIYODA_PREFIX) &&
+          v["@cat01"] === "A1101"
+        );
+
+        const total = filtered.reduce((sum, v) => sum + parseInt(v["$"]), 0);
+
+        const marker = L.marker([35.6938, 139.7536]).addTo(map);
+        marker.bindPopup(`千代田区の人口（2020年）：<b>${total.toLocaleString()}人</b>`).openPopup();
+      })
+      .catch(err => {
+        console.error("人口取得に失敗:", err);
+        alert("人口取得に失敗しました。");
+      });
+  </script>
+</body>
+</html>

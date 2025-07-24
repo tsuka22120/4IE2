@@ -1,0 +1,130 @@
+\documentclass[a4paper,11pt,dvipdfmx]{jsarticle}
+
+
+% 数式
+\usepackage{amsmath,amsfonts}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{mathtools}
+% 画像
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{circuitikz}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{askmaps}
+\usepackage{multirow}
+\usepackage{bigstrut}
+\usepackage{rotating}
+\usepackage{listings}
+\usepackage{subcaption}
+% 表
+\usepackage{makecell}
+% その他
+\usepackage{url}
+\usepackage{ascmac}
+\usepackage{cases}
+\usepackage{here}
+\usepackage{upgreek}
+\usepackage{tocloft}  % tocloftパッケージを使う
+\usepackage{titlesec} % titlesecパッケージを使う（セクションタイトルのカスタマイズ）
+
+% 画像挿入コマンド
+\newcommand{\Figure}[4]{
+\begin{figure}[H]
+\centering
+\includegraphics[width=#1\linewidth]{./images/#2}
+\caption{#3}
+\label{fig:#4}
+\end{figure}
+}
+\begin{document}
+
+\section{要旨}
+サーミスタの温度による抵抗値の値を求めることにより，温度と抵抗値の相関を調べる．
+また，結果からグラフを作成し，サーミスタの特性を確認する．
+
+\section{目的}
+今回の実験では，ホイーンストンブリッジ回路を用いて，サーミスタの温度による抵抗値の変化を調べる．
+結果からグラフを作成し，温度と抵抗の相関について調べることを目的とする．
+\section{実験方法}
+追加資料 pp.1-4 を参照する．
+
+\section{実験結果}
+この章では測定したデータ，およびグラフを示す．
+\subsection{測定データ}
+
+\begin{table}[h]
+\centering
+\caption{測定データ}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+No. & \( t(\SI{}{\celsius}) \) & \( T(\mathrm{K}) \) & \( 1/T \) & \( 1/T - 1/T_0 \) & \( R(\Omega) \) \\
+\hline
+1 & 78.0 & 351.2 & \( 2.847 \times 10^{-3} \) & \( -8.136 \times 10^{-4} \) & 1710 \\
+2 & 71.0 & 344.2 & \( 2.905 \times 10^{-3} \) & \( -7.557 \times 10^{-4} \) & 2060 \\
+3 & 65.2 & 338.4 & \( 2.955 \times 10^{-3} \) & \( -7.059 \times 10^{-4} \) & 2440 \\
+4 & 62.8 & 336.0 & \( 2.976 \times 10^{-3} \) & \( -6.848 \times 10^{-4} \) & 2720 \\
+5 & 53.8 & 327.0 & \( 3.058 \times 10^{-3} \) & \( -6.029 \times 10^{-4} \) & 3660 \\
+6 & 43.6 & 316.8 & \( 3.157 \times 10^{-3} \) & \( -5.044 \times 10^{-4} \) & 5260 \\
+7 & 36.5 & 309.7 & \( 3.229 \times 10^{-3} \) & \( -4.321 \times 10^{-4} \) & 6630 \\
+8 & 29.8 & 303.0 & \( 3.300 \times 10^{-3} \) & \( -3.607 \times 10^{-4} \) & 8620 \\
+9 & 22.4 & 295.6 & \( 3.383 \times 10^{-3} \) & \( -2.780 \times 10^{-4} \) & \( 1139 \times 10^1 \) \\
+10 & 14.4 & 287.6 & \( 3.477 \times 10^{-3} \) & \( -1.839 \times 10^{-4} \) & \( 1544 \times 10^1 \) \\
+11 & 8.5 & 281.7 & \( 3.550 \times 10^{-3} \) & \( -1.111 \times 10^{-4} \) & \( 1960 \times 10^1 \) \\
+12 & 3.6 & 276.8 & \( 3.613 \times 10^{-3} \) & \( -4.828 \times 10^{-5} \) & \( 2340 \times 10^1 \) \\
+\hline
+\end{tabular}
+\end{table}
+
+tは水温，Tは絶対温度，\( T_0 \)は0℃の絶対温度，\( R \)はサーミスタの抵抗値を表す．
+
+\subsection{グラフ}
+ここでは，測定したデータをもとに作成した普通グラフと片対数グラフを示す．
+\subsubsection{普通グラフ}
+ここでは、測定したデータをもとに作成した普通グラフをグラフ1に示す．
+\newpage
+% ここに手書きのグラフを挿入する．
+
+\subsection{片対数グラフ}
+ここでは、測定したデータをもとに作成した片対数グラフをグラフ2に示す．
+\newpage
+% ここに手書きのグラフを挿入する．
+表のデータを以下の式に代入する．
+\[
+\frac{1}{T} - \frac{1}{T_0}
+\]
+\[
+y = \ln R,\quad a = \ln R_0,\quad b = B,\quad x = \frac{1}{T} - \frac{1}{T_0}
+\]
+と置くことで
+\[
+y = a + bx
+\]
+の形で表すことができ，
+
+測定データと最小二乗法を用いて，値はおよそ \( a = 10.28,\ b = 3468 \) となる．
+
+よって，傾き \( B = 3468 \)，切片 \( R_0 = 2.924 \times 10^4 \) に近い値になると考えられる．
+
+\section{考察}
+本実験では，サーミスタの温度変化に伴う抵抗値の変化を測定し，得られたデータをもとに，温度と抵抗の関係をグラフ化・数式化することで，サーミスタの特性を確認した．
+
+片対数グラフを作成し，変数変換によって \( y = \ln R,\ x = \frac{1}{T} - \frac{1}{T_0} \) とおくことで，関係式は線形 \( y = a + bx \) の形に変換された．この線形回帰から得られたパラメータは，切片 \( a = \ln R_0 \approx 10.28 \)，傾き \( b = B \approx 3468 \) であり，これにより \( R_0 \approx 2.924 \times 10^4 \) と求められた．
+
+この結果は，サーミスタの特性を表す式 \( R = R_0 \exp\left( \frac{B}{T} \right) \) の形式に一致しており，理論的にも妥当であるといえる．特に，プロットしたデータがほぼ直線上に分布していたことからも，変換後の線形関係が成り立つことが確認できた．
+
+ただし，いくつかのデータ点では直線からのずれが見られた．この原因としては，以下のような要因が考えられる：
+
+\begin{itemize}
+    \item 水温の測定誤差：温度計の読み取りや，水中の温度むらによる影響．
+    \item 抵抗測定の誤差：マルチメータの精度や接触不良による誤差．
+    \item サーミスタの個体差：理想的なモデルとの乖離．
+\end{itemize}
+
+今後の改善点としては，温度の安定化のために撹拌器を用いる，より高精度な測定器を使用する，測定点数を増やすなどが挙げられる．
+
+総じて，本実験を通してサーミスタの温度依存性を定量的に理解することができ，また，データ処理によって非線形関係を線形化し，解析を容易にする手法の有効性も確認できた．
+
+\end{document}

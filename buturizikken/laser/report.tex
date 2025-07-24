@@ -1,0 +1,180 @@
+\documentclass[a4paper,11pt,dvipdfmx]{jsarticle}
+
+% 数式
+\usepackage{amsmath,amsfonts}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{mathtools}
+% 画像
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{circuitikz}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{askmaps}
+\usepackage{multirow}
+\usepackage{bigstrut}
+\usepackage{rotating}
+\usepackage{listings}
+\usepackage{subcaption}
+% 表
+\usepackage{makecell}
+% その他
+\usepackage{url}
+\usepackage{ascmac}
+\usepackage{cases}
+\usepackage{here}
+\usepackage{upgreek}
+\usepackage{tocloft}
+\usepackage{titlesec}
+
+\begin{document}
+
+\section*{1 要旨}
+本実験では，He-Neレーザーを用いて光の回折と干渉を観測し光の波動性を確認した．回折格子を
+用いて光の干渉縞を観測し，レーザー光の波長を求めた．レーザー光の波長は $6.31 \times 10^{-5}\,\mathrm{cm}$ と求
+まった．レーザー光を単スリットに照射し，干渉縞の間の距離を測定することで，スリット幅を求め
+た．スリット幅は $1.14\times 10^{-2}\,\mathrm{cm}$ と求まった．レーザー光の波長の理論値は $6.33\times 10^{-5}\,\mathrm{cm}$，実際に
+顕微鏡で測定したスリット幅の実測値は $1.3 \times 10^{-2}\,\mathrm{cm}$ である．実験結果は理論値，実測値とほぼ
+一致しており実験は正しく行われたと考えられる．
+
+\section*{2 目的}
+レーザーの原理を理解し，光の回析と干渉を観測することで光の波動性を確認する．
+
+\section*{3 実験手順}
+実験指導プリント pp.9-12に従い実験を行う．
+
+\section*{4 実験結果}
+
+\subsection*{4.1 波長の測定}
+回折格子を用いて干渉縞の観測を行った．回折格子とランプスケールの距離を表1に示す．
+
+\begin{table}[H]
+\centering
+\caption{回折格子とランプスケールの距離}
+\begin{tabular}{c|c c c}
+\hline
+測定位置 & LA & LB & LC \\ \hline
+長さ [cm] & 87.60 & 14.25 & 13.55 \\
+\hline
+\end{tabular}
+\end{table}
+
+ランプスケールの距離$L$は表1の値を用いて式(1)のように求める．
+\[
+L = LA - LB + LC = 87.60 - 14.25 + 13.55 = 86.90\,\mathrm{cm}
+\tag{1}
+\]
+
+回折格子による干渉縞の測定値を表2に示す．
+
+\begin{table}[H]
+\centering
+\caption{回折格子による干渉縞の測定値}
+\begin{tabular}{c|c c c c}
+\hline
+次数 & 左端($-m$) & 右端($-m$) & 左端($+m$) & 右端($+m$) \\ \hline
+1 & 19.60 & 19.85 & 30.60 & 30.85 \\
+2 & 14.10 & 14.20 & 36.30 & 36.40 \\
+3 & 8.30 & 8.60 & 42.00 & 42.15 \\
+\hline
+\end{tabular}
+\end{table}
+
+表2の値を用いて，レーザー光の波長を求める．
+\[
+Dm = \frac{(3-1) + (4-2)}{4}
+\tag{2}
+\]
+\[
+\sin\theta = \frac{Dm}{\sqrt{L^2 + Dm^2}}
+\tag{3}
+\]
+\[
+\lambda = \frac{d \sin\theta}{m}
+\tag{4}
+\]
+
+計算結果を表3に示す．
+
+\begin{table}[H]
+\centering
+\caption{レーザー光の波長}
+\begin{tabular}{c|c c c}
+\hline
+次数 & $Dm$ [cm] & $\sin\theta$ & $\lambda$ [cm] \\ \hline
+1 & 11.10 & 0.0632 & $6.31\times 10^{-5}$ \\
+2 & 22.20 & 0.1267 & $6.32\times 10^{-5}$ \\
+3 & 33.70 & 0.1899 & $6.32\times 10^{-5}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+レーザー光の波長は平均して $6.31\times 10^{-5}\,\mathrm{cm}$ と求まった．理論値は $6.33\times 10^{-5}\,\mathrm{cm}$ であり，実験値
+とほぼ一致している．
+
+\subsection*{4.2 スリット幅の測定}
+単スリットにレーザー光を照射し発生する干渉縞の間の距離を測定することで，スリット幅を求め
+た．単スリットからグラフ用紙の距離$L$は209.50cmである．
+
+\begin{table}[H]
+\centering
+\caption{単スリットによる干渉縞の測定値}
+\begin{tabular}{c|c c c c}
+\hline
+次数 & 左端($-m$) & 右端($-m$) & 左端($+m$) & 右端($+m$) \\ \hline
+1 & 4.02 & 4.11 & 6.30 & 6.48 \\
+2 & 2.80 & 3.00 & 7.42 & 7.70 \\
+3 & 1.60 & 1.90 & 8.57 & 8.84 \\
+\hline
+\end{tabular}
+\end{table}
+
+表4の値を用いて，スリット幅$d$を求める．
+\[
+Dm = \frac{(3-1) + (4-2)}{4}
+\tag{5}
+\]
+理論値の波長 $6.33\times 10^{-5}\,\mathrm{cm}$ を用いる．
+\[
+\sin\theta_m = \frac{Dm}{L}
+\tag{6}
+\]
+\[
+d = \frac{m \lambda}{\sin\theta_m}
+\tag{7}
+\]
+
+計算結果を表5に示す．
+
+\begin{table}[H]
+\centering
+\caption{スリット幅}
+\begin{tabular}{c|c c c}
+\hline
+次数 & $Dm$ [cm] & $\sin\theta_m$ & $d$ [cm] \\ \hline
+1 & 1.16 & 0.00555 & $1.14\times 10^{-2}$ \\
+2 & 2.33 & 0.01112 & $1.14\times 10^{-2}$ \\
+3 & 3.48 & 0.01660 & $1.14\times 10^{-2}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+スリット幅は平均して $1.14\times 10^{-2}\,\mathrm{cm}$ と求まった．実際に顕微鏡で測定したスリット幅の実測値は
+$1.3 \times 10^{-2}\,\mathrm{cm}$ である．実験値は実測値とほぼ一致しており，スリット幅の測定は正しく行われたと
+考えられる．
+
+\section*{5 考察}
+今回の実験では，He-Neレーザーを用いて光の回折と干渉の性質を詳細に調べた．
+回折格子を用いて求めた波長は平均 $6.31\times 10^{-5}\,\mathrm{cm}$ となり，理論値 $6.33\times 10^{-5}\,\mathrm{cm}$ と非常に近い値を得た．
+これは装置の精度と目視による読み取りの精度が十分であったことを示している．
+
+スリット幅の測定でも，干渉縞の間隔を正確に測定することで，平均値 $1.14\times 10^{-2}\,\mathrm{cm}$ を求め，
+実測値 $1.3 \times 10^{-2}\,\mathrm{cm}$ と良く一致した．
+多少の差は，干渉縞のコントラストの低下や目視読み取りの誤差，装置の設置誤差などが原因と考えられるが，
+おおむね光の波動性と干渉・回折の原理をよく確認することができた．
+
+今回の結果から，レーザー光の単色性・指向性・可干渉性の高さが測定精度に大きく寄与していることも理解できた．
+今後さらに精密な測定を行うためには，光学ベンチや高精度センサーを用いることで，人為的誤差を減らすことが重要であると考えられる．
+\end{document}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>地図から人口集計（e-Stat）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+  <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
+  <style>#map { height: 100vh; }</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+const ESTAT_APP_ID = "10c4c396799b67c9ed94de89fe177abed0254854"; // ←ここを自分のAPIキーに置き換えてください
+const STAT_ID = "0003412317"; // 2020年国勢調査（市区町村別）
+
+const map = L.map('map').setView([35.6895, 139.6917], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+const drawnItems = new L.FeatureGroup();
+map.addLayer(drawnItems);
+map.addControl(new L.Control.Draw({
+  draw: { polygon: true, rectangle: true },
+  edit: { featureGroup: drawnItems }
+}));
+
+// 市区町村ポリゴン（例として一部だけ含めたGeoJSONを想定）
+let municipalities = []; // ←あとでGeoJSONロード
+
+// 描画イベント
+map.on(L.Draw.Event.CREATED, async function (e) {
+  drawnItems.clearLayers();
+  const layer = e.layer;
+  drawnItems.addLayer(layer);
+  const userPolygon = layer.toGeoJSON().geometry;
+
+  let totalPop = 0;
+  for (const feature of municipalities.features) {
+    const polygon = feature.geometry;
+    if (turf.booleanIntersects(userPolygon, polygon)) {
+      const code = feature.properties.code;
+
+      // e-Stat APIで該当コードの人口を取得
+      const res = await fetch(`https://api.e-stat.go.jp/rest/3.0/app/json/getStatsData?appId=${ESTAT_APP_ID}&statsDataId=${STAT_ID}&cdArea=${code}`);
+      const json = await res.json();
+
+      try {
+        const value = json.GET_STATS_DATA.STATISTICAL_DATA.DATA_INF.VALUE[0]["$"];
+        totalPop += parseInt(value);
+      } catch {
+        console.warn(`人口取得失敗: ${code}`);
+      }
+    }
+  }
+
+  layer.bindPopup(`この範囲の推定人口：${totalPop.toLocaleString()}人`).openPopup();
+});
+
+// GeoJSONロード（例：市区町村の境界データを別ファイルから取得）
+fetch("municipalities.geojson")
+  .then(res => res.json())
+  .then(data => municipalities = data);
+</script>
+</body>
+</html>
