@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.6.14)  30 JUL 2025 13:47
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.6.14)  30 JUL 2025 14:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -428,29 +428,59 @@ File: pgflibrarycurvilinear.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@circ@res@count=\count312
 ) (c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircquadpoles.tex) (c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircmultipoles.tex) (c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcirclabel.tex) (c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircvoltage.tex
 \pgfcirc@labelshift=\dimen312
-) (c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex) (c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex)) (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex) (c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex)) (c:/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+(c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+(c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen313
+\captionmargin=\dimen314
+\caption@leftmargin=\dimen315
+\caption@rightmargin=\dimen316
+\caption@width=\dimen317
+\caption@indent=\dimen318
+\caption@parindent=\dimen319
+\caption@hangindent=\dimen320
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->{\small \advance \leftskip .0628\linewidth \advance \rightskip .0628\linewidth \vskip \abovecaptionskip \sbox \@tempboxa {#1\hskip 1zw\relax #2}\ifdim \wd \@tempboxa <\hsize \centering \fi #1{\hskip 1zw\relax }#2\par \vskip \belowcaptionskip } on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count313
+\c@continuedfloat=\count314
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count315
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count316
+) (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (c:/texlive/2024/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2024-05-06 v3.3.17 A comprehensive (SI) units package
-\l__siunitx_number_uncert_offset_int=\count313
-\l__siunitx_number_exponent_fixed_int=\count314
-\l__siunitx_number_min_decimal_int=\count315
-\l__siunitx_number_min_integer_int=\count316
-\l__siunitx_number_round_precision_int=\count317
-\l__siunitx_number_lower_threshold_int=\count318
-\l__siunitx_number_upper_threshold_int=\count319
-\l__siunitx_number_group_first_int=\count320
-\l__siunitx_number_group_size_int=\count321
-\l__siunitx_number_group_minimum_int=\count322
-\l__siunitx_angle_tmp_dim=\dimen313
+\l__siunitx_number_uncert_offset_int=\count317
+\l__siunitx_number_exponent_fixed_int=\count318
+\l__siunitx_number_min_decimal_int=\count319
+\l__siunitx_number_min_integer_int=\count320
+\l__siunitx_number_round_precision_int=\count321
+\l__siunitx_number_lower_threshold_int=\count322
+\l__siunitx_number_upper_threshold_int=\count323
+\l__siunitx_number_group_first_int=\count324
+\l__siunitx_number_group_size_int=\count325
+\l__siunitx_number_group_minimum_int=\count326
+\l__siunitx_angle_tmp_dim=\dimen321
 \l__siunitx_angle_marker_box=\box86
 \l__siunitx_angle_unit_box=\box87
-\l__siunitx_compound_count_int=\count323
+\l__siunitx_compound_count_int=\count327
 (c:/texlive/2024/texmf-dist/tex/latex/translations/translations.sty
 Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
 (c:/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count324
+\etb@tempcnta=\count328
 ) (c:/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
 (c:/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
@@ -465,240 +495,178 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 ))
 \l__siunitx_table_tmp_box=\box88
-\l__siunitx_table_tmp_dim=\dimen314
-\l__siunitx_table_column_width_dim=\dimen315
+\l__siunitx_table_tmp_dim=\dimen322
+\l__siunitx_table_column_width_dim=\dimen323
 \l__siunitx_table_integer_box=\box89
 \l__siunitx_table_decimal_box=\box90
 \l__siunitx_table_uncert_box=\box91
 \l__siunitx_table_before_box=\box92
 \l__siunitx_table_after_box=\box93
-\l__siunitx_table_before_dim=\dimen316
-\l__siunitx_table_carry_dim=\dimen317
-\l__siunitx_unit_tmp_int=\count325
-\l__siunitx_unit_position_int=\count326
-\l__siunitx_unit_total_int=\count327
+\l__siunitx_table_before_dim=\dimen324
+\l__siunitx_table_carry_dim=\dimen325
+\l__siunitx_unit_tmp_int=\count329
+\l__siunitx_unit_position_int=\count330
+\l__siunitx_unit_total_int=\count331
 (c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 Package: array 2024/05/23 v2.6c Tabular extension package (FMi)
-\col@sep=\dimen318
+\col@sep=\dimen326
 \ar@mcellbox=\box94
-\extrarowheight=\dimen319
+\extrarowheight=\dimen327
 \NC@list=\toks36
 \extratabsurround=\skip59
 \backup@length=\skip60
 \ar@cellbox=\box95
-)) (c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count328
-\float@exts=\toks37
-\float@box=\box96
-\@float@everytoks=\toks38
-\@floatcapt=\box97
-) (c:/texlive/2024/texmf-dist/tex/latex/askmaps/askmaps.sty
-Package: askmaps 2020/10/23 Version 0.2 LaTeX package for drawing American Style Karnaugh maps
-(c:/texlive/2024/texmf-dist/tex/latex/pict2e/pict2e.sty
-Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
-(c:/texlive/2024/texmf-dist/tex/latex/pict2e/pict2e.cfg
-File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
-)
-Package pict2e Info: Driver file: dvipdfmx.def on input line 112.
-Package pict2e Info: Driver file for pict2e: p2e-dvipdfmx.def on input line 114.
-(c:/texlive/2024/texmf-dist/tex/latex/pict2e/p2e-dvipdfmx.def
-File: p2e-dvipdfmx.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
-)
-\pIIe@GRAPH=\toks39
-\@arclen=\dimen320
-\@arcrad=\dimen321
-\pIIe@tempdima=\dimen322
-\pIIe@tempdimb=\dimen323
-\pIIe@tempdimc=\dimen324
-\pIIe@tempdimd=\dimen325
-\pIIe@tempdime=\dimen326
-\pIIe@tempdimf=\dimen327
-)
-\askmapunitlength=\dimen328
+)) (c:/texlive/2024/texmf-dist/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup11
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+) (c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen328
+\c@nlinenum=\count332
+\TeXr@lab=\toks37
 ) (c:/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip61
-\multirow@cntb=\count329
+\multirow@cntb=\count333
 \multirow@dima=\skip62
 \bigstrutjot=\dimen329
 ) (c:/texlive/2024/texmf-dist/tex/latex/multirow/bigstrut.sty
 Package: bigstrut 2021/03/15 v2.8 Provide larger struts in tabulars
-) (c:/texlive/2024/texmf-dist/tex/latex/graphics/rotating.sty
-Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-(c:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-)
-\c@r@tfl@t=\count330
-\rotFPtop=\skip63
-\rotFPbot=\skip64
-\rot@float@box=\box98
-\rot@mess@toks=\toks40
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count331
-\lst@gtempboxa=\box99
-\lst@token=\toks41
-\lst@length=\count332
-\lst@currlwidth=\dimen330
-\lst@column=\count333
-\lst@pos=\count334
-\lst@lostspace=\dimen331
-\lst@width=\dimen332
-\lst@newlines=\count335
-\lst@lineno=\count336
-\lst@maxwidth=\dimen333
-(c:/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
-File: lstpatch.sty 2024/05/25 1.10b (Carsten Heinz)
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
-\c@lstnumber=\count337
-\lst@skipnumbers=\count338
-\lst@framebox=\box100
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2024/05/25 1.10b listings configuration
-))
-Package: listings 2024/05/25 1.10b (Carsten Heinz)
-(c:/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
-(c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-(c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen334
-\captionmargin=\dimen335
-\caption@leftmargin=\dimen336
-\caption@rightmargin=\dimen337
-\caption@width=\dimen338
-\caption@indent=\dimen339
-\caption@parindent=\dimen340
-\caption@hangindent=\dimen341
-Package caption Info: Unknown document class (or package),
-(caption)             standard defaults will be used.
-Package caption Info: \@makecaption = \long macro:#1#2->{\small \advance \leftskip .0628\linewidth \advance \rightskip .0628\linewidth \vskip \abovecaptionskip \sbox \@tempboxa {#1\hskip 1zw\relax #2}\ifdim \wd \@tempboxa <\hsize \centering \fi #1{\hskip 1zw\relax }#2\par \vskip \belowcaptionskip } on input line 1175.
-)
-
-Package caption Warning: Unknown document class (or package),
-(caption)                standard defaults will be used.
-See the caption package documentation for explanation.
-
-\c@caption@flags=\count339
-\c@continuedfloat=\count340
-Package caption Info: float package is loaded.
-Package caption Info: listings package is loaded.
-Package caption Info: rotating package is loaded.
-)
-Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count341
-Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count342
-) (c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen342
-\c@nlinenum=\count343
-\TeXr@lab=\toks42
-) (c:/texlive/2024/texmf-dist/tex/latex/url/url.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count334
+\float@exts=\toks38
+\float@box=\box96
+\@float@everytoks=\toks39
+\@floatcapt=\box97
+) (c:/texlive/2024/texmf-dist/tex/latex/here/here.sty) (c:/texlive/2024/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (c:/texlive/2024/texmf-dist/tex/latex/ascmac/ascmac.sty
 Package: ascmac 2020/01/15 v2.1 ascmac wrapper (community edition) 
 (c:/texlive/2024/texmf-dist/tex/latex/ascmac/tascmac.sty
 Package: tascmac 2020/01/15 v2.1 ascmac package (community edition) 
-\@savetbaselineshift=\dimen343
-\@saveybaselineshift=\dimen344
-\scb@x=\box101
-\scscb@x=\box102
-\@bw=\dimen345
-\@nbox=\box103
-\@nbody=\box104
-\@scw=\dimen346
-\ascmac@hoboxa=\box105
-\ascmac@hoboxb=\box106
-\@itemh=\dimen347
-\@iboxpos=\toks43
-\@iboxstr=\box107
-\@bwsp=\box108
-\@@bwsp=\box109
-\@bcal=\count344
-\shaderule=\dimen348
+\@savetbaselineshift=\dimen330
+\@saveybaselineshift=\dimen331
+\scb@x=\box98
+\scscb@x=\box99
+\@bw=\dimen332
+\@nbox=\box100
+\@nbody=\box101
+\@scw=\dimen333
+\ascmac@hoboxa=\box102
+\ascmac@hoboxb=\box103
+\@itemh=\dimen334
+\@iboxpos=\toks40
+\@iboxstr=\box104
+\@bwsp=\box105
+\@@bwsp=\box106
+\@bcal=\count335
+\shaderule=\dimen335
 )) (c:/texlive/2024/texmf-dist/tex/latex/cases/cases.sty
 Package: cases 2020/03/29 ver 3.2
-\numc@numwid=\dimen349
-) (c:/texlive/2024/texmf-dist/tex/latex/here/here.sty) (c:/texlive/2024/texmf-dist/tex/latex/was/upgreek.sty
-Package: upgreek 2003/02/12 v2.0 (WaS)
-Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
-\symugrf@m=\mathgroup11
-LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
-(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
-) (c:/texlive/2024/texmf-dist/tex/latex/tocloft/tocloft.sty
+\numc@numwid=\dimen336
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count336
+\lst@gtempboxa=\box107
+\lst@token=\toks41
+\lst@length=\count337
+\lst@currlwidth=\dimen337
+\lst@column=\count338
+\lst@pos=\count339
+\lst@lostspace=\dimen338
+\lst@width=\dimen339
+\lst@newlines=\count340
+\lst@lineno=\count341
+\lst@maxwidth=\dimen340
+(c:/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/05/25 1.10b (Carsten Heinz)
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
+\c@lstnumber=\count342
+\lst@skipnumbers=\count343
+\lst@framebox=\box108
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/05/25 1.10b listings configuration
+))
+Package: listings 2024/05/25 1.10b (Carsten Heinz)
+(c:/texlive/2024/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
-\cftparskip=\skip65
-\cftbeforetoctitleskip=\skip66
-\cftaftertoctitleskip=\skip67
-\cftbeforepartskip=\skip68
-\cftpartnumwidth=\skip69
-\cftpartindent=\skip70
-\cftbeforesecskip=\skip71
-\cftsecindent=\skip72
-\cftsecnumwidth=\skip73
-\cftbeforesubsecskip=\skip74
-\cftsubsecindent=\skip75
-\cftsubsecnumwidth=\skip76
-\cftbeforesubsubsecskip=\skip77
-\cftsubsubsecindent=\skip78
-\cftsubsubsecnumwidth=\skip79
-\cftbeforeparaskip=\skip80
-\cftparaindent=\skip81
-\cftparanumwidth=\skip82
-\cftbeforesubparaskip=\skip83
-\cftsubparaindent=\skip84
-\cftsubparanumwidth=\skip85
-\cftbeforeloftitleskip=\skip86
-\cftafterloftitleskip=\skip87
-\cftbeforefigskip=\skip88
-\cftfigindent=\skip89
-\cftfignumwidth=\skip90
-\c@lofdepth=\count345
-\c@lotdepth=\count346
-\cftbeforelottitleskip=\skip91
-\cftafterlottitleskip=\skip92
-\cftbeforetabskip=\skip93
-\cfttabindent=\skip94
-\cfttabnumwidth=\skip95
+\cftparskip=\skip63
+\cftbeforetoctitleskip=\skip64
+\cftaftertoctitleskip=\skip65
+\cftbeforepartskip=\skip66
+\cftpartnumwidth=\skip67
+\cftpartindent=\skip68
+\cftbeforesecskip=\skip69
+\cftsecindent=\skip70
+\cftsecnumwidth=\skip71
+\cftbeforesubsecskip=\skip72
+\cftsubsecindent=\skip73
+\cftsubsecnumwidth=\skip74
+\cftbeforesubsubsecskip=\skip75
+\cftsubsubsecindent=\skip76
+\cftsubsubsecnumwidth=\skip77
+\cftbeforeparaskip=\skip78
+\cftparaindent=\skip79
+\cftparanumwidth=\skip80
+\cftbeforesubparaskip=\skip81
+\cftsubparaindent=\skip82
+\cftsubparanumwidth=\skip83
+\cftbeforeloftitleskip=\skip84
+\cftafterloftitleskip=\skip85
+\cftbeforefigskip=\skip86
+\cftfigindent=\skip87
+\cftfignumwidth=\skip88
+\c@lofdepth=\count344
+\c@lotdepth=\count345
+\cftbeforelottitleskip=\skip89
+\cftafterlottitleskip=\skip90
+\cftbeforetabskip=\skip91
+\cfttabindent=\skip92
+\cfttabnumwidth=\skip93
 ) (c:/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box110
-\beforetitleunit=\skip96
-\aftertitleunit=\skip97
-\ttl@plus=\dimen350
-\ttl@minus=\dimen351
-\ttl@toksa=\toks44
-\titlewidth=\dimen352
-\titlewidthlast=\dimen353
-\titlewidthfirst=\dimen354
+\ttl@box=\box109
+\beforetitleunit=\skip94
+\aftertitleunit=\skip95
+\ttl@plus=\dimen341
+\ttl@minus=\dimen342
+\ttl@toksa=\toks42
+\titlewidth=\dimen343
+\titlewidthlast=\dimen344
+\titlewidthfirst=\dimen345
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 33.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 35.
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
 
 Package siunitx Warning: Detected the "physics" package:
 (siunitx)                omitting definition of \qty.
@@ -713,51 +681,64 @@ Package siunitx Warning: Detected the "physics" package:
 (c:/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 33.
-\c@lstlisting=\count347
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 35.
+\c@lstlisting=\count346
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 36.
+(Font)              scaled to size 13.31541pt on input line 38.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 36.
+(Font)              scaled to size 13.31541pt on input line 38.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 36.
+(Font)              scaled to size 13.31541pt on input line 38.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 36.
+(Font)              scaled to size 13.31541pt on input line 38.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 39.
+(Font)              scaled to size 6.47278pt on input line 41.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 39.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+(Font)              scaled to size 4.62341pt on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 39.
+(Font)              scaled to size 9.24683pt on input line 41.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 39.
+(Font)              scaled to size 6.47278pt on input line 41.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 39.
+(Font)              scaled to size 4.62341pt on input line 41.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 49.
+(Font)              scaled to size 11.09619pt on input line 56.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 49.
+(Font)              scaled to size 11.09619pt on input line 56.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 49.
+(Font)              scaled to size 11.09619pt on input line 56.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 49.
+(Font)              scaled to size 11.09619pt on input line 56.
 
 
 [1
 
 ]
 
-[2] (./report.aux)
+[2]
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 174.
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 177.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 177.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 177.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 177.
+
+
+[3]
+
+[4] (./report.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2024-06-01> patch level 1
@@ -765,12 +746,12 @@ L3 programming layer <2024-05-27>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 40362 strings out of 474259
- 1001553 string characters out of 5747073
- 1929753 words of memory out of 5000000
- 62823 multiletter control sequences out of 15000+600000
- 570567 words of font info for 98 fonts, out of 8000000 for 9000
+ 40009 strings out of 474259
+ 996097 string characters out of 5747073
+ 1933753 words of memory out of 5000000
+ 62489 multiletter control sequences out of 15000+600000
+ 570981 words of font info for 100 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 99i,10n,116p,619b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,20n,116p,662b,882s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on report.dvi (2 pages, 7976 bytes).
+Output written on report.dvi (4 pages, 14532 bytes).

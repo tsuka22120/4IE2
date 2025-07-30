@@ -1,110 +1,198 @@
 \documentclass[a4paper,11pt,dvipdfmx]{jsarticle}
 
-% 数式
+% --- 数式関連のパッケージ ---
 \usepackage{amsmath,amsfonts}
 \usepackage{bm}
 \usepackage{physics}
 \usepackage{mathtools}
-% 画像
+
+% --- 図や画像関連のパッケージ ---
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{subcaption}
+
+% --- 単位や記号関連のパッケージ ---
 \usepackage{amssymb}
 \usepackage{siunitx}
-\usepackage{float}
-\usepackage{tikz}
-\usepackage{askmaps}
+\usepackage{upgreek}
+
+% --- 表関連のパッケージ ---
+\usepackage{makecell}
 \usepackage{multirow}
 \usepackage{bigstrut}
-\usepackage{rotating}
-\usepackage{listings}
-\usepackage{subcaption}
-% 表
-\usepackage{makecell}
-% その他
+
+% --- レイアウト・その他 ---
+\usepackage{float}
+\usepackage{here} % [H]オプション用
 \usepackage{url}
 \usepackage{ascmac}
 \usepackage{cases}
-\usepackage{here}
-\usepackage{upgreek}
+\usepackage{listings}
 \usepackage{tocloft}
 \usepackage{titlesec}
 
-
 \begin{document}
 
-
+% ==================================================
 \section{要旨}
-本実験では、ユーイングの装置と光てこを用いて、3種類の金属棒のヤング率を測定し、得られた値から金属の種類を特定することを目的とした。測定には中央に重りを載せて棒をたわませる方法を用い、光てこにより微小変位を精密に測定した。
+% ==================================================
+本実験では、ユーイングの装置を用いて3種類の金属材料のヤング率を測定し、その値から各金属を特定した。
+実験の結果、各金属棒のヤング率はそれぞれ $E_A = \SI{9.55e10}{Pa}$, $E_B = \SI{2.14e11}{Pa}$, $E_C = \SI{1.26e11}{Pa}$ と求められた。これらの実験値を文献値と比較することにより、金属棒Aは黄銅、Bは鉄（鋼）、Cは銅であると推定した。
 
-実験対象となった金属棒A、B、Cのヤング率はそれぞれ \(9.55 \times 10^{10}\) [Pa]、\(2.14 \times 10^{11}\) [Pa]、\(1.26 \times 10^{11}\) [Pa] と求められた。これらの値は、文献値と照らし合わせた結果、Aが黄銅、Bが鉄（鋼）、Cが銅であると推定された。さらに、誤差率はそれぞれ -5\%、-1\%〜6\%、-3\% 程度であり、装置の構造や測定精度から考えても、本実験は比較的高精度にヤング率を求められたことが示された。
-
+% ==================================================
 \section{実験の目的}
-ユーイングの装置を用いて、金属のヤング率を測定し、その値から材料の特定を行う。
+% ==================================================
+ユーイングの装置（Ewing's apparatus）を用い、金属のヤング率を測定する。
 
+% ==================================================
 \section{実験手順}
-実験指導書 pp.37--43「1. ユーイングの装置による測定」に従って実施。
+% ==================================================
+実験指導書 pp.37-43の 「1.ユーイングの装置による測定」を参照。
 
+% ==================================================
 \section{実験結果}
-
+% ==================================================
 \subsection{ヤング率の式の導出}
-長さ\( l \)、断面積\( S \)の棒に両側から力\( F \)を加えたとき、応力は\( \frac{F}{S} \)、ひずみは\( \frac{\Delta l}{l} \)となる。
-このときヤング率\( E \)は次式で定義される：
+長さ $l$、断面積 $S$ の柱状の物体に力 $F$ を加えて引くとき、引張応力は $\frac{F}{S}$、ひずみは $\frac{\Delta l}{l}$ となる。ここで $\Delta l$ は物体の伸びである。ヤング率 $E$ は応力とひずみの比で定義される。
 \begin{equation}
-E = \frac{F l}{S \Delta l}
+    E = \frac{F/S}{\Delta l / l} \label{eq:young_def}
+\end{equation}
+ユーイングの装置では、角棒の中央におもり（質量 $M$, 重さ $W=Mg$）を載せてたわませる。このとき、梁のたわみに関する材料力学の理論から、ヤング率 $E$ は次式で与えられる。
+\begin{equation}
+    E = \frac{W l^3}{4e a^3 b} = \frac{g l^3}{4 a^3 b} \frac{M}{e} \label{eq:young_modulus}
+\end{equation}
+ここで、$l$ は支点間の距離、$a$ は角棒の厚さ、$b$ は幅、$e$ は中央のたわみである。
+
+\subsection{「光てこ」の原理}
+金属棒の微小なたわみ $e$ は、光てこ（optical lever）を用いて測定する。鏡の脚の二等辺三角形の高さを $z$、鏡から尺度までの水平距離を $x$、尺度上の読みの変化を $\Delta y$ とすると、たわみ $e$ は次式で求められる。
+\begin{equation}
+    e = \frac{z \Delta y}{2x} \label{eq:deflection}
 \end{equation}
 
-本実験では中央に重りを載せて角棒をたわませ、その変位からヤング率を求める。理論解析により、次の関係式が得られる：
-\begin{equation}
-E = \frac{W l^3}{4 a^3 b e}
-\end{equation}
+\subsection{ヤング率の測定}
+本実験では、重力加速度 $g=\SI{9.81}{m/s^2}$, 支点間距離 $l=\SI{0.4}{m}$, 光てこの脚の高さ $z=\SI{0.03}{m}$ として実験を行った。おもりを $0$ から $\SI{1000}{g}$ まで変化させ、質量差 $\Delta M = \SI{600}{g}$ のときの尺度の変化量を求めた。
 
-\subsection{光てこの原理}
-光てこを用いて中間降下\( e \)を測定する。鏡の脚の高さを\( z \)、鏡と尺度の距離を\( x \)、尺度の読み取りを\( y, y' \)としたとき、
-\begin{equation}
-e = \frac{z (y - y')}{2x}
-\end{equation}
-が成り立つ。
-
-\subsection{実験データ}
-金属棒の寸法および測定条件を表\ref{tbl:specs}に示す。
-
-\renewcommand{\arraystretch}{1.2}
+最初に各金属棒の寸法と鏡と尺度の距離を測定した（表\ref{tab:dimensions}）。
 \begin{table}[H]
-\centering
-\caption{金属棒の寸法と装置のパラメータ}
-\label{tbl:specs}
-\begin{tabular}{|c|c|c|c|}
-\hline
-金属棒 & 幅 \( b \) [m] & 厚さ \( a \) [m] & 鏡と尺度の距離 \( x \) [m] \\ \hline
-A & 0.015920 & 0.004974333 & 2.36 \\ \hline
-B & 0.015923 & 0.004896     & 2.42 \\ \hline
-C & 0.015960 & 0.004953     & 2.40 \\ \hline
-\end{tabular}
+    \centering
+    \caption{金属棒の測定}
+    \label{tab:dimensions}
+    \begin{tabular}{cccc}
+        \hline
+        金属棒 & 幅 $b$ [\SI{}{m}] & 厚さ $a$ [\SI{}{m}] & 鏡と尺度の距離 $x$ [\SI{}{m}] \\
+        \hline \hline
+        A & \num{0.015920} & \num{0.004974} & \num{2.36} \\
+        B & \num{0.015923} & \num{0.004896} & \num{2.42} \\
+        C & \num{0.015960} & \num{0.004953} & \num{2.40} \\
+        \hline
+    \end{tabular}
 \end{table}
 
-重りを変化させて各金属棒の変位を測定し、その平均変位から中間降下\( e \)およびヤング率\( E \)を計算した。結果を表\ref{tbl:young}に示す。
-
+次に、おもりの質量を変化させ、増重時と減重時の尺度を測定した（表\ref{tab:data_A}、\ref{tab:data_B}、\ref{tab:data_C}）。
 \begin{table}[H]
-\centering
-\caption{ヤング率の測定結果}
-\label{tbl:young}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-金属棒 & \( \Delta y \) [m] & 中間降下 \( e \) [m] & ヤング率 \( E \) [Pa] & 推定金属 \\ \hline
-A & 0.0791 & 0.000503 & \( 9.55 \times 10^{10} \) & 黄銅 \\ \hline
-B & 0.0379 & 0.000235 & \( 2.14 \times 10^{11} \) & 鉄（鋼） \\ \hline
-C & 0.0617 & 0.000386 & \( 1.26 \times 10^{11} \) & 銅 \\ \hline
-\end{tabular}
+    \centering
+    \caption{金属棒Aの測定}
+    \label{tab:data_A}
+    \begin{tabular}{cccc}
+        \hline
+        おもりの重さ $m$ [\SI{}{g}] & 増重時 $y$ [\SI{}{mm}] & 減重時 $y'$ [\SI{}{mm}] & 平均 [\SI{}{mm}] \\
+        \hline \hline
+        0 & 85.0 & 85.0 & 85.0 \\
+        200 & 111.0 & 111.0 & 111.0 \\
+        400 & 136.8 & 136.8 & 136.8 \\
+        600 & 164.0 & 164.0 & 164.0 \\
+        800 & 190.0 & 190.0 & 190.0 \\
+        1000 & 216.0 & 216.0 & 216.0 \\
+        \hline
+    \end{tabular}
 \end{table}
 
+\begin{table}[H]
+    \centering
+    \caption{金属棒Bの測定}
+    \label{tab:data_B}
+    \begin{tabular}{cccc}
+        \hline
+        おもりの重さ $m$ [\SI{}{g}] & 増重時 $y$ [\SI{}{mm}] & 減重時 $y'$ [\SI{}{mm}] & 平均 [\SI{}{mm}] \\
+        \hline \hline
+        0 & 40.0 & 40.0 & 40.0 \\
+        200 & 52.5 & 51.8 & 52.2 \\
+        400 & 65.0 & 65.0 & 65.0 \\
+        600 & 78.0 & 78.0 & 78.0 \\
+        800 & 90.0 & 90.0 & 90.0 \\
+        1000 & 103.0 & 103.0 & 103.0 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{金属棒Cの測定}
+    \label{tab:data_C}
+    \begin{tabular}{cccc}
+        \hline
+        おもりの重さ $m$ [\SI{}{g}] & 増重時 $y$ [\SI{}{mm}] & 減重時 $y'$ [\SI{}{mm}] & 平均 [\SI{}{mm}] \\
+        \hline \hline
+        0 & 100.0 & 100.0 & 100.0 \\
+        200 & 121.0 & 120.0 & 120.5 \\
+        400 & 141.5 & 141.0 & 141.3 \\
+        600 & 161.5 & 162.0 & 161.8 \\
+        800 & 182.0 & 182.0 & 182.0 \\
+        1000 & 203.0 & 203.0 & 203.0 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+これらのデータから、質量差 $\Delta M = \SI{600}{g}$ に対する尺度の平均変化量 $\Delta y$ を算出し、式\eqref{eq:deflection}と式\eqref{eq:young_modulus}を用いてたわみ $e$ とヤング率 $E$ を求めた（表\ref{tab:results}）。
+
+\begin{table}[H]
+    \centering
+    \caption{ヤング率の算出結果}
+    \label{tab:results}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{cccccc}
+        \hline
+        金属棒 & \makecell{平均尺度変化 \\ $\Delta y$ (for $\Delta M=\SI{0.6}{kg}$) [\SI{}{m}]} & \makecell{中央のたわみ \\ $e$ [\SI{}{m}]} & \makecell{ヤング率 \\ $E$ [\SI{}{Pa}]} & \makecell{推定される金属} & \makecell{文献値との誤差率 \\ (\%)} \\
+        \hline \hline
+        A & \num{0.0791} & $\num{5.03e-4}$ & $\mathbf{\num{9.55e10}}$ & 黄銅 ($\sim \SI{10e10}{Pa}$) & -4.5 \\
+        B & \num{0.0379} & $\num{2.35e-4}$ & $\mathbf{\num{2.14e11}}$ & 鉄(鋼) ($\sim \SI{21e10}{Pa}$) & +1.9 \\
+        C & \num{0.0617} & $\num{3.86e-4}$ & $\mathbf{\num{1.26e11}}$ & 銅 ($\sim \SI{13e10}{Pa}$) & -3.1 \\
+        \hline
+    \end{tabular}%
+    }
+\end{table}
+
+% ==================================================
 \section{考察}
-今回の実験で得られたヤング率の値は、文献に記載されている各金属の代表的なヤング率と比較して妥当なものであった。
-\begin{itemize}
-  \item 黄銅：約\( 1.0 \times 10^{11} \)[Pa] に対し、Aの測定値は\( 9.55 \times 10^{10} \)[Pa]で、誤差約 -5\%
-  \item 鉄（鋼）：\( 2.0 \sim 2.2 \times 10^{11} \)[Pa] に対し、Bの測定値は\( 2.14 \times 10^{11} \)[Pa]で、誤差は -1\%〜+6\%
-  \item 銅：約\( 1.3 \times 10^{11} \)[Pa] に対し、Cの測定値は\( 1.26 \times 10^{11} \)[Pa]で、誤差約 -3\%
-\end{itemize}
+% ==================================================
+本実験で得られたヤング率は、文献値と比較して誤差が5\%以内に収まっており、ユーイングの装置を用いて金属のヤング率を概ね正確に測定できることが確認できた。しかし、いくつかの誤差要因が結果に影響を与えたと考えられる。
 
-以上から、実験装置の精度および測定手順に大きな問題はなく、比較的正確にヤング率を求めることができたと考えられる。ただし、装置の設置状態や目視による読み取り誤差、棒の固定状態などがさらなる精度向上の鍵となる。また、光てこの構造上、測定誤差が距離\( x \)や高さ\( z \)に大きく依存するため、これらの値の測定精度を高める工夫が今後の課題となる。
+\subsection{誤差の要因分析}
+誤差は系統誤差と偶然誤差に大別できる。
+
+\subsubsection{系統誤差}
+系統誤差は、測定器の精度や理論式の近似に起因する。
+\begin{enumerate}
+    \item \textbf{寸法測定の不確かさ:} ヤング率の算出式\eqref{eq:young_modulus}からわかるように、ヤング率 $E$ は金属棒の厚さ $a$ の3乗に反比例する ($E \propto 1/a^3$)。したがって、厚さ $a$ の測定におけるわずかな誤差が、ヤング率の計算結果に極めて大きな影響を及ぼす。例えば、厚さの測定値が真の値より1\%大きいだけで、ヤング率の計算値は約3\%小さくなる。マイクロメータによる測定は高精度だが、棒全体の厚さが完全に均一でない可能性も誤差の一因となる。
+    \item \textbf{定数の正確性:} 支点間距離 $l$、光てこの脚の高さ $z$、鏡と尺度の距離 $x$ など、定数として扱った値にも測定誤差が含まれる。特に $l$ は3乗で効いてくるため、その影響は大きい。
+    \item \textbf{理論式の近似:} 光てこの原理における微小角近似や、梁のたわみ公式は、理想的な剛体や均質な弾性体を仮定している。実際の装置のわずかな歪みや支点の摩擦などが、理論からのずれを生じさせた可能性がある。
+\end{enumerate}
+
+\subsubsection{偶然誤差}
+偶然誤差は、測定の繰り返しによってばらつく誤差である。
+\begin{enumerate}
+    \item \textbf{尺度の読み取り誤差:} 望遠鏡のピントや視差により、尺度の読み取りには個人差が生じる。今回は増重時と減重時の測定を行い、その平均値を用いることで、この種の誤差の低減を図った。
+    \item \textbf{ヒステリシス現象:} 測定データを見ると、特に金属棒BとCにおいて、増重時と減重時で尺度の読みが完全に一致しない箇所があった。これは、おもりの載せ降ろしに伴う弾性ヒステリシス（内部摩擦によるエネルギー損失）や、装置全体の微小なガタつきが原因と考えられる。材料が完全な弾性体でない場合、応力の履歴によってひずみが変化するため、このような現象が観測される。
+\end{enumerate}
+
+\subsection{実験の改善点}
+本実験の精度をさらに向上させるためには、以下の点が考えられる。
+\begin{itemize}
+    \item 金属棒の幅 $b$ と厚さ $a$ を、棒の複数箇所で測定し、その平均値を用いることで、材料の不均一性による影響を軽減する。
+    \item 測定の試行回数を増やし、統計的な処理（最小二乗法など）を用いて $M/e$ の値を決定することで、偶然誤差をより効果的に低減する。
+    \item 実験室の温度を一定に保つ。金属のヤング率は温度に依存するため、温度変化は測定値に影響を与える可能性がある。
+\end{itemize}
+以上の考察から、測定誤差の最大の要因は金属棒の厚さの測定精度であることが示唆された。実験の精度を向上させるためには、寸法測定の正確性を高めるとともに、統計的なデータ処理を行うことが有効であると考えられる。
 
 \end{document}
