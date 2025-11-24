@@ -1,0 +1,29 @@
+﻿======================================================================
+Hydropower Site Selection System - Result Summary
+======================================================================
+
+Region: 長野県
+Date: 2025/11/25 01:23:52
+
+[Basic Information]
+Search Area: 13508.9 km²
+Grid Points: 378
+Rivers Detected: 26193
+Elevation Range: 325.0m ~ 2857.0m
+
+[Candidate Sites]
+Water Sources: 40
+Intakes: 40
+Powerhouses: 40
+
+[Top 10 Power Output]
+# 1: 1146.0 kW (Head: 1565.0m, Flow: 0.49m³/s)
+# 2:  973.6 kW (Head: 1259.0m, Flow: 0.48m³/s)
+# 3:  897.4 kW (Head: 1665.0m, Flow: 0.49m³/s)
+# 4:  833.3 kW (Head: 1545.0m, Flow: 0.49m³/s)
+# 5:  758.1 kW (Head: 1696.0m, Flow: 0.46m³/s)
+# 6:  717.1 kW (Head: 1366.0m, Flow: 0.47m³/s)
+# 7:  716.8 kW (Head: 1366.0m, Flow: 0.47m³/s)
+# 8:  713.3 kW (Head: 1862.0m, Flow: 0.42m³/s)
+# 9:  677.8 kW (Head: 1746.0m, Flow: 0.46m³/s)
+#10:  620.5 kW (Head: 1277.0m, Flow: 0.44m³/s)
