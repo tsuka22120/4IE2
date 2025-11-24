@@ -1,0 +1,5522 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_76e7cd632663cb4ebc01dddcf1857074 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; right: 10px; width: 250px; height: auto; 
+                background-color: white; z-index:9999; font-size:14px;
+                border:2px solid grey; border-radius: 5px; padding: 10px">
+    <p style="margin: 0; font-weight: bold;">水力発電候補地 トップ50</p>
+    <p style="margin: 5px 0; font-size: 12px;">💧 水源 (Water Source)</p>
+    <p style="margin: 5px 0; font-size: 12px;">🟦 取水口 (Intake)</p>
+    <p style="margin: 5px 0; font-size: 12px;">⚡ 発電所 (Powerhouse)</p>
+    <p style="margin: 5px 0; font-size: 11px; color: #666;">※ マーカーをクリックすると詳細情報が表示されます</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_76e7cd632663cb4ebc01dddcf1857074" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_76e7cd632663cb4ebc01dddcf1857074 = L.map(
+                "map_76e7cd632663cb4ebc01dddcf1857074",
+                {
+                    center: [36.424061, 137.8542754],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2e02c51e0bac8026eae743979f460b83 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2e02c51e0bac8026eae743979f460b83.addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var circle_marker_96ae54b90856b6a73582041541c3a25f = L.circleMarker(
+                [36.378861, 137.752721],
+                {"bubblingMouseEvents": true, "color": "#b5f08a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b5f08a", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_bbe660ded220212deaaea7ef8b3a65c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9850dae1b3f85d048cb9cf5c47db2135 = $(`<div id="html_9850dae1b3f85d048cb9cf5c47db2135" style="width: 100.0%; height: 100.0%;">Elevation: 1275.0m</div>`)[0];
+                popup_bbe660ded220212deaaea7ef8b3a65c0.setContent(html_9850dae1b3f85d048cb9cf5c47db2135);
+            
+        
+
+        circle_marker_96ae54b90856b6a73582041541c3a25f.bindPopup(popup_bbe660ded220212deaaea7ef8b3a65c0)
+        ;
+
+        
+    
+    
+            var circle_marker_e41492063ea3fa64fed0c1faee5925a6 = L.circleMarker(
+                [36.381408, 137.83734720689654],
+                {"bubblingMouseEvents": true, "color": "#2155bb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2155bb", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_58fced51a9ca02f60706c0ee0261e7c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_537d35d4fe892b4dbfb2fff80a2ef058 = $(`<div id="html_537d35d4fe892b4dbfb2fff80a2ef058" style="width: 100.0%; height: 100.0%;">Elevation: 641.0m</div>`)[0];
+                popup_58fced51a9ca02f60706c0ee0261e7c4.setContent(html_537d35d4fe892b4dbfb2fff80a2ef058);
+            
+        
+
+        circle_marker_e41492063ea3fa64fed0c1faee5925a6.bindPopup(popup_58fced51a9ca02f60706c0ee0261e7c4)
+        ;
+
+        
+    
+    
+            var circle_marker_b813ff7fbfeab35fb8dbc435d7de53e3 = L.circleMarker(
+                [36.386502, 137.79503410344827],
+                {"bubblingMouseEvents": true, "color": "#91e983", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#91e983", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_b032ca396d87526b8b136bc2a4ea332d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f88bff592ea6cb1931adef1754871a8e = $(`<div id="html_f88bff592ea6cb1931adef1754871a8e" style="width: 100.0%; height: 100.0%;">Elevation: 1213.0m</div>`)[0];
+                popup_b032ca396d87526b8b136bc2a4ea332d.setContent(html_f88bff592ea6cb1931adef1754871a8e);
+            
+        
+
+        circle_marker_b813ff7fbfeab35fb8dbc435d7de53e3.bindPopup(popup_b032ca396d87526b8b136bc2a4ea332d)
+        ;
+
+        
+    
+    
+            var circle_marker_2392398fc87061e8427f738ba088e29d = L.circleMarker(
+                [36.391596, 137.752721],
+                {"bubblingMouseEvents": true, "color": "#b6a171", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b6a171", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_54c1530ac0722d7968dd06a0edff9324 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f7d2e96e529e35b0ea6bec2a14cd2633 = $(`<div id="html_f7d2e96e529e35b0ea6bec2a14cd2633" style="width: 100.0%; height: 100.0%;">Elevation: 1635.0m</div>`)[0];
+                popup_54c1530ac0722d7968dd06a0edff9324.setContent(html_f7d2e96e529e35b0ea6bec2a14cd2633);
+            
+        
+
+        circle_marker_2392398fc87061e8427f738ba088e29d.bindPopup(popup_54c1530ac0722d7968dd06a0edff9324)
+        ;
+
+        
+    
+    
+            var circle_marker_22424772dd1f72aa538263deef99afa3 = L.circleMarker(
+                [36.394143, 137.83734720689654],
+                {"bubblingMouseEvents": true, "color": "#2450b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2450b6", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_e25497ee6f79f8e590e9ebf8e8b8e393 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96658da35fd23bab1c6868a70d79fae9 = $(`<div id="html_96658da35fd23bab1c6868a70d79fae9" style="width: 100.0%; height: 100.0%;">Elevation: 625.0m</div>`)[0];
+                popup_e25497ee6f79f8e590e9ebf8e8b8e393.setContent(html_96658da35fd23bab1c6868a70d79fae9);
+            
+        
+
+        circle_marker_22424772dd1f72aa538263deef99afa3.bindPopup(popup_e25497ee6f79f8e590e9ebf8e8b8e393)
+        ;
+
+        
+    
+    
+            var circle_marker_0ce3db7bdf6613c1ab717cb8a1638721 = L.circleMarker(
+                [36.399237, 137.79503410344827],
+                {"bubblingMouseEvents": true, "color": "#68e17a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#68e17a", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_a869678dccce79887c2b68c9526d745a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b500be4540bd2b1e632fe00eb32fa1ef = $(`<div id="html_b500be4540bd2b1e632fe00eb32fa1ef" style="width: 100.0%; height: 100.0%;">Elevation: 1150.0m</div>`)[0];
+                popup_a869678dccce79887c2b68c9526d745a.setContent(html_b500be4540bd2b1e632fe00eb32fa1ef);
+            
+        
+
+        circle_marker_0ce3db7bdf6613c1ab717cb8a1638721.bindPopup(popup_a869678dccce79887c2b68c9526d745a)
+        ;
+
+        
+    
+    
+            var circle_marker_bc3e8e25b3427d408f9ebef339c762fc = L.circleMarker(
+                [36.404331, 137.752721],
+                {"bubblingMouseEvents": true, "color": "#dbd0ce", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dbd0ce", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_c9632869d4993f32852063daa5cf2668 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2cc7c06f26d5abdba7de20b9c5f95fa5 = $(`<div id="html_2cc7c06f26d5abdba7de20b9c5f95fa5" style="width: 100.0%; height: 100.0%;">Elevation: 2117.0m</div>`)[0];
+                popup_c9632869d4993f32852063daa5cf2668.setContent(html_2cc7c06f26d5abdba7de20b9c5f95fa5);
+            
+        
+
+        circle_marker_bc3e8e25b3427d408f9ebef339c762fc.bindPopup(popup_c9632869d4993f32852063daa5cf2668)
+        ;
+
+        
+    
+    
+            var circle_marker_f893a7a773afd2e63c812d993a6a3707 = L.circleMarker(
+                [36.406878, 137.83734720689654],
+                {"bubblingMouseEvents": true, "color": "#1b62c9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1b62c9", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_e847351aa2a0c80dcd1f4c845126ba3e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70f20a0433fe2044b1bcddd4022aa6d7 = $(`<div id="html_70f20a0433fe2044b1bcddd4022aa6d7" style="width: 100.0%; height: 100.0%;">Elevation: 673.0m</div>`)[0];
+                popup_e847351aa2a0c80dcd1f4c845126ba3e.setContent(html_70f20a0433fe2044b1bcddd4022aa6d7);
+            
+        
+
+        circle_marker_f893a7a773afd2e63c812d993a6a3707.bindPopup(popup_e847351aa2a0c80dcd1f4c845126ba3e)
+        ;
+
+        
+    
+    
+            var circle_marker_6868220f82d71e3ba00f3a934c1eac39 = L.circleMarker(
+                [36.411972, 137.79503410344827],
+                {"bubblingMouseEvents": true, "color": "#b5f08a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b5f08a", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_370fa718a6c637dd4cb55a6d1fa66a73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c8165b47f50a54764c58e04e4eacfe59 = $(`<div id="html_c8165b47f50a54764c58e04e4eacfe59" style="width: 100.0%; height: 100.0%;">Elevation: 1274.0m</div>`)[0];
+                popup_370fa718a6c637dd4cb55a6d1fa66a73.setContent(html_c8165b47f50a54764c58e04e4eacfe59);
+            
+        
+
+        circle_marker_6868220f82d71e3ba00f3a934c1eac39.bindPopup(popup_370fa718a6c637dd4cb55a6d1fa66a73)
+        ;
+
+        
+    
+    
+            var circle_marker_45fe5d21df4b3449d7dec4484efea46c = L.circleMarker(
+                [36.417066000000005, 137.752721],
+                {"bubblingMouseEvents": true, "color": "#d4c9c6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d4c9c6", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_bd364ce8a5b62a0cb196cabf5dab6041 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c093ba634321b2002db4586399d92bf = $(`<div id="html_3c093ba634321b2002db4586399d92bf" style="width: 100.0%; height: 100.0%;">Elevation: 2103.0m</div>`)[0];
+                popup_bd364ce8a5b62a0cb196cabf5dab6041.setContent(html_3c093ba634321b2002db4586399d92bf);
+            
+        
+
+        circle_marker_45fe5d21df4b3449d7dec4484efea46c.bindPopup(popup_bd364ce8a5b62a0cb196cabf5dab6041)
+        ;
+
+        
+    
+    
+            var circle_marker_60d6df00843e95ae65ea370742c351b5 = L.circleMarker(
+                [36.419613000000005, 137.83734720689654],
+                {"bubblingMouseEvents": true, "color": "#254db3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#254db3", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_0afa6ad8f06a8421ce70498ee0a7f099 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7fb053f0c50c5e7d8a89792dc150b60 = $(`<div id="html_c7fb053f0c50c5e7d8a89792dc150b60" style="width: 100.0%; height: 100.0%;">Elevation: 621.0m</div>`)[0];
+                popup_0afa6ad8f06a8421ce70498ee0a7f099.setContent(html_c7fb053f0c50c5e7d8a89792dc150b60);
+            
+        
+
+        circle_marker_60d6df00843e95ae65ea370742c351b5.bindPopup(popup_0afa6ad8f06a8421ce70498ee0a7f099)
+        ;
+
+        
+    
+    
+            var circle_marker_3ce2c4107526e737ba166c67f25c09ec = L.circleMarker(
+                [36.424707000000005, 137.79503410344827],
+                {"bubblingMouseEvents": true, "color": "#edfb95", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#edfb95", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_7e74174199e48618e11988f04c15a70e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca025dd85752c66dcb6376d871594eba = $(`<div id="html_ca025dd85752c66dcb6376d871594eba" style="width: 100.0%; height: 100.0%;">Elevation: 1364.0m</div>`)[0];
+                popup_7e74174199e48618e11988f04c15a70e.setContent(html_ca025dd85752c66dcb6376d871594eba);
+            
+        
+
+        circle_marker_3ce2c4107526e737ba166c67f25c09ec.bindPopup(popup_7e74174199e48618e11988f04c15a70e)
+        ;
+
+        
+    
+    
+            var circle_marker_163b88fde4a8b1484955087938caa22b = L.circleMarker(
+                [36.429801000000005, 137.752721],
+                {"bubblingMouseEvents": true, "color": "#beab75", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#beab75", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_122ee30aa509c630a8cc724d14d1702e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb397a591498cc01ddd3724c75d590be = $(`<div id="html_eb397a591498cc01ddd3724c75d590be" style="width: 100.0%; height: 100.0%;">Elevation: 1609.0m</div>`)[0];
+                popup_122ee30aa509c630a8cc724d14d1702e.setContent(html_eb397a591498cc01ddd3724c75d590be);
+            
+        
+
+        circle_marker_163b88fde4a8b1484955087938caa22b.bindPopup(popup_122ee30aa509c630a8cc724d14d1702e)
+        ;
+
+        
+    
+    
+            var circle_marker_6c91430e27415e767210bd463ac4a490 = L.circleMarker(
+                [36.432348000000005, 137.83734720689654],
+                {"bubblingMouseEvents": true, "color": "#2450b6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2450b6", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_39f2967da59f05577513ce1688cea42c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbff64067576f0ab47088b65b36642b6 = $(`<div id="html_fbff64067576f0ab47088b65b36642b6" style="width: 100.0%; height: 100.0%;">Elevation: 626.0m</div>`)[0];
+                popup_39f2967da59f05577513ce1688cea42c.setContent(html_fbff64067576f0ab47088b65b36642b6);
+            
+        
+
+        circle_marker_6c91430e27415e767210bd463ac4a490.bindPopup(popup_39f2967da59f05577513ce1688cea42c)
+        ;
+
+        
+    
+    
+            var circle_marker_04cf4b6c40f1bbb733466cb40b7cba33 = L.circleMarker(
+                [36.437442000000004, 137.79503410344827],
+                {"bubblingMouseEvents": true, "color": "#68e17a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#68e17a", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_8bc5e9bd30c5a84de589c53a560decef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6e6469620060e49fb3c7d45d8fb98b2 = $(`<div id="html_b6e6469620060e49fb3c7d45d8fb98b2" style="width: 100.0%; height: 100.0%;">Elevation: 1147.0m</div>`)[0];
+                popup_8bc5e9bd30c5a84de589c53a560decef.setContent(html_b6e6469620060e49fb3c7d45d8fb98b2);
+            
+        
+
+        circle_marker_04cf4b6c40f1bbb733466cb40b7cba33.bindPopup(popup_8bc5e9bd30c5a84de589c53a560decef)
+        ;
+
+        
+    
+    
+            var circle_marker_4cf37de3683dfa4997d38974ed141866 = L.circleMarker(
+                [36.442536000000004, 137.752721],
+                {"bubblingMouseEvents": true, "color": "#8a6959", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8a6959", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_4e7f05ac177020313ea30a113148a0e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ac8a76aad50a3903f87c26934a91167 = $(`<div id="html_6ac8a76aad50a3903f87c26934a91167" style="width: 100.0%; height: 100.0%;">Elevation: 1780.0m</div>`)[0];
+                popup_4e7f05ac177020313ea30a113148a0e3.setContent(html_6ac8a76aad50a3903f87c26934a91167);
+            
+        
+
+        circle_marker_4cf37de3683dfa4997d38974ed141866.bindPopup(popup_4e7f05ac177020313ea30a113148a0e3)
+        ;
+
+        
+    
+    
+            var circle_marker_88cd63ea78475f2ff5ffd6802113f272 = L.circleMarker(
+                [36.445083000000004, 137.83734720689654],
+                {"bubblingMouseEvents": true, "color": "#0985eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0985eb", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_6a18082d1485565d43b2bf8eeef5afe9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b4bb3d730fd306cbb7d2e9da43eda15 = $(`<div id="html_2b4bb3d730fd306cbb7d2e9da43eda15" style="width: 100.0%; height: 100.0%;">Elevation: 758.0m</div>`)[0];
+                popup_6a18082d1485565d43b2bf8eeef5afe9.setContent(html_2b4bb3d730fd306cbb7d2e9da43eda15);
+            
+        
+
+        circle_marker_88cd63ea78475f2ff5ffd6802113f272.bindPopup(popup_6a18082d1485565d43b2bf8eeef5afe9)
+        ;
+
+        
+    
+    
+            var circle_marker_1d23642379c94e41682a44e1b7f0c16d = L.circleMarker(
+                [36.450177000000004, 137.79503410344827],
+                {"bubblingMouseEvents": true, "color": "#4ddb75", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4ddb75", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_ddc50a82b07feafe568adb200b01ecff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9d5c2cd41d93e5df9859e15604d2cf3 = $(`<div id="html_f9d5c2cd41d93e5df9859e15604d2cf3" style="width: 100.0%; height: 100.0%;">Elevation: 1106.0m</div>`)[0];
+                popup_ddc50a82b07feafe568adb200b01ecff.setContent(html_f9d5c2cd41d93e5df9859e15604d2cf3);
+            
+        
+
+        circle_marker_1d23642379c94e41682a44e1b7f0c16d.bindPopup(popup_ddc50a82b07feafe568adb200b01ecff)
+        ;
+
+        
+    
+    
+            var marker_d3924be8f2d14440305b57754d3406ae = L.marker(
+                [36.394143, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_81d5ede80814b886b5e83ed578b659e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_faec429b1500286dc94a94dd6bb69f9b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76bd1511568df59a1bc5667fc215def9 = $(`<div id="html_76bd1511568df59a1bc5667fc215def9" style="width: 100.0%; height: 100.0%;"><b>ランク #1</b><br>Water Source<br>Elevation: 1918.0m<br>Power: 2058.7kW</div>`)[0];
+                popup_faec429b1500286dc94a94dd6bb69f9b.setContent(html_76bd1511568df59a1bc5667fc215def9);
+            
+        
+
+        marker_d3924be8f2d14440305b57754d3406ae.bindPopup(popup_faec429b1500286dc94a94dd6bb69f9b)
+        ;
+
+        
+    
+    
+            marker_d3924be8f2d14440305b57754d3406ae.bindTooltip(
+                `<div>
+                     水源 #1 (2058.7kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d3924be8f2d14440305b57754d3406ae.setIcon(icon_81d5ede80814b886b5e83ed578b659e6);
+            
+    
+            var marker_67d03a61d48520fe116f70740924be0d = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_f33412896516be40e6369e228c1830fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7564130a8527256eed8223678c09910 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_789c928fb60b4bfa9481e54cae25bd4d = $(`<div id="html_789c928fb60b4bfa9481e54cae25bd4d" style="width: 100.0%; height: 100.0%;"><b>ランク #1</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_c7564130a8527256eed8223678c09910.setContent(html_789c928fb60b4bfa9481e54cae25bd4d);
+            
+        
+
+        marker_67d03a61d48520fe116f70740924be0d.bindPopup(popup_c7564130a8527256eed8223678c09910)
+        ;
+
+        
+    
+    
+            marker_67d03a61d48520fe116f70740924be0d.bindTooltip(
+                `<div>
+                     取水口 #1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_67d03a61d48520fe116f70740924be0d.setIcon(icon_f33412896516be40e6369e228c1830fd);
+            
+    
+            var marker_9fba0cb54d7c79eff7b3f525b5070d70 = L.marker(
+                [36.391596, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_ec7485c3c8bc9732cef6928879f1d544 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e92cbcdb3839423108b11e9a73ace554 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e09a0256922b05d233900187b3483975 = $(`<div id="html_e09a0256922b05d233900187b3483975" style="width: 100.0%; height: 100.0%;"><b>ランク #1</b><br>Powerhouse<br>Elevation: 568.0m<br><b>Power: 2058.7kW</b><br>Head: 1350.0m</div>`)[0];
+                popup_e92cbcdb3839423108b11e9a73ace554.setContent(html_e09a0256922b05d233900187b3483975);
+            
+        
+
+        marker_9fba0cb54d7c79eff7b3f525b5070d70.bindPopup(popup_e92cbcdb3839423108b11e9a73ace554)
+        ;
+
+        
+    
+    
+            marker_9fba0cb54d7c79eff7b3f525b5070d70.bindTooltip(
+                `<div>
+                     発電所 #1 (2058.7kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9fba0cb54d7c79eff7b3f525b5070d70.setIcon(icon_ec7485c3c8bc9732cef6928879f1d544);
+            
+    
+            var poly_line_b48d03adfdf4a9660720df05db60c4b8 = L.polyline(
+                [[36.394143, 137.75695231034484], [36.383955, 137.752721], [36.391596, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_ea8d6021c6074bf341aa2f1d26e203d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30276d6ac3c1a7e487b7d10e0e47069e = $(`<div id="html_30276d6ac3c1a7e487b7d10e0e47069e" style="width: 100.0%; height: 100.0%;"><b>ランク #1</b><br>Power: 2058.7kW<br>Head: 1350.0m</div>`)[0];
+                popup_ea8d6021c6074bf341aa2f1d26e203d9.setContent(html_30276d6ac3c1a7e487b7d10e0e47069e);
+            
+        
+
+        poly_line_b48d03adfdf4a9660720df05db60c4b8.bindPopup(popup_ea8d6021c6074bf341aa2f1d26e203d9)
+        ;
+
+        
+    
+    
+            var marker_182b641bd5a3ca856074abdc09d3b3be = L.marker(
+                [36.386502, 137.76541493103448],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_b3a7a51ba77135417fd3bbcc9ce8e34b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5fdd22046802eef30cad38a80a6ff583 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a23cb718db091bc96d04de09df3fea9 = $(`<div id="html_8a23cb718db091bc96d04de09df3fea9" style="width: 100.0%; height: 100.0%;"><b>ランク #2</b><br>Water Source<br>Elevation: 1953.0m<br>Power: 2055.4kW</div>`)[0];
+                popup_5fdd22046802eef30cad38a80a6ff583.setContent(html_8a23cb718db091bc96d04de09df3fea9);
+            
+        
+
+        marker_182b641bd5a3ca856074abdc09d3b3be.bindPopup(popup_5fdd22046802eef30cad38a80a6ff583)
+        ;
+
+        
+    
+    
+            marker_182b641bd5a3ca856074abdc09d3b3be.bindTooltip(
+                `<div>
+                     水源 #2 (2055.4kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_182b641bd5a3ca856074abdc09d3b3be.setIcon(icon_b3a7a51ba77135417fd3bbcc9ce8e34b);
+            
+    
+            var marker_fcdacefc395e53334e97f3c163421632 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_43838e2171f1ce8b66a4f9d0d8f361f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9240841156100ffc53fdc186e415efe2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3041ebcc8ee9a7ea0aa3811bc669ad05 = $(`<div id="html_3041ebcc8ee9a7ea0aa3811bc669ad05" style="width: 100.0%; height: 100.0%;"><b>ランク #2</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_9240841156100ffc53fdc186e415efe2.setContent(html_3041ebcc8ee9a7ea0aa3811bc669ad05);
+            
+        
+
+        marker_fcdacefc395e53334e97f3c163421632.bindPopup(popup_9240841156100ffc53fdc186e415efe2)
+        ;
+
+        
+    
+    
+            marker_fcdacefc395e53334e97f3c163421632.bindTooltip(
+                `<div>
+                     取水口 #2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fcdacefc395e53334e97f3c163421632.setIcon(icon_43838e2171f1ce8b66a4f9d0d8f361f4);
+            
+    
+            var marker_db273139228124ad3d311113f1ecaf4f = L.marker(
+                [36.391596, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_a056c8ef99e686ff76ed764d9bbdb5d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1f11050fec483e77b2211b0382d33e5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33f5c53245feac9abbcb2c44287c1a31 = $(`<div id="html_33f5c53245feac9abbcb2c44287c1a31" style="width: 100.0%; height: 100.0%;"><b>ランク #2</b><br>Powerhouse<br>Elevation: 568.0m<br><b>Power: 2055.4kW</b><br>Head: 1385.0m</div>`)[0];
+                popup_1f11050fec483e77b2211b0382d33e5d.setContent(html_33f5c53245feac9abbcb2c44287c1a31);
+            
+        
+
+        marker_db273139228124ad3d311113f1ecaf4f.bindPopup(popup_1f11050fec483e77b2211b0382d33e5d)
+        ;
+
+        
+    
+    
+            marker_db273139228124ad3d311113f1ecaf4f.bindTooltip(
+                `<div>
+                     発電所 #2 (2055.4kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_db273139228124ad3d311113f1ecaf4f.setIcon(icon_a056c8ef99e686ff76ed764d9bbdb5d1);
+            
+    
+            var poly_line_adaf0e0a06c6e58ae60619df07069c25 = L.polyline(
+                [[36.386502, 137.76541493103448], [36.383955, 137.752721], [36.391596, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_c6cf162509eaab524c4abb901c7a2be6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_965ec44ca100221a1aaf7a98bb109db2 = $(`<div id="html_965ec44ca100221a1aaf7a98bb109db2" style="width: 100.0%; height: 100.0%;"><b>ランク #2</b><br>Power: 2055.4kW<br>Head: 1385.0m</div>`)[0];
+                popup_c6cf162509eaab524c4abb901c7a2be6.setContent(html_965ec44ca100221a1aaf7a98bb109db2);
+            
+        
+
+        poly_line_adaf0e0a06c6e58ae60619df07069c25.bindPopup(popup_c6cf162509eaab524c4abb901c7a2be6)
+        ;
+
+        
+    
+    
+            var marker_bd6912418742f8b9bbbf64132948c20e = L.marker(
+                [36.394143, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_aa073e39679c96f8274a8934901015ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_060e629c4dd7414e473e391322f112f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb5a0559c883bc07773701213644dff5 = $(`<div id="html_eb5a0559c883bc07773701213644dff5" style="width: 100.0%; height: 100.0%;"><b>ランク #3</b><br>Water Source<br>Elevation: 1918.0m<br>Power: 2049.6kW</div>`)[0];
+                popup_060e629c4dd7414e473e391322f112f9.setContent(html_eb5a0559c883bc07773701213644dff5);
+            
+        
+
+        marker_bd6912418742f8b9bbbf64132948c20e.bindPopup(popup_060e629c4dd7414e473e391322f112f9)
+        ;
+
+        
+    
+    
+            marker_bd6912418742f8b9bbbf64132948c20e.bindTooltip(
+                `<div>
+                     水源 #3 (2049.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd6912418742f8b9bbbf64132948c20e.setIcon(icon_aa073e39679c96f8274a8934901015ec);
+            
+    
+            var marker_71b659234ae5a1f8ab58afc3c5f9732e = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_03f2b2bfe59b2ad7a8fdd9dfa18a7244 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8bb2a47990f6692adfb73e71951e0cd7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4ee615f2467b565588073f2dba068630 = $(`<div id="html_4ee615f2467b565588073f2dba068630" style="width: 100.0%; height: 100.0%;"><b>ランク #3</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_8bb2a47990f6692adfb73e71951e0cd7.setContent(html_4ee615f2467b565588073f2dba068630);
+            
+        
+
+        marker_71b659234ae5a1f8ab58afc3c5f9732e.bindPopup(popup_8bb2a47990f6692adfb73e71951e0cd7)
+        ;
+
+        
+    
+    
+            marker_71b659234ae5a1f8ab58afc3c5f9732e.bindTooltip(
+                `<div>
+                     取水口 #3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_71b659234ae5a1f8ab58afc3c5f9732e.setIcon(icon_03f2b2bfe59b2ad7a8fdd9dfa18a7244);
+            
+    
+            var marker_b764bd2d98614268f3afb1794f54d667 = L.marker(
+                [36.394143, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_4777dcbd29e581cfab3fb9ac97a82c5a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9588740d18cf9b4b49e5cdee50a83d2d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_789a19d96d70b21868e060d58fb3de9c = $(`<div id="html_789a19d96d70b21868e060d58fb3de9c" style="width: 100.0%; height: 100.0%;"><b>ランク #3</b><br>Powerhouse<br>Elevation: 570.0m<br><b>Power: 2049.6kW</b><br>Head: 1348.0m</div>`)[0];
+                popup_9588740d18cf9b4b49e5cdee50a83d2d.setContent(html_789a19d96d70b21868e060d58fb3de9c);
+            
+        
+
+        marker_b764bd2d98614268f3afb1794f54d667.bindPopup(popup_9588740d18cf9b4b49e5cdee50a83d2d)
+        ;
+
+        
+    
+    
+            marker_b764bd2d98614268f3afb1794f54d667.bindTooltip(
+                `<div>
+                     発電所 #3 (2049.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b764bd2d98614268f3afb1794f54d667.setIcon(icon_4777dcbd29e581cfab3fb9ac97a82c5a);
+            
+    
+            var poly_line_d53b45b72b5b9e12898aebf606fe7c7b = L.polyline(
+                [[36.394143, 137.75695231034484], [36.383955, 137.752721], [36.394143, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_779be7b2f93530b3b34e0fb51fd2b22e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b7aef5693f8f056d512a99377740e47 = $(`<div id="html_1b7aef5693f8f056d512a99377740e47" style="width: 100.0%; height: 100.0%;"><b>ランク #3</b><br>Power: 2049.6kW<br>Head: 1348.0m</div>`)[0];
+                popup_779be7b2f93530b3b34e0fb51fd2b22e.setContent(html_1b7aef5693f8f056d512a99377740e47);
+            
+        
+
+        poly_line_d53b45b72b5b9e12898aebf606fe7c7b.bindPopup(popup_779be7b2f93530b3b34e0fb51fd2b22e)
+        ;
+
+        
+    
+    
+            var marker_b3506b0931b569589da85fce3bdcd1ec = L.marker(
+                [36.386502, 137.76541493103448],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_cdc62279be42d43bddc2c9fb0da32d1f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3c16267b9c77c410d396b1de8dcea345 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0571465e1177c1dd65d3e4ef8c741016 = $(`<div id="html_0571465e1177c1dd65d3e4ef8c741016" style="width: 100.0%; height: 100.0%;"><b>ランク #4</b><br>Water Source<br>Elevation: 1953.0m<br>Power: 2046.5kW</div>`)[0];
+                popup_3c16267b9c77c410d396b1de8dcea345.setContent(html_0571465e1177c1dd65d3e4ef8c741016);
+            
+        
+
+        marker_b3506b0931b569589da85fce3bdcd1ec.bindPopup(popup_3c16267b9c77c410d396b1de8dcea345)
+        ;
+
+        
+    
+    
+            marker_b3506b0931b569589da85fce3bdcd1ec.bindTooltip(
+                `<div>
+                     水源 #4 (2046.5kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b3506b0931b569589da85fce3bdcd1ec.setIcon(icon_cdc62279be42d43bddc2c9fb0da32d1f);
+            
+    
+            var marker_5bfd7320a445e1b35dcae1f532ed442c = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_2ed20e09e120db03da31dc0331506c86 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11b0d009846a4279954dcd2ab4060213 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a4f610a02178e7fb61ee0b8ebfd5677 = $(`<div id="html_3a4f610a02178e7fb61ee0b8ebfd5677" style="width: 100.0%; height: 100.0%;"><b>ランク #4</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_11b0d009846a4279954dcd2ab4060213.setContent(html_3a4f610a02178e7fb61ee0b8ebfd5677);
+            
+        
+
+        marker_5bfd7320a445e1b35dcae1f532ed442c.bindPopup(popup_11b0d009846a4279954dcd2ab4060213)
+        ;
+
+        
+    
+    
+            marker_5bfd7320a445e1b35dcae1f532ed442c.bindTooltip(
+                `<div>
+                     取水口 #4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5bfd7320a445e1b35dcae1f532ed442c.setIcon(icon_2ed20e09e120db03da31dc0331506c86);
+            
+    
+            var marker_1eb5e51299d6b1706dcb54871ea498f8 = L.marker(
+                [36.394143, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_120450a714664c57eb1896f7060fd911 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2316e41b1fd5ebc679772fe79e2de3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76b8c3f410fc156bcbfa00441c69ee4e = $(`<div id="html_76b8c3f410fc156bcbfa00441c69ee4e" style="width: 100.0%; height: 100.0%;"><b>ランク #4</b><br>Powerhouse<br>Elevation: 570.0m<br><b>Power: 2046.5kW</b><br>Head: 1383.0m</div>`)[0];
+                popup_e2316e41b1fd5ebc679772fe79e2de3d.setContent(html_76b8c3f410fc156bcbfa00441c69ee4e);
+            
+        
+
+        marker_1eb5e51299d6b1706dcb54871ea498f8.bindPopup(popup_e2316e41b1fd5ebc679772fe79e2de3d)
+        ;
+
+        
+    
+    
+            marker_1eb5e51299d6b1706dcb54871ea498f8.bindTooltip(
+                `<div>
+                     発電所 #4 (2046.5kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1eb5e51299d6b1706dcb54871ea498f8.setIcon(icon_120450a714664c57eb1896f7060fd911);
+            
+    
+            var poly_line_e6d65a4b3100c126ade5773d71868111 = L.polyline(
+                [[36.386502, 137.76541493103448], [36.383955, 137.752721], [36.394143, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_4c7eedadedefd142a87019741e49c136 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd803c6c3de6277d493d337be917f1c6 = $(`<div id="html_cd803c6c3de6277d493d337be917f1c6" style="width: 100.0%; height: 100.0%;"><b>ランク #4</b><br>Power: 2046.5kW<br>Head: 1383.0m</div>`)[0];
+                popup_4c7eedadedefd142a87019741e49c136.setContent(html_cd803c6c3de6277d493d337be917f1c6);
+            
+        
+
+        poly_line_e6d65a4b3100c126ade5773d71868111.bindPopup(popup_4c7eedadedefd142a87019741e49c136)
+        ;
+
+        
+    
+    
+            var marker_77d0aa69be5e1f42ca00705619e3ef78 = L.marker(
+                [36.391596, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_951bf48496b124830dc5096b2167e58a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a1da401b8757c57c615256f568a79413 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc45371e7423bf1461731671e35d9978 = $(`<div id="html_cc45371e7423bf1461731671e35d9978" style="width: 100.0%; height: 100.0%;"><b>ランク #5</b><br>Water Source<br>Elevation: 2014.0m<br>Power: 2039.1kW</div>`)[0];
+                popup_a1da401b8757c57c615256f568a79413.setContent(html_cc45371e7423bf1461731671e35d9978);
+            
+        
+
+        marker_77d0aa69be5e1f42ca00705619e3ef78.bindPopup(popup_a1da401b8757c57c615256f568a79413)
+        ;
+
+        
+    
+    
+            marker_77d0aa69be5e1f42ca00705619e3ef78.bindTooltip(
+                `<div>
+                     水源 #5 (2039.1kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_77d0aa69be5e1f42ca00705619e3ef78.setIcon(icon_951bf48496b124830dc5096b2167e58a);
+            
+    
+            var marker_921723d60d3b21857ada2de6b0105dea = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_148beaecce907b93ec4ebe4402ae5ea8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1adcdcda2d2fdc3ded06708f4953a401 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b1eadf1471370443a62c780a5936c94 = $(`<div id="html_3b1eadf1471370443a62c780a5936c94" style="width: 100.0%; height: 100.0%;"><b>ランク #5</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_1adcdcda2d2fdc3ded06708f4953a401.setContent(html_3b1eadf1471370443a62c780a5936c94);
+            
+        
+
+        marker_921723d60d3b21857ada2de6b0105dea.bindPopup(popup_1adcdcda2d2fdc3ded06708f4953a401)
+        ;
+
+        
+    
+    
+            marker_921723d60d3b21857ada2de6b0105dea.bindTooltip(
+                `<div>
+                     取水口 #5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_921723d60d3b21857ada2de6b0105dea.setIcon(icon_148beaecce907b93ec4ebe4402ae5ea8);
+            
+    
+            var marker_39b6cc00fc8d2e728410d079b0b66fe5 = L.marker(
+                [36.391596, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_98c75577cf96efa33cd0180ba5c88666 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7403b0c9175b58fa86b26b76e5d7540 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3af4d7dd514d736e5ba1828b59fd311 = $(`<div id="html_a3af4d7dd514d736e5ba1828b59fd311" style="width: 100.0%; height: 100.0%;"><b>ランク #5</b><br>Powerhouse<br>Elevation: 568.0m<br><b>Power: 2039.1kW</b><br>Head: 1446.0m</div>`)[0];
+                popup_f7403b0c9175b58fa86b26b76e5d7540.setContent(html_a3af4d7dd514d736e5ba1828b59fd311);
+            
+        
+
+        marker_39b6cc00fc8d2e728410d079b0b66fe5.bindPopup(popup_f7403b0c9175b58fa86b26b76e5d7540)
+        ;
+
+        
+    
+    
+            marker_39b6cc00fc8d2e728410d079b0b66fe5.bindTooltip(
+                `<div>
+                     発電所 #5 (2039.1kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_39b6cc00fc8d2e728410d079b0b66fe5.setIcon(icon_98c75577cf96efa33cd0180ba5c88666);
+            
+    
+            var poly_line_76c549773f75ccd377ebfc91beeca869 = L.polyline(
+                [[36.391596, 137.77387755172415], [36.394143, 137.80349672413794], [36.391596, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_c1d4b0034524677e4326e1ffd3aa0bab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11029add4f80977a49fd1bce7b49d241 = $(`<div id="html_11029add4f80977a49fd1bce7b49d241" style="width: 100.0%; height: 100.0%;"><b>ランク #5</b><br>Power: 2039.1kW<br>Head: 1446.0m</div>`)[0];
+                popup_c1d4b0034524677e4326e1ffd3aa0bab.setContent(html_11029add4f80977a49fd1bce7b49d241);
+            
+        
+
+        poly_line_76c549773f75ccd377ebfc91beeca869.bindPopup(popup_c1d4b0034524677e4326e1ffd3aa0bab)
+        ;
+
+        
+    
+    
+            var marker_f196e8d013447c520eacc52cae6c5a85 = L.marker(
+                [36.391596, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_eb0ce6bc464cf3a6a968dddfd019718d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5b5e24433f27fb247b4449a447bdb54a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93de871e9d86978a9f66a35eccc2ae11 = $(`<div id="html_93de871e9d86978a9f66a35eccc2ae11" style="width: 100.0%; height: 100.0%;"><b>ランク #6</b><br>Water Source<br>Elevation: 2014.0m<br>Power: 2037.9kW</div>`)[0];
+                popup_5b5e24433f27fb247b4449a447bdb54a.setContent(html_93de871e9d86978a9f66a35eccc2ae11);
+            
+        
+
+        marker_f196e8d013447c520eacc52cae6c5a85.bindPopup(popup_5b5e24433f27fb247b4449a447bdb54a)
+        ;
+
+        
+    
+    
+            marker_f196e8d013447c520eacc52cae6c5a85.bindTooltip(
+                `<div>
+                     水源 #6 (2037.9kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f196e8d013447c520eacc52cae6c5a85.setIcon(icon_eb0ce6bc464cf3a6a968dddfd019718d);
+            
+    
+            var marker_de5954a4ad2a1a16598589dc2307aebb = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_4fedb61416bc1dd0b355ef5fdc31eeb2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a3c94986bba2331affe0e961c9b771c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67d985f88457de065af052874b669c51 = $(`<div id="html_67d985f88457de065af052874b669c51" style="width: 100.0%; height: 100.0%;"><b>ランク #6</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_4a3c94986bba2331affe0e961c9b771c.setContent(html_67d985f88457de065af052874b669c51);
+            
+        
+
+        marker_de5954a4ad2a1a16598589dc2307aebb.bindPopup(popup_4a3c94986bba2331affe0e961c9b771c)
+        ;
+
+        
+    
+    
+            marker_de5954a4ad2a1a16598589dc2307aebb.bindTooltip(
+                `<div>
+                     取水口 #6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_de5954a4ad2a1a16598589dc2307aebb.setIcon(icon_4fedb61416bc1dd0b355ef5fdc31eeb2);
+            
+    
+            var marker_a2bc2bc1af228cf95c0f5d912daf5f79 = L.marker(
+                [36.394143, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_8cdcf3b381bb2095d864282d14ded8bb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a307729263ddcd12c08023680e7c72e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a5d41610377452361fade06bf720100 = $(`<div id="html_7a5d41610377452361fade06bf720100" style="width: 100.0%; height: 100.0%;"><b>ランク #6</b><br>Powerhouse<br>Elevation: 570.0m<br><b>Power: 2037.9kW</b><br>Head: 1444.0m</div>`)[0];
+                popup_9a307729263ddcd12c08023680e7c72e.setContent(html_7a5d41610377452361fade06bf720100);
+            
+        
+
+        marker_a2bc2bc1af228cf95c0f5d912daf5f79.bindPopup(popup_9a307729263ddcd12c08023680e7c72e)
+        ;
+
+        
+    
+    
+            marker_a2bc2bc1af228cf95c0f5d912daf5f79.bindTooltip(
+                `<div>
+                     発電所 #6 (2037.9kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a2bc2bc1af228cf95c0f5d912daf5f79.setIcon(icon_8cdcf3b381bb2095d864282d14ded8bb);
+            
+    
+            var poly_line_22fdeb958c42533846cbe517d2f4c772 = L.polyline(
+                [[36.391596, 137.77387755172415], [36.394143, 137.80349672413794], [36.394143, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_b5d76eb03b3657077c97263a9bf1b761 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f25a14754e59a089997953422d85789a = $(`<div id="html_f25a14754e59a089997953422d85789a" style="width: 100.0%; height: 100.0%;"><b>ランク #6</b><br>Power: 2037.9kW<br>Head: 1444.0m</div>`)[0];
+                popup_b5d76eb03b3657077c97263a9bf1b761.setContent(html_f25a14754e59a089997953422d85789a);
+            
+        
+
+        poly_line_22fdeb958c42533846cbe517d2f4c772.bindPopup(popup_b5d76eb03b3657077c97263a9bf1b761)
+        ;
+
+        
+    
+    
+            var marker_0d5c7650597103999fa56e655ad5de80 = L.marker(
+                [36.394143, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_6db6067f05ed328f0b38ea9acb028cfa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightred",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30b332a309966025d9c2a07826240944 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31eaabe474462beaaa1db28bef5882a3 = $(`<div id="html_31eaabe474462beaaa1db28bef5882a3" style="width: 100.0%; height: 100.0%;"><b>ランク #7</b><br>Water Source<br>Elevation: 1918.0m<br>Power: 2000.3kW</div>`)[0];
+                popup_30b332a309966025d9c2a07826240944.setContent(html_31eaabe474462beaaa1db28bef5882a3);
+            
+        
+
+        marker_0d5c7650597103999fa56e655ad5de80.bindPopup(popup_30b332a309966025d9c2a07826240944)
+        ;
+
+        
+    
+    
+            marker_0d5c7650597103999fa56e655ad5de80.bindTooltip(
+                `<div>
+                     水源 #7 (2000.3kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0d5c7650597103999fa56e655ad5de80.setIcon(icon_6db6067f05ed328f0b38ea9acb028cfa);
+            
+    
+            var marker_8c8ea570ac805414cd97cef42ee3c963 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_16f5d348b1cae0549a3afea9920daa59 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightred",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50fdec7496d3524f2e08a3b37cb6492d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5070552f1065192087c4c7facc9bab63 = $(`<div id="html_5070552f1065192087c4c7facc9bab63" style="width: 100.0%; height: 100.0%;"><b>ランク #7</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_50fdec7496d3524f2e08a3b37cb6492d.setContent(html_5070552f1065192087c4c7facc9bab63);
+            
+        
+
+        marker_8c8ea570ac805414cd97cef42ee3c963.bindPopup(popup_50fdec7496d3524f2e08a3b37cb6492d)
+        ;
+
+        
+    
+    
+            marker_8c8ea570ac805414cd97cef42ee3c963.bindTooltip(
+                `<div>
+                     取水口 #7
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8c8ea570ac805414cd97cef42ee3c963.setIcon(icon_16f5d348b1cae0549a3afea9920daa59);
+            
+    
+            var marker_d4e1b374c0d5c7040ec4209326becf8f = L.marker(
+                [36.381408, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_064484683e08b9c116125045115b9620 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightred",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b7793b978b9cc659ab4dcdafde8f5ce1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5faf4f8e2b92ce13b16d00060f4af9f0 = $(`<div id="html_5faf4f8e2b92ce13b16d00060f4af9f0" style="width: 100.0%; height: 100.0%;"><b>ランク #7</b><br>Powerhouse<br>Elevation: 560.0m<br><b>Power: 2000.3kW</b><br>Head: 1358.0m</div>`)[0];
+                popup_b7793b978b9cc659ab4dcdafde8f5ce1.setContent(html_5faf4f8e2b92ce13b16d00060f4af9f0);
+            
+        
+
+        marker_d4e1b374c0d5c7040ec4209326becf8f.bindPopup(popup_b7793b978b9cc659ab4dcdafde8f5ce1)
+        ;
+
+        
+    
+    
+            marker_d4e1b374c0d5c7040ec4209326becf8f.bindTooltip(
+                `<div>
+                     発電所 #7 (2000.3kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d4e1b374c0d5c7040ec4209326becf8f.setIcon(icon_064484683e08b9c116125045115b9620);
+            
+    
+            var poly_line_04484a2a351cd9effbf748b45a7ac3f9 = L.polyline(
+                [[36.394143, 137.75695231034484], [36.383955, 137.752721], [36.381408, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "lightred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_9ec74c4db7c9a0de9169cd4fd7262d8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_34f58ed9df2684f64c91f575e9429cc0 = $(`<div id="html_34f58ed9df2684f64c91f575e9429cc0" style="width: 100.0%; height: 100.0%;"><b>ランク #7</b><br>Power: 2000.3kW<br>Head: 1358.0m</div>`)[0];
+                popup_9ec74c4db7c9a0de9169cd4fd7262d8b.setContent(html_34f58ed9df2684f64c91f575e9429cc0);
+            
+        
+
+        poly_line_04484a2a351cd9effbf748b45a7ac3f9.bindPopup(popup_9ec74c4db7c9a0de9169cd4fd7262d8b)
+        ;
+
+        
+    
+    
+            var marker_26d2b4a4536932542e2a29b1ea919331 = L.marker(
+                [36.386502, 137.76541493103448],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_abeb08091559fc23d796b6ff24b81091 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_00429989f1c4709732fbe0a21e3cf0ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9eba883c1c62bad0301289afde9b14ec = $(`<div id="html_9eba883c1c62bad0301289afde9b14ec" style="width: 100.0%; height: 100.0%;"><b>ランク #8</b><br>Water Source<br>Elevation: 1953.0m<br>Power: 1996.9kW</div>`)[0];
+                popup_00429989f1c4709732fbe0a21e3cf0ac.setContent(html_9eba883c1c62bad0301289afde9b14ec);
+            
+        
+
+        marker_26d2b4a4536932542e2a29b1ea919331.bindPopup(popup_00429989f1c4709732fbe0a21e3cf0ac)
+        ;
+
+        
+    
+    
+            marker_26d2b4a4536932542e2a29b1ea919331.bindTooltip(
+                `<div>
+                     水源 #8 (1996.9kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_26d2b4a4536932542e2a29b1ea919331.setIcon(icon_abeb08091559fc23d796b6ff24b81091);
+            
+    
+            var marker_f7319d927b87565379582a4a42e8e53c = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_fe1f3b6a432526b689592a01162cdc9d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cac40f96549e5e70003a82d19d5be4a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c3be36b458941c64836bab17743c193 = $(`<div id="html_0c3be36b458941c64836bab17743c193" style="width: 100.0%; height: 100.0%;"><b>ランク #8</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_cac40f96549e5e70003a82d19d5be4a2.setContent(html_0c3be36b458941c64836bab17743c193);
+            
+        
+
+        marker_f7319d927b87565379582a4a42e8e53c.bindPopup(popup_cac40f96549e5e70003a82d19d5be4a2)
+        ;
+
+        
+    
+    
+            marker_f7319d927b87565379582a4a42e8e53c.bindTooltip(
+                `<div>
+                     取水口 #8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f7319d927b87565379582a4a42e8e53c.setIcon(icon_fe1f3b6a432526b689592a01162cdc9d);
+            
+    
+            var marker_850e17748887d974c3a4b40fba7b11b3 = L.marker(
+                [36.381408, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_09db27a307e2968f343f184d42f6ed33 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64617d63966bc534b859a54b6caa17c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03cda8b0cf16c961bb44d86447fa19a8 = $(`<div id="html_03cda8b0cf16c961bb44d86447fa19a8" style="width: 100.0%; height: 100.0%;"><b>ランク #8</b><br>Powerhouse<br>Elevation: 560.0m<br><b>Power: 1996.9kW</b><br>Head: 1393.0m</div>`)[0];
+                popup_64617d63966bc534b859a54b6caa17c2.setContent(html_03cda8b0cf16c961bb44d86447fa19a8);
+            
+        
+
+        marker_850e17748887d974c3a4b40fba7b11b3.bindPopup(popup_64617d63966bc534b859a54b6caa17c2)
+        ;
+
+        
+    
+    
+            marker_850e17748887d974c3a4b40fba7b11b3.bindTooltip(
+                `<div>
+                     発電所 #8 (1996.9kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_850e17748887d974c3a4b40fba7b11b3.setIcon(icon_09db27a307e2968f343f184d42f6ed33);
+            
+    
+            var poly_line_25cd007f044dc5d958232065874c2561 = L.polyline(
+                [[36.386502, 137.76541493103448], [36.383955, 137.752721], [36.381408, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "beige", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "beige", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_61853b5be74af74f2a38b0e7ae7aa247 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_133c3ac0a7da65728f8b1822efd994bf = $(`<div id="html_133c3ac0a7da65728f8b1822efd994bf" style="width: 100.0%; height: 100.0%;"><b>ランク #8</b><br>Power: 1996.9kW<br>Head: 1393.0m</div>`)[0];
+                popup_61853b5be74af74f2a38b0e7ae7aa247.setContent(html_133c3ac0a7da65728f8b1822efd994bf);
+            
+        
+
+        poly_line_25cd007f044dc5d958232065874c2561.bindPopup(popup_61853b5be74af74f2a38b0e7ae7aa247)
+        ;
+
+        
+    
+    
+            var marker_cafa74db7357954e8a4f5d9bea498737 = L.marker(
+                [36.394143, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_4041caafa37dd205bb5a869d7c4fd08c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_578f69880a882f229c7a7680599a0700 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b209f6e144f3c48bf8df737b18d86f0e = $(`<div id="html_b209f6e144f3c48bf8df737b18d86f0e" style="width: 100.0%; height: 100.0%;"><b>ランク #9</b><br>Water Source<br>Elevation: 1918.0m<br>Power: 1996.8kW</div>`)[0];
+                popup_578f69880a882f229c7a7680599a0700.setContent(html_b209f6e144f3c48bf8df737b18d86f0e);
+            
+        
+
+        marker_cafa74db7357954e8a4f5d9bea498737.bindPopup(popup_578f69880a882f229c7a7680599a0700)
+        ;
+
+        
+    
+    
+            marker_cafa74db7357954e8a4f5d9bea498737.bindTooltip(
+                `<div>
+                     水源 #9 (1996.8kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cafa74db7357954e8a4f5d9bea498737.setIcon(icon_4041caafa37dd205bb5a869d7c4fd08c);
+            
+    
+            var marker_9c7acd4d730717ac6598123f701845a3 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_ad56d86bb7e7c606c468198120a97bca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5d1d5661fbc31ae83ed952f0f2343c98 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3eb1b17bbcbec4792e5ba6106cfb1fb9 = $(`<div id="html_3eb1b17bbcbec4792e5ba6106cfb1fb9" style="width: 100.0%; height: 100.0%;"><b>ランク #9</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_5d1d5661fbc31ae83ed952f0f2343c98.setContent(html_3eb1b17bbcbec4792e5ba6106cfb1fb9);
+            
+        
+
+        marker_9c7acd4d730717ac6598123f701845a3.bindPopup(popup_5d1d5661fbc31ae83ed952f0f2343c98)
+        ;
+
+        
+    
+    
+            marker_9c7acd4d730717ac6598123f701845a3.bindTooltip(
+                `<div>
+                     取水口 #9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9c7acd4d730717ac6598123f701845a3.setIcon(icon_ad56d86bb7e7c606c468198120a97bca);
+            
+    
+            var marker_dccbb7126ee65c02042206888b01d6da = L.marker(
+                [36.383955, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_9fe9008b84a746d60c4ffaf769f5a1b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bfbed0b14d354a1b76552c206edd5222 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_519421d5c69e10b5f1a5034661fd522c = $(`<div id="html_519421d5c69e10b5f1a5034661fd522c" style="width: 100.0%; height: 100.0%;"><b>ランク #9</b><br>Powerhouse<br>Elevation: 563.0m<br><b>Power: 1996.8kW</b><br>Head: 1355.0m</div>`)[0];
+                popup_bfbed0b14d354a1b76552c206edd5222.setContent(html_519421d5c69e10b5f1a5034661fd522c);
+            
+        
+
+        marker_dccbb7126ee65c02042206888b01d6da.bindPopup(popup_bfbed0b14d354a1b76552c206edd5222)
+        ;
+
+        
+    
+    
+            marker_dccbb7126ee65c02042206888b01d6da.bindTooltip(
+                `<div>
+                     発電所 #9 (1996.8kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dccbb7126ee65c02042206888b01d6da.setIcon(icon_9fe9008b84a746d60c4ffaf769f5a1b2);
+            
+    
+            var poly_line_c40c2195365eb8d448b344491001a2a5 = L.polyline(
+                [[36.394143, 137.75695231034484], [36.383955, 137.752721], [36.383955, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_748b536129b96b3ea613ff2da1688725 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_949cc56bbf442c509d18b2cf9e322715 = $(`<div id="html_949cc56bbf442c509d18b2cf9e322715" style="width: 100.0%; height: 100.0%;"><b>ランク #9</b><br>Power: 1996.8kW<br>Head: 1355.0m</div>`)[0];
+                popup_748b536129b96b3ea613ff2da1688725.setContent(html_949cc56bbf442c509d18b2cf9e322715);
+            
+        
+
+        poly_line_c40c2195365eb8d448b344491001a2a5.bindPopup(popup_748b536129b96b3ea613ff2da1688725)
+        ;
+
+        
+    
+    
+            var marker_1c5f73cfa1a2293a8e8d52bb31c3f637 = L.marker(
+                [36.394143, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_b5c2ee1c86cce11ed6a5ab6e7407caba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_658a00ad4177878d02c24d7ab2c52fbc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa5e8292d6bac0a3948f046bc5655d8c = $(`<div id="html_fa5e8292d6bac0a3948f046bc5655d8c" style="width: 100.0%; height: 100.0%;"><b>ランク #10</b><br>Water Source<br>Elevation: 1918.0m<br>Power: 1996.0kW</div>`)[0];
+                popup_658a00ad4177878d02c24d7ab2c52fbc.setContent(html_fa5e8292d6bac0a3948f046bc5655d8c);
+            
+        
+
+        marker_1c5f73cfa1a2293a8e8d52bb31c3f637.bindPopup(popup_658a00ad4177878d02c24d7ab2c52fbc)
+        ;
+
+        
+    
+    
+            marker_1c5f73cfa1a2293a8e8d52bb31c3f637.bindTooltip(
+                `<div>
+                     水源 #10 (1996.0kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1c5f73cfa1a2293a8e8d52bb31c3f637.setIcon(icon_b5c2ee1c86cce11ed6a5ab6e7407caba);
+            
+    
+            var marker_6b9ba433ffb0d86113dabafd2f202a73 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_deae32a6a452653e324a1802d8d9b39a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4b6145a2e852a8da4eef67bb68533a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80bda245530274e2d7fc542947e3ecbf = $(`<div id="html_80bda245530274e2d7fc542947e3ecbf" style="width: 100.0%; height: 100.0%;"><b>ランク #10</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_c4b6145a2e852a8da4eef67bb68533a0.setContent(html_80bda245530274e2d7fc542947e3ecbf);
+            
+        
+
+        marker_6b9ba433ffb0d86113dabafd2f202a73.bindPopup(popup_c4b6145a2e852a8da4eef67bb68533a0)
+        ;
+
+        
+    
+    
+            marker_6b9ba433ffb0d86113dabafd2f202a73.bindTooltip(
+                `<div>
+                     取水口 #10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6b9ba433ffb0d86113dabafd2f202a73.setIcon(icon_deae32a6a452653e324a1802d8d9b39a);
+            
+    
+            var marker_564fa099ecc794bd1e4cd16e0158d974 = L.marker(
+                [36.386502, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_d36f0e9d69fbef073b6be4ed7f5f6af6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7869164cdb608a96aa1565a0540dcf56 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cdb53cd415b8c900c17c6f5e726839d6 = $(`<div id="html_cdb53cd415b8c900c17c6f5e726839d6" style="width: 100.0%; height: 100.0%;"><b>ランク #10</b><br>Powerhouse<br>Elevation: 563.0m<br><b>Power: 1996.0kW</b><br>Head: 1355.0m</div>`)[0];
+                popup_7869164cdb608a96aa1565a0540dcf56.setContent(html_cdb53cd415b8c900c17c6f5e726839d6);
+            
+        
+
+        marker_564fa099ecc794bd1e4cd16e0158d974.bindPopup(popup_7869164cdb608a96aa1565a0540dcf56)
+        ;
+
+        
+    
+    
+            marker_564fa099ecc794bd1e4cd16e0158d974.bindTooltip(
+                `<div>
+                     発電所 #10 (1996.0kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_564fa099ecc794bd1e4cd16e0158d974.setIcon(icon_d36f0e9d69fbef073b6be4ed7f5f6af6);
+            
+    
+            var poly_line_8f32b2199039c76d4e29cd4bff72db22 = L.polyline(
+                [[36.394143, 137.75695231034484], [36.383955, 137.752721], [36.386502, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_bac829f04308d4a14acbdc31b9ef6c04 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abecea4b113f3168d7db24d30f32bd3a = $(`<div id="html_abecea4b113f3168d7db24d30f32bd3a" style="width: 100.0%; height: 100.0%;"><b>ランク #10</b><br>Power: 1996.0kW<br>Head: 1355.0m</div>`)[0];
+                popup_bac829f04308d4a14acbdc31b9ef6c04.setContent(html_abecea4b113f3168d7db24d30f32bd3a);
+            
+        
+
+        poly_line_8f32b2199039c76d4e29cd4bff72db22.bindPopup(popup_bac829f04308d4a14acbdc31b9ef6c04)
+        ;
+
+        
+    
+    
+            var marker_ef18fc53a98925d36c04ec2f79bceee7 = L.marker(
+                [36.394143, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_18d8d42b218b01288e0b614d9789ea9b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60433f38a6eaa459e7ec6eace44d3f34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c1d0c5c35cb5caf5811b83a862947d24 = $(`<div id="html_c1d0c5c35cb5caf5811b83a862947d24" style="width: 100.0%; height: 100.0%;"><b>ランク #11</b><br>Water Source<br>Elevation: 1918.0m<br>Power: 1994.9kW</div>`)[0];
+                popup_60433f38a6eaa459e7ec6eace44d3f34.setContent(html_c1d0c5c35cb5caf5811b83a862947d24);
+            
+        
+
+        marker_ef18fc53a98925d36c04ec2f79bceee7.bindPopup(popup_60433f38a6eaa459e7ec6eace44d3f34)
+        ;
+
+        
+    
+    
+            marker_ef18fc53a98925d36c04ec2f79bceee7.bindTooltip(
+                `<div>
+                     水源 #11 (1994.9kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ef18fc53a98925d36c04ec2f79bceee7.setIcon(icon_18d8d42b218b01288e0b614d9789ea9b);
+            
+    
+            var marker_e76a781a6ad12887d73abc1bfd034ef8 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_9425e5a0dae137edc3a76540d055236b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ccbeb98f695b31fe71d2d05a807144b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf21ad9f19cd0ee7f3ba03ad522e9087 = $(`<div id="html_cf21ad9f19cd0ee7f3ba03ad522e9087" style="width: 100.0%; height: 100.0%;"><b>ランク #11</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_8ccbeb98f695b31fe71d2d05a807144b.setContent(html_cf21ad9f19cd0ee7f3ba03ad522e9087);
+            
+        
+
+        marker_e76a781a6ad12887d73abc1bfd034ef8.bindPopup(popup_8ccbeb98f695b31fe71d2d05a807144b)
+        ;
+
+        
+    
+    
+            marker_e76a781a6ad12887d73abc1bfd034ef8.bindTooltip(
+                `<div>
+                     取水口 #11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e76a781a6ad12887d73abc1bfd034ef8.setIcon(icon_9425e5a0dae137edc3a76540d055236b);
+            
+    
+            var marker_6b694813106bbf4f5d328a5bad9b58a9 = L.marker(
+                [36.378861, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_9715edd323cc605b10c776c1af0dfdb3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb261cd052ae97ce3f4def35e789a8d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e769f19819a6b7849768fb4b190d402f = $(`<div id="html_e769f19819a6b7849768fb4b190d402f" style="width: 100.0%; height: 100.0%;"><b>ランク #11</b><br>Powerhouse<br>Elevation: 562.0m<br><b>Power: 1994.9kW</b><br>Head: 1356.0m</div>`)[0];
+                popup_eb261cd052ae97ce3f4def35e789a8d5.setContent(html_e769f19819a6b7849768fb4b190d402f);
+            
+        
+
+        marker_6b694813106bbf4f5d328a5bad9b58a9.bindPopup(popup_eb261cd052ae97ce3f4def35e789a8d5)
+        ;
+
+        
+    
+    
+            marker_6b694813106bbf4f5d328a5bad9b58a9.bindTooltip(
+                `<div>
+                     発電所 #11 (1994.9kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6b694813106bbf4f5d328a5bad9b58a9.setIcon(icon_9715edd323cc605b10c776c1af0dfdb3);
+            
+    
+            var poly_line_7f5bf5f98a018483653f3821486a3060 = L.polyline(
+                [[36.394143, 137.75695231034484], [36.383955, 137.752721], [36.378861, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_2929d0d452b01545f12fa1e5d7a23274 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f64f83f97156a293c9c3c61094d3b385 = $(`<div id="html_f64f83f97156a293c9c3c61094d3b385" style="width: 100.0%; height: 100.0%;"><b>ランク #11</b><br>Power: 1994.9kW<br>Head: 1356.0m</div>`)[0];
+                popup_2929d0d452b01545f12fa1e5d7a23274.setContent(html_f64f83f97156a293c9c3c61094d3b385);
+            
+        
+
+        poly_line_7f5bf5f98a018483653f3821486a3060.bindPopup(popup_2929d0d452b01545f12fa1e5d7a23274)
+        ;
+
+        
+    
+    
+            var marker_93c3dfe66fcd0abcb502eaecebd7fab3 = L.marker(
+                [36.386502, 137.76541493103448],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_acd89d19fffbb1ecd286b34af88b86be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0eda3d35b04c54137b9a3c0a5ac58317 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e60b22cea5de27c1ad332db3d496ac0 = $(`<div id="html_0e60b22cea5de27c1ad332db3d496ac0" style="width: 100.0%; height: 100.0%;"><b>ランク #12</b><br>Water Source<br>Elevation: 1953.0m<br>Power: 1993.4kW</div>`)[0];
+                popup_0eda3d35b04c54137b9a3c0a5ac58317.setContent(html_0e60b22cea5de27c1ad332db3d496ac0);
+            
+        
+
+        marker_93c3dfe66fcd0abcb502eaecebd7fab3.bindPopup(popup_0eda3d35b04c54137b9a3c0a5ac58317)
+        ;
+
+        
+    
+    
+            marker_93c3dfe66fcd0abcb502eaecebd7fab3.bindTooltip(
+                `<div>
+                     水源 #12 (1993.4kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_93c3dfe66fcd0abcb502eaecebd7fab3.setIcon(icon_acd89d19fffbb1ecd286b34af88b86be);
+            
+    
+            var marker_93c47126baf6ada13d6b434d46baa31d = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_977ef5b56995f61129a49dc687e1c0d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37a6db4a9d5b89b3330f908bb1249ad9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43eba7a8db9ff0cf5eaaa23499bad85e = $(`<div id="html_43eba7a8db9ff0cf5eaaa23499bad85e" style="width: 100.0%; height: 100.0%;"><b>ランク #12</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_37a6db4a9d5b89b3330f908bb1249ad9.setContent(html_43eba7a8db9ff0cf5eaaa23499bad85e);
+            
+        
+
+        marker_93c47126baf6ada13d6b434d46baa31d.bindPopup(popup_37a6db4a9d5b89b3330f908bb1249ad9)
+        ;
+
+        
+    
+    
+            marker_93c47126baf6ada13d6b434d46baa31d.bindTooltip(
+                `<div>
+                     取水口 #12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_93c47126baf6ada13d6b434d46baa31d.setIcon(icon_977ef5b56995f61129a49dc687e1c0d3);
+            
+    
+            var marker_3400592a0ba98587b881b74c52635213 = L.marker(
+                [36.383955, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_670b7cbf155611757d96c5a7fe2a8d49 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_589a40e6ad30afde7f59e9a76dbb6e4b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dfba7df6a2c41ee7d04ec641a0bc787b = $(`<div id="html_dfba7df6a2c41ee7d04ec641a0bc787b" style="width: 100.0%; height: 100.0%;"><b>ランク #12</b><br>Powerhouse<br>Elevation: 563.0m<br><b>Power: 1993.4kW</b><br>Head: 1390.0m</div>`)[0];
+                popup_589a40e6ad30afde7f59e9a76dbb6e4b.setContent(html_dfba7df6a2c41ee7d04ec641a0bc787b);
+            
+        
+
+        marker_3400592a0ba98587b881b74c52635213.bindPopup(popup_589a40e6ad30afde7f59e9a76dbb6e4b)
+        ;
+
+        
+    
+    
+            marker_3400592a0ba98587b881b74c52635213.bindTooltip(
+                `<div>
+                     発電所 #12 (1993.4kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3400592a0ba98587b881b74c52635213.setIcon(icon_670b7cbf155611757d96c5a7fe2a8d49);
+            
+    
+            var poly_line_039e59b7de5c60c56b45f27f7b749b3b = L.polyline(
+                [[36.386502, 137.76541493103448], [36.383955, 137.752721], [36.383955, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "darkpurple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkpurple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_4866fc42ebb730bfb3db7a401aafedae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c316f640b11554cd2514ba0bc3032b41 = $(`<div id="html_c316f640b11554cd2514ba0bc3032b41" style="width: 100.0%; height: 100.0%;"><b>ランク #12</b><br>Power: 1993.4kW<br>Head: 1390.0m</div>`)[0];
+                popup_4866fc42ebb730bfb3db7a401aafedae.setContent(html_c316f640b11554cd2514ba0bc3032b41);
+            
+        
+
+        poly_line_039e59b7de5c60c56b45f27f7b749b3b.bindPopup(popup_4866fc42ebb730bfb3db7a401aafedae)
+        ;
+
+        
+    
+    
+            var marker_15c7df197944c0beed2cee3fd9a5ec19 = L.marker(
+                [36.386502, 137.76541493103448],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_ff085c1dcb12b82ac9035e5f174b850a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "white",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_47de7f7b0827f7631be5ef1db61462f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7c2799752bf49ccc0d47278d8af0e54 = $(`<div id="html_e7c2799752bf49ccc0d47278d8af0e54" style="width: 100.0%; height: 100.0%;"><b>ランク #13</b><br>Water Source<br>Elevation: 1953.0m<br>Power: 1992.7kW</div>`)[0];
+                popup_47de7f7b0827f7631be5ef1db61462f2.setContent(html_e7c2799752bf49ccc0d47278d8af0e54);
+            
+        
+
+        marker_15c7df197944c0beed2cee3fd9a5ec19.bindPopup(popup_47de7f7b0827f7631be5ef1db61462f2)
+        ;
+
+        
+    
+    
+            marker_15c7df197944c0beed2cee3fd9a5ec19.bindTooltip(
+                `<div>
+                     水源 #13 (1992.7kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_15c7df197944c0beed2cee3fd9a5ec19.setIcon(icon_ff085c1dcb12b82ac9035e5f174b850a);
+            
+    
+            var marker_c0091f7bb7b1819ca0ff2ffeca192c85 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_ca865f1793bd24cba46be3731927d040 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "white",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fc070717b566620af80a8470d7600130 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_32e9c1f79eaada2a18fbdaf866e03b1b = $(`<div id="html_32e9c1f79eaada2a18fbdaf866e03b1b" style="width: 100.0%; height: 100.0%;"><b>ランク #13</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_fc070717b566620af80a8470d7600130.setContent(html_32e9c1f79eaada2a18fbdaf866e03b1b);
+            
+        
+
+        marker_c0091f7bb7b1819ca0ff2ffeca192c85.bindPopup(popup_fc070717b566620af80a8470d7600130)
+        ;
+
+        
+    
+    
+            marker_c0091f7bb7b1819ca0ff2ffeca192c85.bindTooltip(
+                `<div>
+                     取水口 #13
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c0091f7bb7b1819ca0ff2ffeca192c85.setIcon(icon_ca865f1793bd24cba46be3731927d040);
+            
+    
+            var marker_044caacdf8df381709c40381f5b98e0e = L.marker(
+                [36.386502, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_9c91f66be40fa66f5b281515b5d8ed40 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "white",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc282e4dbc3e7a328f7083c9c50a0c06 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c016d76731f49a343220ddc00647463 = $(`<div id="html_4c016d76731f49a343220ddc00647463" style="width: 100.0%; height: 100.0%;"><b>ランク #13</b><br>Powerhouse<br>Elevation: 563.0m<br><b>Power: 1992.7kW</b><br>Head: 1390.0m</div>`)[0];
+                popup_bc282e4dbc3e7a328f7083c9c50a0c06.setContent(html_4c016d76731f49a343220ddc00647463);
+            
+        
+
+        marker_044caacdf8df381709c40381f5b98e0e.bindPopup(popup_bc282e4dbc3e7a328f7083c9c50a0c06)
+        ;
+
+        
+    
+    
+            marker_044caacdf8df381709c40381f5b98e0e.bindTooltip(
+                `<div>
+                     発電所 #13 (1992.7kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_044caacdf8df381709c40381f5b98e0e.setIcon(icon_9c91f66be40fa66f5b281515b5d8ed40);
+            
+    
+            var poly_line_73887400b6dd7a951b7a79c0e8438014 = L.polyline(
+                [[36.386502, 137.76541493103448], [36.383955, 137.752721], [36.386502, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "white", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_7303916d5108cbacc6bbaac65fe8cc40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb22d6f7ce6665bb067a8775e4674743 = $(`<div id="html_cb22d6f7ce6665bb067a8775e4674743" style="width: 100.0%; height: 100.0%;"><b>ランク #13</b><br>Power: 1992.7kW<br>Head: 1390.0m</div>`)[0];
+                popup_7303916d5108cbacc6bbaac65fe8cc40.setContent(html_cb22d6f7ce6665bb067a8775e4674743);
+            
+        
+
+        poly_line_73887400b6dd7a951b7a79c0e8438014.bindPopup(popup_7303916d5108cbacc6bbaac65fe8cc40)
+        ;
+
+        
+    
+    
+            var marker_5b130ee58b2a053728d979b12bdc7de2 = L.marker(
+                [36.386502, 137.76541493103448],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_f09a682650cd4f70221ca674fa64cab6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50afe03c9ca56396e2d6632ef48752ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3058a721739943568f84509c3691178d = $(`<div id="html_3058a721739943568f84509c3691178d" style="width: 100.0%; height: 100.0%;"><b>ランク #14</b><br>Water Source<br>Elevation: 1953.0m<br>Power: 1991.6kW</div>`)[0];
+                popup_50afe03c9ca56396e2d6632ef48752ab.setContent(html_3058a721739943568f84509c3691178d);
+            
+        
+
+        marker_5b130ee58b2a053728d979b12bdc7de2.bindPopup(popup_50afe03c9ca56396e2d6632ef48752ab)
+        ;
+
+        
+    
+    
+            marker_5b130ee58b2a053728d979b12bdc7de2.bindTooltip(
+                `<div>
+                     水源 #14 (1991.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5b130ee58b2a053728d979b12bdc7de2.setIcon(icon_f09a682650cd4f70221ca674fa64cab6);
+            
+    
+            var marker_db45a38e1d51b360d85a706e82559369 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_163e08bcc0278d5cade78c0bfe1ca44e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cfe1be758df3872262ebf83506ae227b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aad0f71e19451a204ae430236f1da33d = $(`<div id="html_aad0f71e19451a204ae430236f1da33d" style="width: 100.0%; height: 100.0%;"><b>ランク #14</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_cfe1be758df3872262ebf83506ae227b.setContent(html_aad0f71e19451a204ae430236f1da33d);
+            
+        
+
+        marker_db45a38e1d51b360d85a706e82559369.bindPopup(popup_cfe1be758df3872262ebf83506ae227b)
+        ;
+
+        
+    
+    
+            marker_db45a38e1d51b360d85a706e82559369.bindTooltip(
+                `<div>
+                     取水口 #14
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_db45a38e1d51b360d85a706e82559369.setIcon(icon_163e08bcc0278d5cade78c0bfe1ca44e);
+            
+    
+            var marker_1e90d44580d09fc84630e54c01c8c71e = L.marker(
+                [36.378861, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_26acd405ca4a21b363f3325b6bbfda92 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5b66a10c9f32c246eee1061f3e011187 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fffcce132ee2a8784b683f9a5b11dc2e = $(`<div id="html_fffcce132ee2a8784b683f9a5b11dc2e" style="width: 100.0%; height: 100.0%;"><b>ランク #14</b><br>Powerhouse<br>Elevation: 562.0m<br><b>Power: 1991.6kW</b><br>Head: 1391.0m</div>`)[0];
+                popup_5b66a10c9f32c246eee1061f3e011187.setContent(html_fffcce132ee2a8784b683f9a5b11dc2e);
+            
+        
+
+        marker_1e90d44580d09fc84630e54c01c8c71e.bindPopup(popup_5b66a10c9f32c246eee1061f3e011187)
+        ;
+
+        
+    
+    
+            marker_1e90d44580d09fc84630e54c01c8c71e.bindTooltip(
+                `<div>
+                     発電所 #14 (1991.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1e90d44580d09fc84630e54c01c8c71e.setIcon(icon_26acd405ca4a21b363f3325b6bbfda92);
+            
+    
+            var poly_line_19c06d5c62576cc4ae855143fb8a819b = L.polyline(
+                [[36.386502, 137.76541493103448], [36.383955, 137.752721], [36.378861, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "pink", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_06d0d063313bfb5357d0e4c4d3e144ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_12cf71e1ed501ebfd573a906b573d691 = $(`<div id="html_12cf71e1ed501ebfd573a906b573d691" style="width: 100.0%; height: 100.0%;"><b>ランク #14</b><br>Power: 1991.6kW<br>Head: 1391.0m</div>`)[0];
+                popup_06d0d063313bfb5357d0e4c4d3e144ac.setContent(html_12cf71e1ed501ebfd573a906b573d691);
+            
+        
+
+        poly_line_19c06d5c62576cc4ae855143fb8a819b.bindPopup(popup_06d0d063313bfb5357d0e4c4d3e144ac)
+        ;
+
+        
+    
+    
+            var marker_1545c443e9382793452ed9e58cb81fe9 = L.marker(
+                [36.389049, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_3e46d7fff3928d627b0df602907ff484 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4db63b609371b309a3a24da0455e099e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60e2d22d0fd015945d7df5b91ba81740 = $(`<div id="html_60e2d22d0fd015945d7df5b91ba81740" style="width: 100.0%; height: 100.0%;"><b>ランク #15</b><br>Water Source<br>Elevation: 2047.0m<br>Power: 1989.1kW</div>`)[0];
+                popup_4db63b609371b309a3a24da0455e099e.setContent(html_60e2d22d0fd015945d7df5b91ba81740);
+            
+        
+
+        marker_1545c443e9382793452ed9e58cb81fe9.bindPopup(popup_4db63b609371b309a3a24da0455e099e)
+        ;
+
+        
+    
+    
+            marker_1545c443e9382793452ed9e58cb81fe9.bindTooltip(
+                `<div>
+                     水源 #15 (1989.1kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1545c443e9382793452ed9e58cb81fe9.setIcon(icon_3e46d7fff3928d627b0df602907ff484);
+            
+    
+            var marker_25fb4a8083ffec45a40889f521c7e596 = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_76c62d469990bdbac40501dec56142c3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42b77048beb78777d6740fd9e97246b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e9d7a65f8bd95d7651e5c64d3420ee9 = $(`<div id="html_8e9d7a65f8bd95d7651e5c64d3420ee9" style="width: 100.0%; height: 100.0%;"><b>ランク #15</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_42b77048beb78777d6740fd9e97246b3.setContent(html_8e9d7a65f8bd95d7651e5c64d3420ee9);
+            
+        
+
+        marker_25fb4a8083ffec45a40889f521c7e596.bindPopup(popup_42b77048beb78777d6740fd9e97246b3)
+        ;
+
+        
+    
+    
+            marker_25fb4a8083ffec45a40889f521c7e596.bindTooltip(
+                `<div>
+                     取水口 #15
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_25fb4a8083ffec45a40889f521c7e596.setIcon(icon_76c62d469990bdbac40501dec56142c3);
+            
+    
+            var marker_49b78ba7aafb69fd205654bc10ef2896 = L.marker(
+                [36.391596, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_8209465beba498639c59622e531b453b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a335983fccf21ca57d5dd35b1e8c8ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1f658585114d5c24413e86d6065a87f = $(`<div id="html_a1f658585114d5c24413e86d6065a87f" style="width: 100.0%; height: 100.0%;"><b>ランク #15</b><br>Powerhouse<br>Elevation: 568.0m<br><b>Power: 1989.1kW</b><br>Head: 1479.0m</div>`)[0];
+                popup_4a335983fccf21ca57d5dd35b1e8c8ea.setContent(html_a1f658585114d5c24413e86d6065a87f);
+            
+        
+
+        marker_49b78ba7aafb69fd205654bc10ef2896.bindPopup(popup_4a335983fccf21ca57d5dd35b1e8c8ea)
+        ;
+
+        
+    
+    
+            marker_49b78ba7aafb69fd205654bc10ef2896.bindTooltip(
+                `<div>
+                     発電所 #15 (1989.1kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_49b78ba7aafb69fd205654bc10ef2896.setIcon(icon_8209465beba498639c59622e531b453b);
+            
+    
+            var poly_line_90eee5759a45ffd5ecfc84e3d5bbde23 = L.polyline(
+                [[36.389049, 137.77387755172415], [36.394143, 137.80349672413794], [36.391596, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_b8127628d5415af8f7ddfd6551b44ff6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_167ec01a0f5e517e7e5bde6555269b9e = $(`<div id="html_167ec01a0f5e517e7e5bde6555269b9e" style="width: 100.0%; height: 100.0%;"><b>ランク #15</b><br>Power: 1989.1kW<br>Head: 1479.0m</div>`)[0];
+                popup_b8127628d5415af8f7ddfd6551b44ff6.setContent(html_167ec01a0f5e517e7e5bde6555269b9e);
+            
+        
+
+        poly_line_90eee5759a45ffd5ecfc84e3d5bbde23.bindPopup(popup_b8127628d5415af8f7ddfd6551b44ff6)
+        ;
+
+        
+    
+    
+            var marker_40aba17427b20423166c961c243b94bb = L.marker(
+                [36.389049, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_baa334a90dee80ec456092fe880dea81 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d633f2adbd54a9c6069013ea0beb6ad3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b89f7a33c161e440b8d99ef7d57ec7b = $(`<div id="html_0b89f7a33c161e440b8d99ef7d57ec7b" style="width: 100.0%; height: 100.0%;"><b>ランク #16</b><br>Water Source<br>Elevation: 2047.0m<br>Power: 1988.0kW</div>`)[0];
+                popup_d633f2adbd54a9c6069013ea0beb6ad3.setContent(html_0b89f7a33c161e440b8d99ef7d57ec7b);
+            
+        
+
+        marker_40aba17427b20423166c961c243b94bb.bindPopup(popup_d633f2adbd54a9c6069013ea0beb6ad3)
+        ;
+
+        
+    
+    
+            marker_40aba17427b20423166c961c243b94bb.bindTooltip(
+                `<div>
+                     水源 #16 (1988.0kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_40aba17427b20423166c961c243b94bb.setIcon(icon_baa334a90dee80ec456092fe880dea81);
+            
+    
+            var marker_1f552f34342dfa9ec6210e4e6110cbe6 = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_cac1740bd9491582c22d522e7cdf7a8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_381102b67125830991e07d4e0c14822e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_928269f1df10745018a9dcf9bb38a39d = $(`<div id="html_928269f1df10745018a9dcf9bb38a39d" style="width: 100.0%; height: 100.0%;"><b>ランク #16</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_381102b67125830991e07d4e0c14822e.setContent(html_928269f1df10745018a9dcf9bb38a39d);
+            
+        
+
+        marker_1f552f34342dfa9ec6210e4e6110cbe6.bindPopup(popup_381102b67125830991e07d4e0c14822e)
+        ;
+
+        
+    
+    
+            marker_1f552f34342dfa9ec6210e4e6110cbe6.bindTooltip(
+                `<div>
+                     取水口 #16
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f552f34342dfa9ec6210e4e6110cbe6.setIcon(icon_cac1740bd9491582c22d522e7cdf7a8b);
+            
+    
+            var marker_bf1fa97b54b69b1492acf2457ba230ed = L.marker(
+                [36.394143, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_67dca473e90cb0c7e37996280523365a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbf0cb44b46fb917c04a1b5045225269 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6afcb352afbc7b16913cbf91c4fee871 = $(`<div id="html_6afcb352afbc7b16913cbf91c4fee871" style="width: 100.0%; height: 100.0%;"><b>ランク #16</b><br>Powerhouse<br>Elevation: 570.0m<br><b>Power: 1988.0kW</b><br>Head: 1477.0m</div>`)[0];
+                popup_dbf0cb44b46fb917c04a1b5045225269.setContent(html_6afcb352afbc7b16913cbf91c4fee871);
+            
+        
+
+        marker_bf1fa97b54b69b1492acf2457ba230ed.bindPopup(popup_dbf0cb44b46fb917c04a1b5045225269)
+        ;
+
+        
+    
+    
+            marker_bf1fa97b54b69b1492acf2457ba230ed.bindTooltip(
+                `<div>
+                     発電所 #16 (1988.0kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bf1fa97b54b69b1492acf2457ba230ed.setIcon(icon_67dca473e90cb0c7e37996280523365a);
+            
+    
+            var poly_line_dc446399e25b141063c360f1debc85cb = L.polyline(
+                [[36.389049, 137.77387755172415], [36.394143, 137.80349672413794], [36.394143, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_1af4b93a42b55b552748cbb1121869d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_849a81dd6b42aff2ae86432a91811345 = $(`<div id="html_849a81dd6b42aff2ae86432a91811345" style="width: 100.0%; height: 100.0%;"><b>ランク #16</b><br>Power: 1988.0kW<br>Head: 1477.0m</div>`)[0];
+                popup_1af4b93a42b55b552748cbb1121869d4.setContent(html_849a81dd6b42aff2ae86432a91811345);
+            
+        
+
+        poly_line_dc446399e25b141063c360f1debc85cb.bindPopup(popup_1af4b93a42b55b552748cbb1121869d4)
+        ;
+
+        
+    
+    
+            var marker_f4b7612e34ccb57610a8fae71d73c2ac = L.marker(
+                [36.394143, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_7a53ac209f73bc19cb5c9376942b3252 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d302c1b013374d99147151b4acab2c29 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c8d50d49e588f5b0105766011d1dacc = $(`<div id="html_1c8d50d49e588f5b0105766011d1dacc" style="width: 100.0%; height: 100.0%;"><b>ランク #17</b><br>Water Source<br>Elevation: 1918.0m<br>Power: 1986.2kW</div>`)[0];
+                popup_d302c1b013374d99147151b4acab2c29.setContent(html_1c8d50d49e588f5b0105766011d1dacc);
+            
+        
+
+        marker_f4b7612e34ccb57610a8fae71d73c2ac.bindPopup(popup_d302c1b013374d99147151b4acab2c29)
+        ;
+
+        
+    
+    
+            marker_f4b7612e34ccb57610a8fae71d73c2ac.bindTooltip(
+                `<div>
+                     水源 #17 (1986.2kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f4b7612e34ccb57610a8fae71d73c2ac.setIcon(icon_7a53ac209f73bc19cb5c9376942b3252);
+            
+    
+            var marker_5eb7e0904277aa665205053defef304f = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_c98fffbb8e5784a43133ef646d19791d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_370de7b22a8bb4f78b05125a0819acbe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86bcfcef699a8649cee919994220a4f2 = $(`<div id="html_86bcfcef699a8649cee919994220a4f2" style="width: 100.0%; height: 100.0%;"><b>ランク #17</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_370de7b22a8bb4f78b05125a0819acbe.setContent(html_86bcfcef699a8649cee919994220a4f2);
+            
+        
+
+        marker_5eb7e0904277aa665205053defef304f.bindPopup(popup_370de7b22a8bb4f78b05125a0819acbe)
+        ;
+
+        
+    
+    
+            marker_5eb7e0904277aa665205053defef304f.bindTooltip(
+                `<div>
+                     取水口 #17
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5eb7e0904277aa665205053defef304f.setIcon(icon_c98fffbb8e5784a43133ef646d19791d);
+            
+    
+            var marker_845183df2fb63069bf0391434c8ae777 = L.marker(
+                [36.389049, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_dfb9484483c0c9471a3d6255239878f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5fd596d2fa1896b5553416f07fb79a14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0a41006724665aeaf6d5575040de466 = $(`<div id="html_b0a41006724665aeaf6d5575040de466" style="width: 100.0%; height: 100.0%;"><b>ランク #17</b><br>Powerhouse<br>Elevation: 568.0m<br><b>Power: 1986.2kW</b><br>Head: 1350.0m</div>`)[0];
+                popup_5fd596d2fa1896b5553416f07fb79a14.setContent(html_b0a41006724665aeaf6d5575040de466);
+            
+        
+
+        marker_845183df2fb63069bf0391434c8ae777.bindPopup(popup_5fd596d2fa1896b5553416f07fb79a14)
+        ;
+
+        
+    
+    
+            marker_845183df2fb63069bf0391434c8ae777.bindTooltip(
+                `<div>
+                     発電所 #17 (1986.2kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_845183df2fb63069bf0391434c8ae777.setIcon(icon_dfb9484483c0c9471a3d6255239878f3);
+            
+    
+            var poly_line_2e49d996618b6a5473672da6d12bc177 = L.polyline(
+                [[36.394143, 137.75695231034484], [36.383955, 137.752721], [36.389049, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_9045371a46afafe9c049b486a4d111c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_104845de3d08ade98972ea7976fa11bd = $(`<div id="html_104845de3d08ade98972ea7976fa11bd" style="width: 100.0%; height: 100.0%;"><b>ランク #17</b><br>Power: 1986.2kW<br>Head: 1350.0m</div>`)[0];
+                popup_9045371a46afafe9c049b486a4d111c4.setContent(html_104845de3d08ade98972ea7976fa11bd);
+            
+        
+
+        poly_line_2e49d996618b6a5473672da6d12bc177.bindPopup(popup_9045371a46afafe9c049b486a4d111c4)
+        ;
+
+        
+    
+    
+            var marker_7e48b1d5232f1adbc1bb992a8f01c269 = L.marker(
+                [36.394143, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_aa7b9ed523e217e50c7af134eaa722f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f10f36987d230d901ede12be4578bc14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_df617f1e8c301879afe426344cf42204 = $(`<div id="html_df617f1e8c301879afe426344cf42204" style="width: 100.0%; height: 100.0%;"><b>ランク #18</b><br>Water Source<br>Elevation: 1918.0m<br>Power: 1983.7kW</div>`)[0];
+                popup_f10f36987d230d901ede12be4578bc14.setContent(html_df617f1e8c301879afe426344cf42204);
+            
+        
+
+        marker_7e48b1d5232f1adbc1bb992a8f01c269.bindPopup(popup_f10f36987d230d901ede12be4578bc14)
+        ;
+
+        
+    
+    
+            marker_7e48b1d5232f1adbc1bb992a8f01c269.bindTooltip(
+                `<div>
+                     水源 #18 (1983.7kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e48b1d5232f1adbc1bb992a8f01c269.setIcon(icon_aa7b9ed523e217e50c7af134eaa722f4);
+            
+    
+            var marker_c9cf6c16b0c9c7661b2297ab135ec1e1 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_30b8efedef6a5ad81442c1d1e6058671 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f2284692c8fe5554f7a19f0cc4e6a74 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c3885cc1b66a16e18f1e15bd65c68bc = $(`<div id="html_5c3885cc1b66a16e18f1e15bd65c68bc" style="width: 100.0%; height: 100.0%;"><b>ランク #18</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_0f2284692c8fe5554f7a19f0cc4e6a74.setContent(html_5c3885cc1b66a16e18f1e15bd65c68bc);
+            
+        
+
+        marker_c9cf6c16b0c9c7661b2297ab135ec1e1.bindPopup(popup_0f2284692c8fe5554f7a19f0cc4e6a74)
+        ;
+
+        
+    
+    
+            marker_c9cf6c16b0c9c7661b2297ab135ec1e1.bindTooltip(
+                `<div>
+                     取水口 #18
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c9cf6c16b0c9c7661b2297ab135ec1e1.setIcon(icon_30b8efedef6a5ad81442c1d1e6058671);
+            
+    
+            var marker_52580436f5a4656b7d502ab56f742158 = L.marker(
+                [36.391596, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_3a5499a79359766180fca76e908e34cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_926d16025dd8d0f79ab4f5aa46e944dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_981be0ea5e55268351dd58524f2e9e36 = $(`<div id="html_981be0ea5e55268351dd58524f2e9e36" style="width: 100.0%; height: 100.0%;"><b>ランク #18</b><br>Powerhouse<br>Elevation: 567.0m<br><b>Power: 1983.7kW</b><br>Head: 1351.0m</div>`)[0];
+                popup_926d16025dd8d0f79ab4f5aa46e944dc.setContent(html_981be0ea5e55268351dd58524f2e9e36);
+            
+        
+
+        marker_52580436f5a4656b7d502ab56f742158.bindPopup(popup_926d16025dd8d0f79ab4f5aa46e944dc)
+        ;
+
+        
+    
+    
+            marker_52580436f5a4656b7d502ab56f742158.bindTooltip(
+                `<div>
+                     発電所 #18 (1983.7kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_52580436f5a4656b7d502ab56f742158.setIcon(icon_3a5499a79359766180fca76e908e34cf);
+            
+    
+            var poly_line_f93cedd20404129e4778c6c88bfccca8 = L.polyline(
+                [[36.394143, 137.75695231034484], [36.383955, 137.752721], [36.391596, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_be3002a49fca117529352d8a4ec81baf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b131b1b1f7deaa709f632035d26dc8a8 = $(`<div id="html_b131b1b1f7deaa709f632035d26dc8a8" style="width: 100.0%; height: 100.0%;"><b>ランク #18</b><br>Power: 1983.7kW<br>Head: 1351.0m</div>`)[0];
+                popup_be3002a49fca117529352d8a4ec81baf.setContent(html_b131b1b1f7deaa709f632035d26dc8a8);
+            
+        
+
+        poly_line_f93cedd20404129e4778c6c88bfccca8.bindPopup(popup_be3002a49fca117529352d8a4ec81baf)
+        ;
+
+        
+    
+    
+            var marker_fd1297ef3f3f956ca6fa58b91229a36c = L.marker(
+                [36.386502, 137.76541493103448],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_17d3e797943e5774e0c37d57dafec4be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a4d7982e04d3567d40f0aef1bcd2364c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92d00f4bf463fa618f425722b6974d44 = $(`<div id="html_92d00f4bf463fa618f425722b6974d44" style="width: 100.0%; height: 100.0%;"><b>ランク #19</b><br>Water Source<br>Elevation: 1953.0m<br>Power: 1983.1kW</div>`)[0];
+                popup_a4d7982e04d3567d40f0aef1bcd2364c.setContent(html_92d00f4bf463fa618f425722b6974d44);
+            
+        
+
+        marker_fd1297ef3f3f956ca6fa58b91229a36c.bindPopup(popup_a4d7982e04d3567d40f0aef1bcd2364c)
+        ;
+
+        
+    
+    
+            marker_fd1297ef3f3f956ca6fa58b91229a36c.bindTooltip(
+                `<div>
+                     水源 #19 (1983.1kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fd1297ef3f3f956ca6fa58b91229a36c.setIcon(icon_17d3e797943e5774e0c37d57dafec4be);
+            
+    
+            var marker_c659072b762abd363bffd52cd16ce85c = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_90140ce25673d61350d2693149d318e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_383f85461e261b7ac916d82028313a6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ad03c748458cea06e356ef8dc165ad7 = $(`<div id="html_0ad03c748458cea06e356ef8dc165ad7" style="width: 100.0%; height: 100.0%;"><b>ランク #19</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_383f85461e261b7ac916d82028313a6d.setContent(html_0ad03c748458cea06e356ef8dc165ad7);
+            
+        
+
+        marker_c659072b762abd363bffd52cd16ce85c.bindPopup(popup_383f85461e261b7ac916d82028313a6d)
+        ;
+
+        
+    
+    
+            marker_c659072b762abd363bffd52cd16ce85c.bindTooltip(
+                `<div>
+                     取水口 #19
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c659072b762abd363bffd52cd16ce85c.setIcon(icon_90140ce25673d61350d2693149d318e5);
+            
+    
+            var marker_6a1a56fdbc5cccf730511e8e4c2896e7 = L.marker(
+                [36.389049, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_9234b9862b91ee4c6f38d96400c11564 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d31d6d36a2d5140ea38c530c00462b27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5fb7abbea63723e7c1b043eccc77a61 = $(`<div id="html_b5fb7abbea63723e7c1b043eccc77a61" style="width: 100.0%; height: 100.0%;"><b>ランク #19</b><br>Powerhouse<br>Elevation: 568.0m<br><b>Power: 1983.1kW</b><br>Head: 1385.0m</div>`)[0];
+                popup_d31d6d36a2d5140ea38c530c00462b27.setContent(html_b5fb7abbea63723e7c1b043eccc77a61);
+            
+        
+
+        marker_6a1a56fdbc5cccf730511e8e4c2896e7.bindPopup(popup_d31d6d36a2d5140ea38c530c00462b27)
+        ;
+
+        
+    
+    
+            marker_6a1a56fdbc5cccf730511e8e4c2896e7.bindTooltip(
+                `<div>
+                     発電所 #19 (1983.1kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6a1a56fdbc5cccf730511e8e4c2896e7.setIcon(icon_9234b9862b91ee4c6f38d96400c11564);
+            
+    
+            var poly_line_2f8c243d19720b8ecd19b934df14d9be = L.polyline(
+                [[36.386502, 137.76541493103448], [36.383955, 137.752721], [36.389049, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightgray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_93e89a9a4aebb72e56a5f28575d1fe32 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b2ec44c24f21f7c22097d46f6895fda = $(`<div id="html_9b2ec44c24f21f7c22097d46f6895fda" style="width: 100.0%; height: 100.0%;"><b>ランク #19</b><br>Power: 1983.1kW<br>Head: 1385.0m</div>`)[0];
+                popup_93e89a9a4aebb72e56a5f28575d1fe32.setContent(html_9b2ec44c24f21f7c22097d46f6895fda);
+            
+        
+
+        poly_line_2f8c243d19720b8ecd19b934df14d9be.bindPopup(popup_93e89a9a4aebb72e56a5f28575d1fe32)
+        ;
+
+        
+    
+    
+            var marker_b0e0ece979702c43b314dda1e352113c = L.marker(
+                [36.386502, 137.76541493103448],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_c1adc867be0c2787248c93b7b9a129c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_393f896cd0696e2c6f30f01d069f614c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89cc1b7a53b92bc6a5c633f8345288eb = $(`<div id="html_89cc1b7a53b92bc6a5c633f8345288eb" style="width: 100.0%; height: 100.0%;"><b>ランク #20</b><br>Water Source<br>Elevation: 1953.0m<br>Power: 1980.6kW</div>`)[0];
+                popup_393f896cd0696e2c6f30f01d069f614c.setContent(html_89cc1b7a53b92bc6a5c633f8345288eb);
+            
+        
+
+        marker_b0e0ece979702c43b314dda1e352113c.bindPopup(popup_393f896cd0696e2c6f30f01d069f614c)
+        ;
+
+        
+    
+    
+            marker_b0e0ece979702c43b314dda1e352113c.bindTooltip(
+                `<div>
+                     水源 #20 (1980.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b0e0ece979702c43b314dda1e352113c.setIcon(icon_c1adc867be0c2787248c93b7b9a129c7);
+            
+    
+            var marker_8f3e5ba92bc190956881c7095f419af4 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_1941292ce5d7df9650fc35cfbf5d0117 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f603999f61a22a2927660c88c00e4e13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01e120626d2de6e0a602015edf62011d = $(`<div id="html_01e120626d2de6e0a602015edf62011d" style="width: 100.0%; height: 100.0%;"><b>ランク #20</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_f603999f61a22a2927660c88c00e4e13.setContent(html_01e120626d2de6e0a602015edf62011d);
+            
+        
+
+        marker_8f3e5ba92bc190956881c7095f419af4.bindPopup(popup_f603999f61a22a2927660c88c00e4e13)
+        ;
+
+        
+    
+    
+            marker_8f3e5ba92bc190956881c7095f419af4.bindTooltip(
+                `<div>
+                     取水口 #20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8f3e5ba92bc190956881c7095f419af4.setIcon(icon_1941292ce5d7df9650fc35cfbf5d0117);
+            
+    
+            var marker_e9037f88c92b1dd2ae9485a5cebd8463 = L.marker(
+                [36.391596, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_29022eb038d57541a5f5b1bcb13a09d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a78650fac0eeba1440fab9b26b535eb6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62e1a40a54fc6be6dd0e417ece61c548 = $(`<div id="html_62e1a40a54fc6be6dd0e417ece61c548" style="width: 100.0%; height: 100.0%;"><b>ランク #20</b><br>Powerhouse<br>Elevation: 567.0m<br><b>Power: 1980.6kW</b><br>Head: 1386.0m</div>`)[0];
+                popup_a78650fac0eeba1440fab9b26b535eb6.setContent(html_62e1a40a54fc6be6dd0e417ece61c548);
+            
+        
+
+        marker_e9037f88c92b1dd2ae9485a5cebd8463.bindPopup(popup_a78650fac0eeba1440fab9b26b535eb6)
+        ;
+
+        
+    
+    
+            marker_e9037f88c92b1dd2ae9485a5cebd8463.bindTooltip(
+                `<div>
+                     発電所 #20 (1980.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e9037f88c92b1dd2ae9485a5cebd8463.setIcon(icon_29022eb038d57541a5f5b1bcb13a09d7);
+            
+    
+            var poly_line_7eee57e1d688e924e5ac348495c25aec = L.polyline(
+                [[36.386502, 137.76541493103448], [36.383955, 137.752721], [36.391596, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_b7651adbdf3d9890e9e41e3accfc2d7d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5baa1a025cad957b377d41a6a3146a14 = $(`<div id="html_5baa1a025cad957b377d41a6a3146a14" style="width: 100.0%; height: 100.0%;"><b>ランク #20</b><br>Power: 1980.6kW<br>Head: 1386.0m</div>`)[0];
+                popup_b7651adbdf3d9890e9e41e3accfc2d7d.setContent(html_5baa1a025cad957b377d41a6a3146a14);
+            
+        
+
+        poly_line_7eee57e1d688e924e5ac348495c25aec.bindPopup(popup_b7651adbdf3d9890e9e41e3accfc2d7d)
+        ;
+
+        
+    
+    
+            var marker_184f3c752cd128f3f8568273e9fb211d = L.marker(
+                [36.391596, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_2f2d79422c35275d901ad4d51ee15fda = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22eb896663c58307822a979de750de9b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3d213dc0e48ea16d02b965e6b480548 = $(`<div id="html_a3d213dc0e48ea16d02b965e6b480548" style="width: 100.0%; height: 100.0%;"><b>ランク #21</b><br>Water Source<br>Elevation: 2014.0m<br>Power: 1964.6kW</div>`)[0];
+                popup_22eb896663c58307822a979de750de9b.setContent(html_a3d213dc0e48ea16d02b965e6b480548);
+            
+        
+
+        marker_184f3c752cd128f3f8568273e9fb211d.bindPopup(popup_22eb896663c58307822a979de750de9b)
+        ;
+
+        
+    
+    
+            marker_184f3c752cd128f3f8568273e9fb211d.bindTooltip(
+                `<div>
+                     水源 #21 (1964.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_184f3c752cd128f3f8568273e9fb211d.setIcon(icon_2f2d79422c35275d901ad4d51ee15fda);
+            
+    
+            var marker_72022fd64ea759fdcde224cc8556b811 = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_ce6af87f733609e6c215687136e4976e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_88f1d90d524fe0b0d129616d3f9736f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5927c1dd437b79a07b8a7d1e843461bc = $(`<div id="html_5927c1dd437b79a07b8a7d1e843461bc" style="width: 100.0%; height: 100.0%;"><b>ランク #21</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_88f1d90d524fe0b0d129616d3f9736f5.setContent(html_5927c1dd437b79a07b8a7d1e843461bc);
+            
+        
+
+        marker_72022fd64ea759fdcde224cc8556b811.bindPopup(popup_88f1d90d524fe0b0d129616d3f9736f5)
+        ;
+
+        
+    
+    
+            marker_72022fd64ea759fdcde224cc8556b811.bindTooltip(
+                `<div>
+                     取水口 #21
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_72022fd64ea759fdcde224cc8556b811.setIcon(icon_ce6af87f733609e6c215687136e4976e);
+            
+    
+            var marker_21591c71223d1a31336d800184e0923e = L.marker(
+                [36.391596, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_55987e29e185d621047836eee3943628 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_192b01ad2a81fbf5ce2a7f3c0078ccf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a38eedc72f2b0c2c2f90ba6d780e8d4d = $(`<div id="html_a38eedc72f2b0c2c2f90ba6d780e8d4d" style="width: 100.0%; height: 100.0%;"><b>ランク #21</b><br>Powerhouse<br>Elevation: 567.0m<br><b>Power: 1964.6kW</b><br>Head: 1447.0m</div>`)[0];
+                popup_192b01ad2a81fbf5ce2a7f3c0078ccf1.setContent(html_a38eedc72f2b0c2c2f90ba6d780e8d4d);
+            
+        
+
+        marker_21591c71223d1a31336d800184e0923e.bindPopup(popup_192b01ad2a81fbf5ce2a7f3c0078ccf1)
+        ;
+
+        
+    
+    
+            marker_21591c71223d1a31336d800184e0923e.bindTooltip(
+                `<div>
+                     発電所 #21 (1964.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_21591c71223d1a31336d800184e0923e.setIcon(icon_55987e29e185d621047836eee3943628);
+            
+    
+            var poly_line_35b6d212f6dfa6a46dca6f9e770b0f54 = L.polyline(
+                [[36.391596, 137.77387755172415], [36.394143, 137.80349672413794], [36.391596, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_784ce5b47a5ed82ed824696b9ad66c5c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f6034f73ea2f4045af82655be1752be = $(`<div id="html_5f6034f73ea2f4045af82655be1752be" style="width: 100.0%; height: 100.0%;"><b>ランク #21</b><br>Power: 1964.6kW<br>Head: 1447.0m</div>`)[0];
+                popup_784ce5b47a5ed82ed824696b9ad66c5c.setContent(html_5f6034f73ea2f4045af82655be1752be);
+            
+        
+
+        poly_line_35b6d212f6dfa6a46dca6f9e770b0f54.bindPopup(popup_784ce5b47a5ed82ed824696b9ad66c5c)
+        ;
+
+        
+    
+    
+            var marker_7a80de6c489df8768933b54adf3f4968 = L.marker(
+                [36.386502, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_73af41ff7680a82dbcd603e08edc8f9c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_133ffc1dd152b872e633d58b62f5f2ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96c6f4b76e189d080be2f9330f6b83a7 = $(`<div id="html_96c6f4b76e189d080be2f9330f6b83a7" style="width: 100.0%; height: 100.0%;"><b>ランク #22</b><br>Water Source<br>Elevation: 2028.0m<br>Power: 1959.5kW</div>`)[0];
+                popup_133ffc1dd152b872e633d58b62f5f2ad.setContent(html_96c6f4b76e189d080be2f9330f6b83a7);
+            
+        
+
+        marker_7a80de6c489df8768933b54adf3f4968.bindPopup(popup_133ffc1dd152b872e633d58b62f5f2ad)
+        ;
+
+        
+    
+    
+            marker_7a80de6c489df8768933b54adf3f4968.bindTooltip(
+                `<div>
+                     水源 #22 (1959.5kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7a80de6c489df8768933b54adf3f4968.setIcon(icon_73af41ff7680a82dbcd603e08edc8f9c);
+            
+    
+            var marker_b92ecca285d4b31ffdb1ec684b5b4176 = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_8580c625c0987b0ab3920fc1c9b2202b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e74a3c7aa947e94316fbae3431e375f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fac003a7b4aef51bb7ea9aec22d433f7 = $(`<div id="html_fac003a7b4aef51bb7ea9aec22d433f7" style="width: 100.0%; height: 100.0%;"><b>ランク #22</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_e74a3c7aa947e94316fbae3431e375f7.setContent(html_fac003a7b4aef51bb7ea9aec22d433f7);
+            
+        
+
+        marker_b92ecca285d4b31ffdb1ec684b5b4176.bindPopup(popup_e74a3c7aa947e94316fbae3431e375f7)
+        ;
+
+        
+    
+    
+            marker_b92ecca285d4b31ffdb1ec684b5b4176.bindTooltip(
+                `<div>
+                     取水口 #22
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b92ecca285d4b31ffdb1ec684b5b4176.setIcon(icon_8580c625c0987b0ab3920fc1c9b2202b);
+            
+    
+            var marker_5cfddc75882dea4b64c384f84a108d59 = L.marker(
+                [36.391596, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_b22cc46a84c5288ef7c500a178b2a7ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42504950259f9bd16ae216b262172e62 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a159d74d401346bbec89292c3858696d = $(`<div id="html_a159d74d401346bbec89292c3858696d" style="width: 100.0%; height: 100.0%;"><b>ランク #22</b><br>Powerhouse<br>Elevation: 568.0m<br><b>Power: 1959.5kW</b><br>Head: 1460.0m</div>`)[0];
+                popup_42504950259f9bd16ae216b262172e62.setContent(html_a159d74d401346bbec89292c3858696d);
+            
+        
+
+        marker_5cfddc75882dea4b64c384f84a108d59.bindPopup(popup_42504950259f9bd16ae216b262172e62)
+        ;
+
+        
+    
+    
+            marker_5cfddc75882dea4b64c384f84a108d59.bindTooltip(
+                `<div>
+                     発電所 #22 (1959.5kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5cfddc75882dea4b64c384f84a108d59.setIcon(icon_b22cc46a84c5288ef7c500a178b2a7ee);
+            
+    
+            var poly_line_ad204f175dcd4602677f579231116db0 = L.polyline(
+                [[36.386502, 137.77387755172415], [36.394143, 137.80349672413794], [36.391596, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_d8707f65a03137552f47513d5d383b4b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e5c12d762e3245658d1cf0e3aca637d4 = $(`<div id="html_e5c12d762e3245658d1cf0e3aca637d4" style="width: 100.0%; height: 100.0%;"><b>ランク #22</b><br>Power: 1959.5kW<br>Head: 1460.0m</div>`)[0];
+                popup_d8707f65a03137552f47513d5d383b4b.setContent(html_e5c12d762e3245658d1cf0e3aca637d4);
+            
+        
+
+        poly_line_ad204f175dcd4602677f579231116db0.bindPopup(popup_d8707f65a03137552f47513d5d383b4b)
+        ;
+
+        
+    
+    
+            var marker_1d1abc8261502ea2864d4beceb7f1bfe = L.marker(
+                [36.391596, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_984564ee2ff0acbdbb9efece95099210 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b2723f5902f457caf0e6ade12b799f22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4462f031f962022d6647535c0e920e01 = $(`<div id="html_4462f031f962022d6647535c0e920e01" style="width: 100.0%; height: 100.0%;"><b>ランク #23</b><br>Water Source<br>Elevation: 2014.0m<br>Power: 1958.8kW</div>`)[0];
+                popup_b2723f5902f457caf0e6ade12b799f22.setContent(html_4462f031f962022d6647535c0e920e01);
+            
+        
+
+        marker_1d1abc8261502ea2864d4beceb7f1bfe.bindPopup(popup_b2723f5902f457caf0e6ade12b799f22)
+        ;
+
+        
+    
+    
+            marker_1d1abc8261502ea2864d4beceb7f1bfe.bindTooltip(
+                `<div>
+                     水源 #23 (1958.8kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1d1abc8261502ea2864d4beceb7f1bfe.setIcon(icon_984564ee2ff0acbdbb9efece95099210);
+            
+    
+            var marker_c7adb43fa2ccde4d196fe463355c42ef = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_fc85ad8e6ce333d5249fe99ac5040433 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e32a2f4128b4b34c6bfd0ab0cf8ecbeb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_311ccedd6df042705e20d2186c78f0ec = $(`<div id="html_311ccedd6df042705e20d2186c78f0ec" style="width: 100.0%; height: 100.0%;"><b>ランク #23</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_e32a2f4128b4b34c6bfd0ab0cf8ecbeb.setContent(html_311ccedd6df042705e20d2186c78f0ec);
+            
+        
+
+        marker_c7adb43fa2ccde4d196fe463355c42ef.bindPopup(popup_e32a2f4128b4b34c6bfd0ab0cf8ecbeb)
+        ;
+
+        
+    
+    
+            marker_c7adb43fa2ccde4d196fe463355c42ef.bindTooltip(
+                `<div>
+                     取水口 #23
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c7adb43fa2ccde4d196fe463355c42ef.setIcon(icon_fc85ad8e6ce333d5249fe99ac5040433);
+            
+    
+            var marker_9b15e29d944ed1a21e5a51a126d08853 = L.marker(
+                [36.389049, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_a04084973484b9c8868ad8aa9a7329e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50c08b8a041103773d9187bead2207b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39e529a700bf13c6df237f745f9fa6fa = $(`<div id="html_39e529a700bf13c6df237f745f9fa6fa" style="width: 100.0%; height: 100.0%;"><b>ランク #23</b><br>Powerhouse<br>Elevation: 568.0m<br><b>Power: 1958.8kW</b><br>Head: 1446.0m</div>`)[0];
+                popup_50c08b8a041103773d9187bead2207b5.setContent(html_39e529a700bf13c6df237f745f9fa6fa);
+            
+        
+
+        marker_9b15e29d944ed1a21e5a51a126d08853.bindPopup(popup_50c08b8a041103773d9187bead2207b5)
+        ;
+
+        
+    
+    
+            marker_9b15e29d944ed1a21e5a51a126d08853.bindTooltip(
+                `<div>
+                     発電所 #23 (1958.8kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9b15e29d944ed1a21e5a51a126d08853.setIcon(icon_a04084973484b9c8868ad8aa9a7329e6);
+            
+    
+            var poly_line_dde9759cd814f8068793bfaa9fbf76e2 = L.polyline(
+                [[36.391596, 137.77387755172415], [36.394143, 137.80349672413794], [36.389049, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_c27832155300c37843bc0149fc024647 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a6d3cd2489f8e05b8ae51effc967bcbb = $(`<div id="html_a6d3cd2489f8e05b8ae51effc967bcbb" style="width: 100.0%; height: 100.0%;"><b>ランク #23</b><br>Power: 1958.8kW<br>Head: 1446.0m</div>`)[0];
+                popup_c27832155300c37843bc0149fc024647.setContent(html_a6d3cd2489f8e05b8ae51effc967bcbb);
+            
+        
+
+        poly_line_dde9759cd814f8068793bfaa9fbf76e2.bindPopup(popup_c27832155300c37843bc0149fc024647)
+        ;
+
+        
+    
+    
+            var marker_d76e794ccb2b3489e70fd8fbee1b6f6d = L.marker(
+                [36.386502, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_8aa5c2a236d3cb113c03b8ccfa0e4e33 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_723d4a9bef64389bcf50ce75ef71a074 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc91c76da5d217e886ecc15fe6bfe41d = $(`<div id="html_fc91c76da5d217e886ecc15fe6bfe41d" style="width: 100.0%; height: 100.0%;"><b>ランク #24</b><br>Water Source<br>Elevation: 2028.0m<br>Power: 1958.4kW</div>`)[0];
+                popup_723d4a9bef64389bcf50ce75ef71a074.setContent(html_fc91c76da5d217e886ecc15fe6bfe41d);
+            
+        
+
+        marker_d76e794ccb2b3489e70fd8fbee1b6f6d.bindPopup(popup_723d4a9bef64389bcf50ce75ef71a074)
+        ;
+
+        
+    
+    
+            marker_d76e794ccb2b3489e70fd8fbee1b6f6d.bindTooltip(
+                `<div>
+                     水源 #24 (1958.4kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d76e794ccb2b3489e70fd8fbee1b6f6d.setIcon(icon_8aa5c2a236d3cb113c03b8ccfa0e4e33);
+            
+    
+            var marker_3b12f55c9993a8cc0446a25e545f5572 = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_60db0930a845981e8f1597b9d36db937 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f63652c790b100ac8c828adc4f9dceae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef92cf4dba32e2afcb47531499cd3a34 = $(`<div id="html_ef92cf4dba32e2afcb47531499cd3a34" style="width: 100.0%; height: 100.0%;"><b>ランク #24</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_f63652c790b100ac8c828adc4f9dceae.setContent(html_ef92cf4dba32e2afcb47531499cd3a34);
+            
+        
+
+        marker_3b12f55c9993a8cc0446a25e545f5572.bindPopup(popup_f63652c790b100ac8c828adc4f9dceae)
+        ;
+
+        
+    
+    
+            marker_3b12f55c9993a8cc0446a25e545f5572.bindTooltip(
+                `<div>
+                     取水口 #24
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3b12f55c9993a8cc0446a25e545f5572.setIcon(icon_60db0930a845981e8f1597b9d36db937);
+            
+    
+            var marker_2259c0790d5d7ef75bfc2f3daed41c1e = L.marker(
+                [36.394143, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_6502001f11efb3dfc34eed2da226b7b0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a0170cab6a804aa1321f2e5636f090bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_885043c0e58588e2f6b0865b0d348c16 = $(`<div id="html_885043c0e58588e2f6b0865b0d348c16" style="width: 100.0%; height: 100.0%;"><b>ランク #24</b><br>Powerhouse<br>Elevation: 570.0m<br><b>Power: 1958.4kW</b><br>Head: 1458.0m</div>`)[0];
+                popup_a0170cab6a804aa1321f2e5636f090bd.setContent(html_885043c0e58588e2f6b0865b0d348c16);
+            
+        
+
+        marker_2259c0790d5d7ef75bfc2f3daed41c1e.bindPopup(popup_a0170cab6a804aa1321f2e5636f090bd)
+        ;
+
+        
+    
+    
+            marker_2259c0790d5d7ef75bfc2f3daed41c1e.bindTooltip(
+                `<div>
+                     発電所 #24 (1958.4kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2259c0790d5d7ef75bfc2f3daed41c1e.setIcon(icon_6502001f11efb3dfc34eed2da226b7b0);
+            
+    
+            var poly_line_864344ec943dda17101d223dcd70b67a = L.polyline(
+                [[36.386502, 137.77387755172415], [36.394143, 137.80349672413794], [36.394143, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_7be40eef682e5336dacb55b6127929c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d083df31c245a486394bd3a632b61bb = $(`<div id="html_9d083df31c245a486394bd3a632b61bb" style="width: 100.0%; height: 100.0%;"><b>ランク #24</b><br>Power: 1958.4kW<br>Head: 1458.0m</div>`)[0];
+                popup_7be40eef682e5336dacb55b6127929c1.setContent(html_9d083df31c245a486394bd3a632b61bb);
+            
+        
+
+        poly_line_864344ec943dda17101d223dcd70b67a.bindPopup(popup_7be40eef682e5336dacb55b6127929c1)
+        ;
+
+        
+    
+    
+            var marker_23d11589c85f67bbae69b743e9284a49 = L.marker(
+                [36.391596, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_bc264adb5aece3de436b9ea4aecf33b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3905b724f9e7540c5a0eab46fb5359fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d62c5df6bec811594195b4c807de325 = $(`<div id="html_2d62c5df6bec811594195b4c807de325" style="width: 100.0%; height: 100.0%;"><b>ランク #25</b><br>Water Source<br>Elevation: 2014.0m<br>Power: 1958.3kW</div>`)[0];
+                popup_3905b724f9e7540c5a0eab46fb5359fc.setContent(html_2d62c5df6bec811594195b4c807de325);
+            
+        
+
+        marker_23d11589c85f67bbae69b743e9284a49.bindPopup(popup_3905b724f9e7540c5a0eab46fb5359fc)
+        ;
+
+        
+    
+    
+            marker_23d11589c85f67bbae69b743e9284a49.bindTooltip(
+                `<div>
+                     水源 #25 (1958.3kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_23d11589c85f67bbae69b743e9284a49.setIcon(icon_bc264adb5aece3de436b9ea4aecf33b8);
+            
+    
+            var marker_d71a04e987344e7a40c934f012b226c3 = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_9e2ffd1cfaeee2f66d100054f84b1c3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e15e7d90b375347626ca9caa19d3b7a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9222b03aed69db43fc47f86ed54c49c9 = $(`<div id="html_9222b03aed69db43fc47f86ed54c49c9" style="width: 100.0%; height: 100.0%;"><b>ランク #25</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_e15e7d90b375347626ca9caa19d3b7a3.setContent(html_9222b03aed69db43fc47f86ed54c49c9);
+            
+        
+
+        marker_d71a04e987344e7a40c934f012b226c3.bindPopup(popup_e15e7d90b375347626ca9caa19d3b7a3)
+        ;
+
+        
+    
+    
+            marker_d71a04e987344e7a40c934f012b226c3.bindTooltip(
+                `<div>
+                     取水口 #25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d71a04e987344e7a40c934f012b226c3.setIcon(icon_9e2ffd1cfaeee2f66d100054f84b1c3a);
+            
+    
+            var marker_c43f562b08dc470004fec71d8d849888 = L.marker(
+                [36.386502, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_0ef62dd20f7341aee9c852755891361a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8aed708efa7398e1b06925153200537c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f52aaf67e1daf9e70f6f16ce7ecd1f2 = $(`<div id="html_3f52aaf67e1daf9e70f6f16ce7ecd1f2" style="width: 100.0%; height: 100.0%;"><b>ランク #25</b><br>Powerhouse<br>Elevation: 563.0m<br><b>Power: 1958.3kW</b><br>Head: 1451.0m</div>`)[0];
+                popup_8aed708efa7398e1b06925153200537c.setContent(html_3f52aaf67e1daf9e70f6f16ce7ecd1f2);
+            
+        
+
+        marker_c43f562b08dc470004fec71d8d849888.bindPopup(popup_8aed708efa7398e1b06925153200537c)
+        ;
+
+        
+    
+    
+            marker_c43f562b08dc470004fec71d8d849888.bindTooltip(
+                `<div>
+                     発電所 #25 (1958.3kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c43f562b08dc470004fec71d8d849888.setIcon(icon_0ef62dd20f7341aee9c852755891361a);
+            
+    
+            var poly_line_39d0fa7a6ecd5632d19be0fbc4bf2f26 = L.polyline(
+                [[36.391596, 137.77387755172415], [36.394143, 137.80349672413794], [36.386502, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_9d2eb06521c059baae81d1d70b224327 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_59760d4992ee994a919f61d8e1798313 = $(`<div id="html_59760d4992ee994a919f61d8e1798313" style="width: 100.0%; height: 100.0%;"><b>ランク #25</b><br>Power: 1958.3kW<br>Head: 1451.0m</div>`)[0];
+                popup_9d2eb06521c059baae81d1d70b224327.setContent(html_59760d4992ee994a919f61d8e1798313);
+            
+        
+
+        poly_line_39d0fa7a6ecd5632d19be0fbc4bf2f26.bindPopup(popup_9d2eb06521c059baae81d1d70b224327)
+        ;
+
+        
+    
+    
+            var marker_65d3465ff77c333884cf9b7d0c04970d = L.marker(
+                [36.391596, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_9fcd391799c1510db7ca29f96d360bc0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightred",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_256f79126a00481263c1e9df19726f40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0259cd83beb0902d444c2e51f896700b = $(`<div id="html_0259cd83beb0902d444c2e51f896700b" style="width: 100.0%; height: 100.0%;"><b>ランク #26</b><br>Water Source<br>Elevation: 2014.0m<br>Power: 1948.2kW</div>`)[0];
+                popup_256f79126a00481263c1e9df19726f40.setContent(html_0259cd83beb0902d444c2e51f896700b);
+            
+        
+
+        marker_65d3465ff77c333884cf9b7d0c04970d.bindPopup(popup_256f79126a00481263c1e9df19726f40)
+        ;
+
+        
+    
+    
+            marker_65d3465ff77c333884cf9b7d0c04970d.bindTooltip(
+                `<div>
+                     水源 #26 (1948.2kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_65d3465ff77c333884cf9b7d0c04970d.setIcon(icon_9fcd391799c1510db7ca29f96d360bc0);
+            
+    
+            var marker_5bd887c591282d6cde7b6927b90f5b34 = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_23ee3affe2f22c842ddfba8ae75936d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightred",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a6d7b3865d8f32a9164c08abce6c85f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d986c3e4de977d07b1e25e18888c63a = $(`<div id="html_1d986c3e4de977d07b1e25e18888c63a" style="width: 100.0%; height: 100.0%;"><b>ランク #26</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_a6d7b3865d8f32a9164c08abce6c85f7.setContent(html_1d986c3e4de977d07b1e25e18888c63a);
+            
+        
+
+        marker_5bd887c591282d6cde7b6927b90f5b34.bindPopup(popup_a6d7b3865d8f32a9164c08abce6c85f7)
+        ;
+
+        
+    
+    
+            marker_5bd887c591282d6cde7b6927b90f5b34.bindTooltip(
+                `<div>
+                     取水口 #26
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5bd887c591282d6cde7b6927b90f5b34.setIcon(icon_23ee3affe2f22c842ddfba8ae75936d8);
+            
+    
+            var marker_2d4953f06c4c1bafadd62e0bcb4482fd = L.marker(
+                [36.383955, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_3a4ee1a0c654c1932ed85631bd818fed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightred",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_84c7d1a04ac998cf1b32c78a7e6fb3ec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7b94400227ee74ba2aeabd159af0864 = $(`<div id="html_c7b94400227ee74ba2aeabd159af0864" style="width: 100.0%; height: 100.0%;"><b>ランク #26</b><br>Powerhouse<br>Elevation: 563.0m<br><b>Power: 1948.2kW</b><br>Head: 1451.0m</div>`)[0];
+                popup_84c7d1a04ac998cf1b32c78a7e6fb3ec.setContent(html_c7b94400227ee74ba2aeabd159af0864);
+            
+        
+
+        marker_2d4953f06c4c1bafadd62e0bcb4482fd.bindPopup(popup_84c7d1a04ac998cf1b32c78a7e6fb3ec)
+        ;
+
+        
+    
+    
+            marker_2d4953f06c4c1bafadd62e0bcb4482fd.bindTooltip(
+                `<div>
+                     発電所 #26 (1948.2kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2d4953f06c4c1bafadd62e0bcb4482fd.setIcon(icon_3a4ee1a0c654c1932ed85631bd818fed);
+            
+    
+            var poly_line_bae4b8acad5ffcb3b831de64c27523db = L.polyline(
+                [[36.391596, 137.77387755172415], [36.394143, 137.80349672413794], [36.383955, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "lightred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_0dab10d4060e36e5db16fd9a1f09f701 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92e8039933823682c9944e205d5a2519 = $(`<div id="html_92e8039933823682c9944e205d5a2519" style="width: 100.0%; height: 100.0%;"><b>ランク #26</b><br>Power: 1948.2kW<br>Head: 1451.0m</div>`)[0];
+                popup_0dab10d4060e36e5db16fd9a1f09f701.setContent(html_92e8039933823682c9944e205d5a2519);
+            
+        
+
+        poly_line_bae4b8acad5ffcb3b831de64c27523db.bindPopup(popup_0dab10d4060e36e5db16fd9a1f09f701)
+        ;
+
+        
+    
+    
+            var marker_5d54e9566379123f05ae10d649c23d0f = L.marker(
+                [36.391596, 137.77387755172415],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_30322f0d7dfb4ef2cf9de98757e4c022 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_01896c21526bb6671ea98dc160a9a85e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c09f22a97882c9238323b78a3b3d017 = $(`<div id="html_6c09f22a97882c9238323b78a3b3d017" style="width: 100.0%; height: 100.0%;"><b>ランク #27</b><br>Water Source<br>Elevation: 2014.0m<br>Power: 1939.4kW</div>`)[0];
+                popup_01896c21526bb6671ea98dc160a9a85e.setContent(html_6c09f22a97882c9238323b78a3b3d017);
+            
+        
+
+        marker_5d54e9566379123f05ae10d649c23d0f.bindPopup(popup_01896c21526bb6671ea98dc160a9a85e)
+        ;
+
+        
+    
+    
+            marker_5d54e9566379123f05ae10d649c23d0f.bindTooltip(
+                `<div>
+                     水源 #27 (1939.4kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5d54e9566379123f05ae10d649c23d0f.setIcon(icon_30322f0d7dfb4ef2cf9de98757e4c022);
+            
+    
+            var marker_df21ba058ad95623d7ab827e671c7411 = L.marker(
+                [36.394143, 137.80349672413794],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_50d86699a94bbf95c5124092a64dec47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2f55060072af4a2c96a90db766cb44b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a29f429333fbab98ed3a2620a30ccf9 = $(`<div id="html_3a29f429333fbab98ed3a2620a30ccf9" style="width: 100.0%; height: 100.0%;"><b>ランク #27</b><br>Intake<br>Elevation: 1243.0m</div>`)[0];
+                popup_e2f55060072af4a2c96a90db766cb44b.setContent(html_3a29f429333fbab98ed3a2620a30ccf9);
+            
+        
+
+        marker_df21ba058ad95623d7ab827e671c7411.bindPopup(popup_e2f55060072af4a2c96a90db766cb44b)
+        ;
+
+        
+    
+    
+            marker_df21ba058ad95623d7ab827e671c7411.bindTooltip(
+                `<div>
+                     取水口 #27
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_df21ba058ad95623d7ab827e671c7411.setIcon(icon_50d86699a94bbf95c5124092a64dec47);
+            
+    
+            var marker_9428145f4850581ece1a0016d6328214 = L.marker(
+                [36.381408, 137.86273506896552],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_3daf04ded09d7813893104c03b061846 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3eef202ca8670c396457879a946fb84f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cec5d526d8eb5f4f4bc053ce440d7317 = $(`<div id="html_cec5d526d8eb5f4f4bc053ce440d7317" style="width: 100.0%; height: 100.0%;"><b>ランク #27</b><br>Powerhouse<br>Elevation: 560.0m<br><b>Power: 1939.4kW</b><br>Head: 1454.0m</div>`)[0];
+                popup_3eef202ca8670c396457879a946fb84f.setContent(html_cec5d526d8eb5f4f4bc053ce440d7317);
+            
+        
+
+        marker_9428145f4850581ece1a0016d6328214.bindPopup(popup_3eef202ca8670c396457879a946fb84f)
+        ;
+
+        
+    
+    
+            marker_9428145f4850581ece1a0016d6328214.bindTooltip(
+                `<div>
+                     発電所 #27 (1939.4kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9428145f4850581ece1a0016d6328214.setIcon(icon_3daf04ded09d7813893104c03b061846);
+            
+    
+            var poly_line_93a8879516c66af6589b8294fb53d803 = L.polyline(
+                [[36.391596, 137.77387755172415], [36.394143, 137.80349672413794], [36.381408, 137.86273506896552]],
+                {"bubblingMouseEvents": true, "color": "beige", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "beige", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_2527ac46d5121d78461d274d8ac047dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_65e1cd977c083f7465697342a9d191e8 = $(`<div id="html_65e1cd977c083f7465697342a9d191e8" style="width: 100.0%; height: 100.0%;"><b>ランク #27</b><br>Power: 1939.4kW<br>Head: 1454.0m</div>`)[0];
+                popup_2527ac46d5121d78461d274d8ac047dc.setContent(html_65e1cd977c083f7465697342a9d191e8);
+            
+        
+
+        poly_line_93a8879516c66af6589b8294fb53d803.bindPopup(popup_2527ac46d5121d78461d274d8ac047dc)
+        ;
+
+        
+    
+    
+            var marker_8769548fc0935d799c5e4b7c56c118ac = L.marker(
+                [36.419613000000005, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_e5d9f4ad9a7c8a33b29c548c6d57894f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b2bb43fc4cc7543421d061927a1f3e22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f11fe0411d0ae687c587b24dd9ffaabe = $(`<div id="html_f11fe0411d0ae687c587b24dd9ffaabe" style="width: 100.0%; height: 100.0%;"><b>ランク #28</b><br>Water Source<br>Elevation: 1999.0m<br>Power: 1938.7kW</div>`)[0];
+                popup_b2bb43fc4cc7543421d061927a1f3e22.setContent(html_f11fe0411d0ae687c587b24dd9ffaabe);
+            
+        
+
+        marker_8769548fc0935d799c5e4b7c56c118ac.bindPopup(popup_b2bb43fc4cc7543421d061927a1f3e22)
+        ;
+
+        
+    
+    
+            marker_8769548fc0935d799c5e4b7c56c118ac.bindTooltip(
+                `<div>
+                     水源 #28 (1938.7kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8769548fc0935d799c5e4b7c56c118ac.setIcon(icon_e5d9f4ad9a7c8a33b29c548c6d57894f);
+            
+    
+            var marker_35cd9bdfcc55140738c279db4ea2b7fd = L.marker(
+                [36.414519, 137.77810886206896],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_d3a0763549a9eb9728d0e39b3dd71f58 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c13dd0cc3a38fb687e8485cbab059410 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3679d7ac16c2514bf4ab8d5c3867ca06 = $(`<div id="html_3679d7ac16c2514bf4ab8d5c3867ca06" style="width: 100.0%; height: 100.0%;"><b>ランク #28</b><br>Intake<br>Elevation: 1571.0m</div>`)[0];
+                popup_c13dd0cc3a38fb687e8485cbab059410.setContent(html_3679d7ac16c2514bf4ab8d5c3867ca06);
+            
+        
+
+        marker_35cd9bdfcc55140738c279db4ea2b7fd.bindPopup(popup_c13dd0cc3a38fb687e8485cbab059410)
+        ;
+
+        
+    
+    
+            marker_35cd9bdfcc55140738c279db4ea2b7fd.bindTooltip(
+                `<div>
+                     取水口 #28
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_35cd9bdfcc55140738c279db4ea2b7fd.setIcon(icon_d3a0763549a9eb9728d0e39b3dd71f58);
+            
+    
+            var marker_32aefcd08b1dc14cd00fa2cfa9f778e0 = L.marker(
+                [36.394143, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_f1e2f948da67eabc85b17bfa16e5a03a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d8f56990f02cb4d6e5d282ab5d0d661 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c619b2797465dc58963edda35782f71 = $(`<div id="html_0c619b2797465dc58963edda35782f71" style="width: 100.0%; height: 100.0%;"><b>ランク #28</b><br>Powerhouse<br>Elevation: 570.0m<br><b>Power: 1938.7kW</b><br>Head: 1429.0m</div>`)[0];
+                popup_2d8f56990f02cb4d6e5d282ab5d0d661.setContent(html_0c619b2797465dc58963edda35782f71);
+            
+        
+
+        marker_32aefcd08b1dc14cd00fa2cfa9f778e0.bindPopup(popup_2d8f56990f02cb4d6e5d282ab5d0d661)
+        ;
+
+        
+    
+    
+            marker_32aefcd08b1dc14cd00fa2cfa9f778e0.bindTooltip(
+                `<div>
+                     発電所 #28 (1938.7kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_32aefcd08b1dc14cd00fa2cfa9f778e0.setIcon(icon_f1e2f948da67eabc85b17bfa16e5a03a);
+            
+    
+            var poly_line_525072e4c6c973e8341b2d4a107dbd4d = L.polyline(
+                [[36.419613000000005, 137.75695231034484], [36.414519, 137.77810886206896], [36.394143, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_23b04e57b7173edbcb57ed3d11c2b7b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf816fb8c728ce2faaed39993534194b = $(`<div id="html_bf816fb8c728ce2faaed39993534194b" style="width: 100.0%; height: 100.0%;"><b>ランク #28</b><br>Power: 1938.7kW<br>Head: 1429.0m</div>`)[0];
+                popup_23b04e57b7173edbcb57ed3d11c2b7b7.setContent(html_bf816fb8c728ce2faaed39993534194b);
+            
+        
+
+        poly_line_525072e4c6c973e8341b2d4a107dbd4d.bindPopup(popup_23b04e57b7173edbcb57ed3d11c2b7b7)
+        ;
+
+        
+    
+    
+            var marker_5165069eb5f05508889ec465b2f99256 = L.marker(
+                [36.394143, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_8424656df3f2ef6e0ac6cf849b80806e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d711414c232655e815fc45c431f0ca2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5433e522d6e477e6aac31dcfc5de9c57 = $(`<div id="html_5433e522d6e477e6aac31dcfc5de9c57" style="width: 100.0%; height: 100.0%;"><b>ランク #29</b><br>Water Source<br>Elevation: 1918.0m<br>Power: 1930.6kW</div>`)[0];
+                popup_0d711414c232655e815fc45c431f0ca2.setContent(html_5433e522d6e477e6aac31dcfc5de9c57);
+            
+        
+
+        marker_5165069eb5f05508889ec465b2f99256.bindPopup(popup_0d711414c232655e815fc45c431f0ca2)
+        ;
+
+        
+    
+    
+            marker_5165069eb5f05508889ec465b2f99256.bindTooltip(
+                `<div>
+                     水源 #29 (1930.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5165069eb5f05508889ec465b2f99256.setIcon(icon_8424656df3f2ef6e0ac6cf849b80806e);
+            
+    
+            var marker_71bb6ff58f155352bec6914c4b9c9822 = L.marker(
+                [36.383955, 137.752721],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_ba5a90a6b564c756e8323e47aa05ca8e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0e92ff46360d2851fc9b965c63557ab5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1695a551a6541decc69c4e35ca11ac2d = $(`<div id="html_1695a551a6541decc69c4e35ca11ac2d" style="width: 100.0%; height: 100.0%;"><b>ランク #29</b><br>Intake<br>Elevation: 1472.0m</div>`)[0];
+                popup_0e92ff46360d2851fc9b965c63557ab5.setContent(html_1695a551a6541decc69c4e35ca11ac2d);
+            
+        
+
+        marker_71bb6ff58f155352bec6914c4b9c9822.bindPopup(popup_0e92ff46360d2851fc9b965c63557ab5)
+        ;
+
+        
+    
+    
+            marker_71bb6ff58f155352bec6914c4b9c9822.bindTooltip(
+                `<div>
+                     取水口 #29
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_71bb6ff58f155352bec6914c4b9c9822.setIcon(icon_ba5a90a6b564c756e8323e47aa05ca8e);
+            
+    
+            var marker_eace94e0bbd49205148fb3f5a3c59a79 = L.marker(
+                [36.378861, 137.86696637931036],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_babe7c0bbbfdc5166c419e962e2c3579 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cee5f449cd422719b08e0dd96d098d01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0280b15697f553c90304c2c358808d27 = $(`<div id="html_0280b15697f553c90304c2c358808d27" style="width: 100.0%; height: 100.0%;"><b>ランク #29</b><br>Powerhouse<br>Elevation: 555.0m<br><b>Power: 1930.6kW</b><br>Head: 1363.0m</div>`)[0];
+                popup_cee5f449cd422719b08e0dd96d098d01.setContent(html_0280b15697f553c90304c2c358808d27);
+            
+        
+
+        marker_eace94e0bbd49205148fb3f5a3c59a79.bindPopup(popup_cee5f449cd422719b08e0dd96d098d01)
+        ;
+
+        
+    
+    
+            marker_eace94e0bbd49205148fb3f5a3c59a79.bindTooltip(
+                `<div>
+                     発電所 #29 (1930.6kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eace94e0bbd49205148fb3f5a3c59a79.setIcon(icon_babe7c0bbbfdc5166c419e962e2c3579);
+            
+    
+            var poly_line_dc3b9bf6441e9a2a0c38acf4c53742a8 = L.polyline(
+                [[36.394143, 137.75695231034484], [36.383955, 137.752721], [36.378861, 137.86696637931036]],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_85242f45cafb214fce300088fbd67c70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c5e2cc3b07f011d4434b4dbc3df0dc8b = $(`<div id="html_c5e2cc3b07f011d4434b4dbc3df0dc8b" style="width: 100.0%; height: 100.0%;"><b>ランク #29</b><br>Power: 1930.6kW<br>Head: 1363.0m</div>`)[0];
+                popup_85242f45cafb214fce300088fbd67c70.setContent(html_c5e2cc3b07f011d4434b4dbc3df0dc8b);
+            
+        
+
+        poly_line_dc3b9bf6441e9a2a0c38acf4c53742a8.bindPopup(popup_85242f45cafb214fce300088fbd67c70)
+        ;
+
+        
+    
+    
+            var marker_f604cc98f0f073e312f59f7a19f1819b = L.marker(
+                [36.409425, 137.75695231034484],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_5a14a0b793d5a22a793e6ae4a874e3fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_29a5eb381af8e96669add2ab78a8365f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85d762bfff6b20029df976ad917582ca = $(`<div id="html_85d762bfff6b20029df976ad917582ca" style="width: 100.0%; height: 100.0%;"><b>ランク #30</b><br>Water Source<br>Elevation: 2013.0m<br>Power: 1930.3kW</div>`)[0];
+                popup_29a5eb381af8e96669add2ab78a8365f.setContent(html_85d762bfff6b20029df976ad917582ca);
+            
+        
+
+        marker_f604cc98f0f073e312f59f7a19f1819b.bindPopup(popup_29a5eb381af8e96669add2ab78a8365f)
+        ;
+
+        
+    
+    
+            marker_f604cc98f0f073e312f59f7a19f1819b.bindTooltip(
+                `<div>
+                     水源 #30 (1930.3kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f604cc98f0f073e312f59f7a19f1819b.setIcon(icon_5a14a0b793d5a22a793e6ae4a874e3fb);
+            
+    
+            var marker_f97fc7aa51136377f2043f6fef087d62 = L.marker(
+                [36.414519, 137.77810886206896],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_17bf075f0591f4b5e24d35b9ec7cee61 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2eac231247e9f78eddc3019fd8339dce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39c6b8c209236ef8794aeb878d80a9cc = $(`<div id="html_39c6b8c209236ef8794aeb878d80a9cc" style="width: 100.0%; height: 100.0%;"><b>ランク #30</b><br>Intake<br>Elevation: 1571.0m</div>`)[0];
+                popup_2eac231247e9f78eddc3019fd8339dce.setContent(html_39c6b8c209236ef8794aeb878d80a9cc);
+            
+        
+
+        marker_f97fc7aa51136377f2043f6fef087d62.bindPopup(popup_2eac231247e9f78eddc3019fd8339dce)
+        ;
+
+        
+    
+    
+            marker_f97fc7aa51136377f2043f6fef087d62.bindTooltip(
+                `<div>
+                     取水口 #30
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f97fc7aa51136377f2043f6fef087d62.setIcon(icon_17bf075f0591f4b5e24d35b9ec7cee61);
+            
+    
+            var marker_adc1c2bc19c4da949e41dc75d03d5372 = L.marker(
+                [36.394143, 137.85850375862069],
+                {
+}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+            var icon_267fa8e65bb710f7ffc85cdfed1a3960 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_848cf4f8d37efc7c7485cb0202c74032 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e4371a3d648b4f722370702caeaef0b8 = $(`<div id="html_e4371a3d648b4f722370702caeaef0b8" style="width: 100.0%; height: 100.0%;"><b>ランク #30</b><br>Powerhouse<br>Elevation: 570.0m<br><b>Power: 1930.3kW</b><br>Head: 1443.0m</div>`)[0];
+                popup_848cf4f8d37efc7c7485cb0202c74032.setContent(html_e4371a3d648b4f722370702caeaef0b8);
+            
+        
+
+        marker_adc1c2bc19c4da949e41dc75d03d5372.bindPopup(popup_848cf4f8d37efc7c7485cb0202c74032)
+        ;
+
+        
+    
+    
+            marker_adc1c2bc19c4da949e41dc75d03d5372.bindTooltip(
+                `<div>
+                     発電所 #30 (1930.3kW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_adc1c2bc19c4da949e41dc75d03d5372.setIcon(icon_267fa8e65bb710f7ffc85cdfed1a3960);
+            
+    
+            var poly_line_7eb7ae1e163c42d9e5f4d7dafc9fac60 = L.polyline(
+                [[36.409425, 137.75695231034484], [36.414519, 137.77810886206896], [36.394143, 137.85850375862069]],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_76e7cd632663cb4ebc01dddcf1857074);
+        
+    
+        var popup_456f49e83948ebff4c1e2cb6e4ac661f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c67d9ff77b1eab9d6a2f17e64074b2be = $(`<div id="html_c67d9ff77b1eab9d6a2f17e64074b2be" style="width: 100.0%; height: 100.0%;"><b>ランク #30</b><br>Power: 1930.3kW<br>Head: 1443.0m</div>`)[0];
+                popup_456f49e83948ebff4c1e2cb6e4ac661f.setContent(html_c67d9ff77b1eab9d6a2f17e64074b2be);
+            
+        
+
+        poly_line_7eb7ae1e163c42d9e5f4d7dafc9fac60.bindPopup(popup_456f49e83948ebff4c1e2cb6e4ac661f)
+        ;
+
+        
+    
+</script>
+</html>

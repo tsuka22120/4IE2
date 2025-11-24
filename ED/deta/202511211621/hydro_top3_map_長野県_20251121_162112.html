@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4e31e9c4a523e4f31fe374add462ddcb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; right: 10px; width: 200px; height: auto; 
+                background-color: white; z-index:9999; font-size:14px;
+                border:2px solid grey; border-radius: 5px; padding: 10px">
+    <p style="margin: 0; font-weight: bold;">Legend - Top 3</p>
+    <p style="margin: 5px 0;">Water Source (High Elevation)</p>
+    <p style="margin: 5px 0;">Intake (Mid Elevation)</p>
+    <p style="margin: 5px 0;">Powerhouse (Low Elevation)</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_4e31e9c4a523e4f31fe374add462ddcb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4e31e9c4a523e4f31fe374add462ddcb = L.map(
+                "map_4e31e9c4a523e4f31fe374add462ddcb",
+                {
+                    center: [36.1143945, 138.0319015],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_403348bb06f0940ed89bc070bfcd97be = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_403348bb06f0940ed89bc070bfcd97be.addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var marker_353f45688529af857779b5ec05724b04 = L.marker(
+                [36.41973733333333, 138.4563118],
+                {
+}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var icon_ef66f6f9998c5ed66b542d65a04ca43f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f504e169c7425aba29a4616aeeebce3b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2ff2bffcbbf2769d693a79f4b75f425 = $(`<div id="html_c2ff2bffcbbf2769d693a79f4b75f425" style="width: 100.0%; height: 100.0%;">Water Source #1<br>Elevation: 2172.0m</div>`)[0];
+                popup_f504e169c7425aba29a4616aeeebce3b.setContent(html_c2ff2bffcbbf2769d693a79f4b75f425);
+            
+        
+
+        marker_353f45688529af857779b5ec05724b04.bindPopup(popup_f504e169c7425aba29a4616aeeebce3b)
+        ;
+
+        
+    
+    
+            marker_353f45688529af857779b5ec05724b04.bindTooltip(
+                `<div>
+                     Water Source #1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_353f45688529af857779b5ec05724b04.setIcon(icon_ef66f6f9998c5ed66b542d65a04ca43f);
+            
+    
+            var marker_fc6c5f8edcb1bd137191282634c17f8d = L.marker(
+                [36.41973733333333, 138.424874],
+                {
+}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var icon_551bf15aa3445e3449b19bd321f2e8d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_678bdd8e84f3ee6d3136704776f91079 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ddac7750ae4ef4da75d13643b579dfcc = $(`<div id="html_ddac7750ae4ef4da75d13643b579dfcc" style="width: 100.0%; height: 100.0%;">Intake #1<br>Elevation: 1821.0m</div>`)[0];
+                popup_678bdd8e84f3ee6d3136704776f91079.setContent(html_ddac7750ae4ef4da75d13643b579dfcc);
+            
+        
+
+        marker_fc6c5f8edcb1bd137191282634c17f8d.bindPopup(popup_678bdd8e84f3ee6d3136704776f91079)
+        ;
+
+        
+    
+    
+            marker_fc6c5f8edcb1bd137191282634c17f8d.bindTooltip(
+                `<div>
+                     Intake #1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fc6c5f8edcb1bd137191282634c17f8d.setIcon(icon_551bf15aa3445e3449b19bd321f2e8d4);
+            
+    
+            var marker_9266607c0779009b4ffd282323353abd = L.marker(
+                [36.33831257777778, 138.3619984],
+                {
+}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var icon_d62e121e664a34be64606f608cffd4a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d17d38763f43c95ae4dbb9db49b4b20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7111ba127aa5e2ea64f6366f8f323766 = $(`<div id="html_7111ba127aa5e2ea64f6366f8f323766" style="width: 100.0%; height: 100.0%;">Powerhouse #1<br>Elevation: 529.0m<br>Power: 1051.8kW</div>`)[0];
+                popup_9d17d38763f43c95ae4dbb9db49b4b20.setContent(html_7111ba127aa5e2ea64f6366f8f323766);
+            
+        
+
+        marker_9266607c0779009b4ffd282323353abd.bindPopup(popup_9d17d38763f43c95ae4dbb9db49b4b20)
+        ;
+
+        
+    
+    
+            marker_9266607c0779009b4ffd282323353abd.bindTooltip(
+                `<div>
+                     Powerhouse #1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9266607c0779009b4ffd282323353abd.setIcon(icon_d62e121e664a34be64606f608cffd4a8);
+            
+    
+            var poly_line_ed5cf7e936483ee5212497d28d9a9e0b = L.polyline(
+                [[36.41973733333333, 138.4563118], [36.41973733333333, 138.424874], [36.33831257777778, 138.3619984]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+        var popup_aa7b068d4989fde1950ab7ba15e839d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_217eb11e1a8c0c2c7aaa07dc11eb3154 = $(`<div id="html_217eb11e1a8c0c2c7aaa07dc11eb3154" style="width: 100.0%; height: 100.0%;">Combination #1<br>Power: 1051.8kW</div>`)[0];
+                popup_aa7b068d4989fde1950ab7ba15e839d5.setContent(html_217eb11e1a8c0c2c7aaa07dc11eb3154);
+            
+        
+
+        poly_line_ed5cf7e936483ee5212497d28d9a9e0b.bindPopup(popup_aa7b068d4989fde1950ab7ba15e839d5)
+        ;
+
+        
+    
+    
+            var marker_7cf554fd342dde3cb933635e3ca5a23b = L.marker(
+                [36.256887822222225, 137.7332424],
+                {
+}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var icon_87f5bcccf905c6d49c6830ece21f7589 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b7b6240280e1e1dd54c12ded09229b57 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e428516809388ca7dc202652eb477fe4 = $(`<div id="html_e428516809388ca7dc202652eb477fe4" style="width: 100.0%; height: 100.0%;">Water Source #2<br>Elevation: 2169.0m</div>`)[0];
+                popup_b7b6240280e1e1dd54c12ded09229b57.setContent(html_e428516809388ca7dc202652eb477fe4);
+            
+        
+
+        marker_7cf554fd342dde3cb933635e3ca5a23b.bindPopup(popup_b7b6240280e1e1dd54c12ded09229b57)
+        ;
+
+        
+    
+    
+            marker_7cf554fd342dde3cb933635e3ca5a23b.bindTooltip(
+                `<div>
+                     Water Source #2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7cf554fd342dde3cb933635e3ca5a23b.setIcon(icon_87f5bcccf905c6d49c6830ece21f7589);
+            
+    
+            var marker_34d4c7d39e0235e8207d167ecfd9bddb = L.marker(
+                [36.256887822222225, 137.76468020000002],
+                {
+}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var icon_c488b0e835c8b18407bfa868b417895d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d905f88857b1a031eab5bec2dce912a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5bbda296e9529aaee6db6b1b19b02818 = $(`<div id="html_5bbda296e9529aaee6db6b1b19b02818" style="width: 100.0%; height: 100.0%;">Intake #2<br>Elevation: 1643.0m</div>`)[0];
+                popup_2d905f88857b1a031eab5bec2dce912a.setContent(html_5bbda296e9529aaee6db6b1b19b02818);
+            
+        
+
+        marker_34d4c7d39e0235e8207d167ecfd9bddb.bindPopup(popup_2d905f88857b1a031eab5bec2dce912a)
+        ;
+
+        
+    
+    
+            marker_34d4c7d39e0235e8207d167ecfd9bddb.bindTooltip(
+                `<div>
+                     Intake #2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_34d4c7d39e0235e8207d167ecfd9bddb.setIcon(icon_c488b0e835c8b18407bfa868b417895d);
+            
+    
+            var marker_592ede66dd3032365787caf31d7bb46d = L.marker(
+                [36.256887822222225, 137.8904314],
+                {
+}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var icon_e597d735b3a39693968643e91ab10c3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ddfdaf54c5dff8313cdcd8e4909d694 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f9374cdb59689f0aabc1e161f8d90ca = $(`<div id="html_4f9374cdb59689f0aabc1e161f8d90ca" style="width: 100.0%; height: 100.0%;">Powerhouse #2<br>Elevation: 604.0m<br>Power: 940.6kW</div>`)[0];
+                popup_4ddfdaf54c5dff8313cdcd8e4909d694.setContent(html_4f9374cdb59689f0aabc1e161f8d90ca);
+            
+        
+
+        marker_592ede66dd3032365787caf31d7bb46d.bindPopup(popup_4ddfdaf54c5dff8313cdcd8e4909d694)
+        ;
+
+        
+    
+    
+            marker_592ede66dd3032365787caf31d7bb46d.bindTooltip(
+                `<div>
+                     Powerhouse #2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_592ede66dd3032365787caf31d7bb46d.setIcon(icon_e597d735b3a39693968643e91ab10c3d);
+            
+    
+            var poly_line_a4cabcef7635e5b94c5bc5f01946c0a3 = L.polyline(
+                [[36.256887822222225, 137.7332424], [36.256887822222225, 137.76468020000002], [36.256887822222225, 137.8904314]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+        var popup_cfbb199b87bae1c271d9392fdb63ec7a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18de33da6c9ce0e228f73c93b3351b2e = $(`<div id="html_18de33da6c9ce0e228f73c93b3351b2e" style="width: 100.0%; height: 100.0%;">Combination #2<br>Power: 940.6kW</div>`)[0];
+                popup_cfbb199b87bae1c271d9392fdb63ec7a.setContent(html_18de33da6c9ce0e228f73c93b3351b2e);
+            
+        
+
+        poly_line_a4cabcef7635e5b94c5bc5f01946c0a3.bindPopup(popup_cfbb199b87bae1c271d9392fdb63ec7a)
+        ;
+
+        
+    
+    
+            var marker_f56c368948b201cd93a95447bd3d6711 = L.marker(
+                [36.41973733333333, 138.4563118],
+                {
+}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var icon_464ec8d0e271fff55e25b8aa144fdff8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_46b100408934858da40a77ac86038bb0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d59f611311a73905ca031d4f6c6a39d1 = $(`<div id="html_d59f611311a73905ca031d4f6c6a39d1" style="width: 100.0%; height: 100.0%;">Water Source #3<br>Elevation: 2172.0m</div>`)[0];
+                popup_46b100408934858da40a77ac86038bb0.setContent(html_d59f611311a73905ca031d4f6c6a39d1);
+            
+        
+
+        marker_f56c368948b201cd93a95447bd3d6711.bindPopup(popup_46b100408934858da40a77ac86038bb0)
+        ;
+
+        
+    
+    
+            marker_f56c368948b201cd93a95447bd3d6711.bindTooltip(
+                `<div>
+                     Water Source #3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f56c368948b201cd93a95447bd3d6711.setIcon(icon_464ec8d0e271fff55e25b8aa144fdff8);
+            
+    
+            var marker_7c18f79b771b4db4e37a5b8866f7b453 = L.marker(
+                [36.41973733333333, 138.424874],
+                {
+}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var icon_8e609d8e0765098ec5c4d17545d7b842 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "filter",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ffd88e5458d9007e90c678b801fc7d28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c53d8524e6af79b6aa1bd32f14ab9013 = $(`<div id="html_c53d8524e6af79b6aa1bd32f14ab9013" style="width: 100.0%; height: 100.0%;">Intake #3<br>Elevation: 1821.0m</div>`)[0];
+                popup_ffd88e5458d9007e90c678b801fc7d28.setContent(html_c53d8524e6af79b6aa1bd32f14ab9013);
+            
+        
+
+        marker_7c18f79b771b4db4e37a5b8866f7b453.bindPopup(popup_ffd88e5458d9007e90c678b801fc7d28)
+        ;
+
+        
+    
+    
+            marker_7c18f79b771b4db4e37a5b8866f7b453.bindTooltip(
+                `<div>
+                     Intake #3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7c18f79b771b4db4e37a5b8866f7b453.setIcon(icon_8e609d8e0765098ec5c4d17545d7b842);
+            
+    
+            var marker_0a80e81b57411b88681b490d7a6e139a = L.marker(
+                [36.37902495555556, 138.2991228],
+                {
+}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+            var icon_da12cd9be6a250a3d4f595dd2becce7f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "bolt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3b0dd469675609207823b9cd1fbd0018 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cf7eff8d7eb92223253182ed50cb040 = $(`<div id="html_4cf7eff8d7eb92223253182ed50cb040" style="width: 100.0%; height: 100.0%;">Powerhouse #3<br>Elevation: 531.0m<br>Power: 904.2kW</div>`)[0];
+                popup_3b0dd469675609207823b9cd1fbd0018.setContent(html_4cf7eff8d7eb92223253182ed50cb040);
+            
+        
+
+        marker_0a80e81b57411b88681b490d7a6e139a.bindPopup(popup_3b0dd469675609207823b9cd1fbd0018)
+        ;
+
+        
+    
+    
+            marker_0a80e81b57411b88681b490d7a6e139a.bindTooltip(
+                `<div>
+                     Powerhouse #3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0a80e81b57411b88681b490d7a6e139a.setIcon(icon_da12cd9be6a250a3d4f595dd2becce7f);
+            
+    
+            var poly_line_1f9e0e72609e9fa0a3e82086ef05038b = L.polyline(
+                [[36.41973733333333, 138.4563118], [36.41973733333333, 138.424874], [36.37902495555556, 138.2991228]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+        var popup_fc39a34e7afb230107ac71ef25c8708a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_520721fc44ec2d98733e8de67f9630d1 = $(`<div id="html_520721fc44ec2d98733e8de67f9630d1" style="width: 100.0%; height: 100.0%;">Combination #3<br>Power: 904.2kW</div>`)[0];
+                popup_fc39a34e7afb230107ac71ef25c8708a.setContent(html_520721fc44ec2d98733e8de67f9630d1);
+            
+        
+
+        poly_line_1f9e0e72609e9fa0a3e82086ef05038b.bindPopup(popup_fc39a34e7afb230107ac71ef25c8708a)
+        ;
+
+        
+    
+    
+            tile_layer_403348bb06f0940ed89bc070bfcd97be.addTo(map_4e31e9c4a523e4f31fe374add462ddcb);
+        
+    
+                marker_353f45688529af857779b5ec05724b04.setIcon(icon_ef66f6f9998c5ed66b542d65a04ca43f);
+            
+    
+                marker_fc6c5f8edcb1bd137191282634c17f8d.setIcon(icon_551bf15aa3445e3449b19bd321f2e8d4);
+            
+    
+                marker_9266607c0779009b4ffd282323353abd.setIcon(icon_d62e121e664a34be64606f608cffd4a8);
+            
+    
+                marker_7cf554fd342dde3cb933635e3ca5a23b.setIcon(icon_87f5bcccf905c6d49c6830ece21f7589);
+            
+    
+                marker_34d4c7d39e0235e8207d167ecfd9bddb.setIcon(icon_c488b0e835c8b18407bfa868b417895d);
+            
+    
+                marker_592ede66dd3032365787caf31d7bb46d.setIcon(icon_e597d735b3a39693968643e91ab10c3d);
+            
+    
+                marker_f56c368948b201cd93a95447bd3d6711.setIcon(icon_464ec8d0e271fff55e25b8aa144fdff8);
+            
+    
+                marker_7c18f79b771b4db4e37a5b8866f7b453.setIcon(icon_8e609d8e0765098ec5c4d17545d7b842);
+            
+    
+                marker_0a80e81b57411b88681b490d7a6e139a.setIcon(icon_da12cd9be6a250a3d4f595dd2becce7f);
+            
+</script>
+</html>
