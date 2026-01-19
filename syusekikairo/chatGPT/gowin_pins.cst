@@ -1,0 +1,15 @@
+# gowin_pins.cst
+# Pin assignment (simple set_io format)
+# Device: Gowin GW1NR-9 (example)
+# Inputs:
+set_io iA 69   # SW1
+set_io iB 68   # SW2
+set_io iC 57   # SW3 (carry-in / borrow-in)
+set_io mode 56 # SW4 (mode: 0=FA,1=FS)
+# Outputs:
+set_io LD1 10  # LD1: sum/diff (inverted on display)
+set_io LD2 11  # LD2: carry/borrow (inverted on display)
+
+# Note:
+# - 実際の Gowin EDA で使う制約ファイル形式はバージョンによって異なる。
+# - 必要に応じて、プロジェクトの .pcf や .xdc 形式へ変換すること。
