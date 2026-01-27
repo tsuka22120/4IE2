@@ -11,7 +11,18 @@ from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
-from tqdm.notebook import tqdm
+
+# tqdmのインポート（Notebook互換）
+try:
+    from tqdm.auto import tqdm  # 環境に応じて自動選択
+except ImportError:
+    try:
+        from tqdm import tqdm
+    except ImportError:
+        # tqdmがない場合のフォールバック
+        def tqdm(iterable, *args, **kwargs):
+            return iterable
+
 import time
 from datetime import datetime
 from itertools import combinations
@@ -22,6 +33,14 @@ import sys
 import os
 import threading
 import matplotlib
+
+# 水文データプロバイダー
+try:
+    from hydro_data_provider import HydroDataProvider
+    HYDRO_PROVIDER_AVAILABLE = True
+except ImportError:
+    HYDRO_PROVIDER_AVAILABLE = False
+    print("⚠ hydro_data_providerが利用できません。推定ロジックを使用します。")
 
 warnings.filterwarnings('ignore')
 
@@ -118,6 +137,17 @@ class HydroSiteSelectorV2:
         self.existing_dams = []
         self.region_name = None
         self.precipitation = None
+        
+        # V3: 水文データプロバイダー
+        self.hydro_provider = None
+        if HYDRO_PROVIDER_AVAILABLE:
+            # DEMファイルが存在する場合は指定
+            dem_path = os.path.join(os.path.dirname(__file__), 'merge.tif')
+            if os.path.exists(dem_path):
+                self.hydro_provider = HydroDataProvider(dem_path=dem_path)
+            else:
+                self.hydro_provider = HydroDataProvider()
+            print("✓ 精密水文データプロバイダー有効")
     
     def update_status(self, stage=None, progress=None, message=None):
         if stage:
@@ -408,35 +438,77 @@ class HydroSiteSelectorV2:
             return False
     
     def _estimate_river_flows_v2(self):
-        """V2: 集水域ベースの河川流量推定"""
-        print(f"  河川流量を推定中（集水域ベース）...")
+        """V2/V3: 精密水文データを使用した河川流量推定"""
         
-        # 河川タイプ別の基準流量 (m³/s)
+        # 精密データプロバイダーが利用可能な場合
+        if self.hydro_provider:
+            print(f"  精密水文データを使用して河川流量を取得中...")
+            self._estimate_flows_with_provider()
+        else:
+            print(f"  河川流量を推定中（従来ロジック）...")
+            self._estimate_flows_legacy()
+    
+    def _estimate_flows_with_provider(self):
+        """精密水文データプロバイダーを使用した流量推定"""
+        avg_elevation = np.mean(self.elevation_data) if len(self.elevation_data) > 0 else 500
+        data_sources = {'water_info_db': 0, 'ksj': 0, 'dem': 0, 'estimated': 0}
+        
+        for river in self.river_data:
+            # 河川の中心座標を取得
+            try:
+                centroid = river['geometry'].centroid
+                lat, lon = centroid.y, centroid.x
+            except:
+                lat, lon = self.center_lat, self.center_lon
+            
+            # 精密データプロバイダーから流量データを取得
+            flow_data = self.hydro_provider.get_flow_data(
+                lat=lat,
+                lon=lon,
+                river_name=river.get('name'),
+                river_length_km=river.get('length_km', 1.0),
+                elevation=avg_elevation,
+                precipitation_mm=self.precipitation or 1500
+            )
+            
+            river['catchment_area_km2'] = flow_data['catchment_area']
+            river['estimated_flow'] = flow_data['flow']
+            river['flow_source'] = flow_data['source']
+            river['flow_confidence'] = flow_data['confidence']
+            self.river_flow_estimates[river['id']] = flow_data['flow']
+            
+            data_sources[flow_data['source']] = data_sources.get(flow_data['source'], 0) + 1
+        
+        if self.river_data:
+            avg_flow = np.mean(list(self.river_flow_estimates.values()))
+            max_flow = max(self.river_flow_estimates.values())
+            print(f"  ✓ 流量取得完了: 平均 {avg_flow:.2f} m³/s, 最大 {max_flow:.2f} m³/s")
+            print(f"  データソース内訳: 実測={data_sources.get('water_info_db', 0)}, "
+                  f"国土数値情報={data_sources.get('ksj', 0)}, "
+                  f"DEM解析={data_sources.get('dem', 0)}, "
+                  f"推定={data_sources.get('estimated', 0)}")
+    
+    def _estimate_flows_legacy(self):
+        """従来の推定ロジックによる流量計算（フォールバック）"""
         BASE_FLOWS = {
-            'river': 5.0,    # 大河川
-            'stream': 1.0,   # 小河川
-            'canal': 2.0     # 用水路
+            'river': 5.0,
+            'stream': 1.0,
+            'canal': 2.0
         }
         
         for river in self.river_data:
-            # 集水域面積の推定（河川長から概算）
-            length_km = max(river['length_km'], 0.5)  # 最低0.5km
-            
-            # 河川タイプに基づく集水域係数
+            length_km = max(river['length_km'], 0.5)
             river_type = river['type']
+            
             if river_type == 'river':
-                # 大河川は広い集水域
                 catchment_area_km2 = 2.0 * (length_km ** 1.8)
             elif river_type == 'stream':
-                # 小河川
                 catchment_area_km2 = 1.0 * (length_km ** 1.6)
             else:
-                # その他
                 catchment_area_km2 = 0.5 * (length_km ** 1.5)
             
             catchment_area_km2 = max(2.0, min(catchment_area_km2, 2000.0))
             
-            # 流出係数（平均標高から推定）
             avg_elevation = np.mean(self.elevation_data) if len(self.elevation_data) > 0 else 500
             if avg_elevation > 1000:
                 runoff_coef = RUNOFF_COEFFICIENTS['mountain']
@@ -445,21 +517,16 @@ class HydroSiteSelectorV2:
             else:
                 runoff_coef = RUNOFF_COEFFICIENTS['plain']
             
-            # 流量計算
-            # 方法1: 集水域ベース
-            # Q = A(km²) × P(mm/年) × C / (365 × 24 × 3600)
             seconds_per_year = 365 * 24 * 3600
             flow_catchment = (catchment_area_km2 * 1e6) * (self.precipitation / 1000) * runoff_coef / seconds_per_year
-            
-            # 方法2: タイプベースの基準流量
             base_flow = BASE_FLOWS.get(river_type, 1.0)
-            
-            # 両方の平均を取る（安定した推定）
             estimated_flow = (flow_catchment + base_flow) / 2.0
             estimated_flow = max(0.5, min(estimated_flow, 100.0))
             
             river['catchment_area_km2'] = catchment_area_km2
             river['estimated_flow'] = estimated_flow
+            river['flow_source'] = 'estimated'
+            river['flow_confidence'] = 0.3
             self.river_flow_estimates[river['id']] = estimated_flow
         
         if self.river_data:
