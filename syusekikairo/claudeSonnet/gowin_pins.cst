@@ -1,0 +1,19 @@
+// Gowin GW1NR-9 ピン配置ファイル
+
+// 入力ピン (スイッチ)
+IO_LOC "iA" 69;          // SW1
+IO_LOC "iB" 68;          // SW2
+IO_LOC "iCy_Br" 57;      // SW3
+IO_LOC "iMode" 56;       // SW4
+
+// 出力ピン (LED)
+IO_LOC "oLD1" 10;        // LD1 - 和/差
+IO_LOC "oLD2" 11;        // LD2 - 桁上げ/借用
+
+// IO標準設定
+IO_PORT "iA" PULL_MODE=UP IO_TYPE=LVCMOS33;
+IO_PORT "iB" PULL_MODE=UP IO_TYPE=LVCMOS33;
+IO_PORT "iCy_Br" PULL_MODE=UP IO_TYPE=LVCMOS33;
+IO_PORT "iMode" PULL_MODE=UP IO_TYPE=LVCMOS33;
+IO_PORT "oLD1" IO_TYPE=LVCMOS33;
+IO_PORT "oLD2" IO_TYPE=LVCMOS33;

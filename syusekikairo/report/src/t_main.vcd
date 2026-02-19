@@ -1,0 +1,189 @@
+$date
+	Tue Dec 09 15:44:58 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module main_tb $end
+$var wire 1 ! LD2 $end
+$var wire 1 " LD1 $end
+$var reg 1 # SW1 $end
+$var reg 1 $ SW2 $end
+$var reg 1 % SW3 $end
+$var reg 1 & SW4 $end
+$scope module uut $end
+$var wire 1 # SW1 $end
+$var wire 1 $ SW2 $end
+$var wire 1 % SW3 $end
+$var wire 1 & SW4 $end
+$var wire 2 ' subResult [1:0] $end
+$var wire 1 ( subD $end
+$var wire 1 ) subB $end
+$var wire 2 * muxResult [1:0] $end
+$var wire 1 + addS $end
+$var wire 2 , addResult [1:0] $end
+$var wire 1 - addC $end
+$var wire 1 ! LD2 $end
+$var wire 1 " LD1 $end
+$scope module FA $end
+$var wire 1 # iA $end
+$var wire 1 $ iB $end
+$var wire 1 % iCy $end
+$var wire 1 - oCy $end
+$var wire 1 . s1 $end
+$var wire 1 + oS $end
+$var wire 1 / c2 $end
+$var wire 1 0 c1 $end
+$scope module HA1 $end
+$var wire 1 # iA $end
+$var wire 1 $ iB $end
+$var wire 1 0 oC $end
+$var wire 1 . oS $end
+$upscope $end
+$scope module HA2 $end
+$var wire 1 . iA $end
+$var wire 1 % iB $end
+$var wire 1 / oC $end
+$var wire 1 + oS $end
+$upscope $end
+$upscope $end
+$scope module FS $end
+$var wire 1 # iA $end
+$var wire 1 $ iB $end
+$var wire 1 % iBr $end
+$var wire 1 ) oBr $end
+$var wire 1 ( oD $end
+$var wire 1 1 d1 $end
+$var wire 1 2 b2 $end
+$var wire 1 3 b1 $end
+$scope module HS1 $end
+$var wire 1 # iA $end
+$var wire 1 $ iB $end
+$var wire 1 3 oB $end
+$var wire 1 1 oD $end
+$upscope $end
+$scope module HS2 $end
+$var wire 1 1 iA $end
+$var wire 1 % iB $end
+$var wire 1 2 oB $end
+$var wire 1 ( oD $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+03
+02
+01
+00
+0/
+0.
+0-
+b0 ,
+0+
+b0 *
+0)
+0(
+b0 '
+0&
+0%
+0$
+0#
+1"
+1!
+$end
+#10000
+0"
+b1 *
+b1 ,
+1+
+b1 '
+1(
+1.
+11
+1#
+#20000
+0!
+1"
+b10 *
+0+
+b10 ,
+1-
+b0 '
+0(
+0.
+10
+01
+1$
+#30000
+0"
+b11 *
+1)
+b11 ,
+1+
+b11 '
+1(
+12
+1%
+#40000
+1!
+1"
+b0 *
+0)
+0-
+b0 ,
+0+
+b0 '
+0(
+02
+00
+0%
+0$
+0#
+1&
+#50000
+0"
+b1 *
+b1 ,
+1+
+b1 '
+1(
+1.
+11
+1#
+#60000
+1"
+b0 *
+0+
+b10 ,
+1-
+b0 '
+0(
+0.
+10
+01
+1$
+#70000
+0!
+0"
+b11 *
+1)
+1+
+b1 ,
+0-
+b11 '
+1(
+13
+1.
+00
+11
+0#
+#90000
