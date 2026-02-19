@@ -1,0 +1,46 @@
+//Copyright (C)2014-2024 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Physical Constraints file
+//Tool Version: V1.9
+//Part Number: GW1NR-LV9QN88PC6/I5
+//Created Time: 2026-02-20
+
+IO_LOC "iClk"           52;
+IO_LOC "oDigit[0]"      83;
+IO_LOC "oDigit[1]"      84;
+IO_LOC "oDigit[2]"      85;
+IO_LOC "oDigit[3]"      86;
+IO_LOC "oPattern[0]"    75;
+IO_LOC "oPattern[1]"    74;
+IO_LOC "oPattern[2]"    73;
+IO_LOC "oPattern[3]"    72;
+IO_LOC "oPattern[4]"    71;
+IO_LOC "oPattern[5]"    70;
+IO_LOC "oPattern[6]"    48;
+IO_LOC "oPattern[7]"    49;
+IO_LOC "oLed[0]"        10;
+IO_LOC "oLed[1]"        11;
+IO_LOC "oLed[2]"        13;
+IO_LOC "oLed[3]"        14;
+IO_LOC "oLed[4]"        15;
+IO_LOC "oLed[5]"        16;
+IO_LOC "iToggleSw[0]"   69;
+IO_LOC "iToggleSw[1]"   68;
+IO_LOC "iToggleSw[2]"   57;
+IO_LOC "iToggleSw[3]"   56;
+IO_LOC "iToggleSw[4]"   55;
+IO_LOC "iToggleSw[5]"   54;
+IO_LOC "iToggleSw[6]"   53;
+IO_LOC "iToggleSw[7]"   51;
+IO_LOC "iToggleSw[8]"   42;
+IO_LOC "iToggleSw[9]"   41;
+IO_LOC "iToggleSw[10]"  35;
+IO_LOC "iToggleSw[11]"  40;
+IO_LOC "iToggleSw[12]"  34;
+IO_LOC "iToggleSw[13]"  33;
+IO_LOC "iToggleSw[14]"  30;
+IO_LOC "iToggleSw[15]"  29;
+IO_LOC "iToggleSw[16]"  32;
+IO_LOC "iToggleSw[17]"  31;
+IO_LOC "iPushSw[0]"     4;
+IO_LOC "iPushSw[1]"     3;
