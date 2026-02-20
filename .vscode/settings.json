@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^python -c \"import hydro_selector_v2; print\\('✓ モジュールのインポート成功'\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
