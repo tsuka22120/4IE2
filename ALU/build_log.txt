@@ -1,0 +1,27 @@
+﻿*** GOWIN Tcl Command Line Console  *** 
+can't find device: GW1NR-LV9QN88PC6/I5 GW1NR-9
+gw_sh.exe : 
+発生場所 行:1 文字:1
++ & "C:\Gowin\Gowin_V
+1.9.11.03_Education_x
+64\IDE\bin\gw_sh.exe"
+ build_g ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (:String   
+ ) [], RemoteExce    
+ption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+    while executing
+"set_device -name GW1
+NR-9 GW1NR-LV9QN88PC6
+/I5"
+    (file "build_gowi
+n.tcl" line 6)

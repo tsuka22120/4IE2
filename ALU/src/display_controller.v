@@ -97,7 +97,7 @@ module display_controller (
     end
 
     //=========================================================================
-    // 7セグメントデコーダ（アクティブLOW: 0=点灯, 1=消灯）
+    // 7セグメントデコーダ（アクティブHIGH: 1=点灯, 0=消灯）
     //
     // ピン対応 (PIN.md準拠):
     //   oPattern[0] = セグa (ピン75)
@@ -107,7 +107,7 @@ module display_controller (
     //   oPattern[4] = セグe (ピン71)
     //   oPattern[5] = セグf (ピン70)
     //   oPattern[6] = セグg (ピン48)
-    //   oPattern[7] = セグdp(ピン49) — 常にOFF(1)
+    //   oPattern[7] = セグdp(ピン49) — 常にOFF(0)
     //
     //        aaaa
     //       f    b
@@ -120,23 +120,23 @@ module display_controller (
     always @(r_nibble) begin
         case (r_nibble)
             //                 dp g f e d c b a
-            4'h0: oPattern = 8'b1_1_00_0_0_0_0;  // 0: a,b,c,d,e,f ON
-            4'h1: oPattern = 8'b1_1_1_1_1_0_0_1; // 1: b,c ON
-            4'h2: oPattern = 8'b1_0_1_0_0_1_0_0; // 2: a,b,d,e,g ON
-            4'h3: oPattern = 8'b1_0_1_1_0_0_0_0; // 3: a,b,c,d,g ON
-            4'h4: oPattern = 8'b1_0_0_1_1_0_0_1; // 4: b,c,f,g ON
-            4'h5: oPattern = 8'b1_0_0_1_0_0_1_0; // 5: a,c,d,f,g ON
-            4'h6: oPattern = 8'b1_0_0_0_0_0_1_0; // 6: a,c,d,e,f,g ON
-            4'h7: oPattern = 8'b1_1_1_1_1_0_0_0; // 7: a,b,c ON
-            4'h8: oPattern = 8'b1_0_0_0_0_0_0_0; // 8: all ON
-            4'h9: oPattern = 8'b1_0_0_1_0_0_0_0; // 9: a,b,c,d,f,g ON
-            4'hA: oPattern = 8'b1_0_0_0_1_0_0_0; // A: a,b,c,e,f,g ON
-            4'hB: oPattern = 8'b1_0_0_0_0_0_1_1; // b: c,d,e,f,g ON
-            4'hC: oPattern = 8'b1_1_0_0_0_1_1_0; // C: a,d,e,f ON
-            4'hD: oPattern = 8'b1_0_1_0_0_0_0_1; // d: b,c,d,e,g ON
-            4'hE: oPattern = 8'b1_0_0_0_0_1_1_0; // E: a,d,e,f,g ON
-            4'hF: oPattern = 8'b1_0_0_0_1_1_1_0; // F: a,e,f,g ON
-            default: oPattern = 8'b1_1_1_1_1_1_1_1; // 全消灯
+            4'h0: oPattern = 8'b0_0_1_1_1_1_1_1;  // 0: a,b,c,d,e,f ON
+            4'h1: oPattern = 8'b0_0_0_0_0_1_1_0;  // 1: b,c ON
+            4'h2: oPattern = 8'b0_1_0_1_1_0_1_1;  // 2: a,b,d,e,g ON
+            4'h3: oPattern = 8'b0_1_0_0_1_1_1_1;  // 3: a,b,c,d,g ON
+            4'h4: oPattern = 8'b0_1_1_0_0_1_1_0;  // 4: b,c,f,g ON
+            4'h5: oPattern = 8'b0_1_1_0_1_1_0_1;  // 5: a,c,d,f,g ON
+            4'h6: oPattern = 8'b0_1_1_1_1_1_0_1;  // 6: a,c,d,e,f,g ON
+            4'h7: oPattern = 8'b0_0_0_0_0_1_1_1;  // 7: a,b,c ON
+            4'h8: oPattern = 8'b0_1_1_1_1_1_1_1;  // 8: all ON
+            4'h9: oPattern = 8'b0_1_1_0_1_1_1_1;  // 9: a,b,c,d,f,g ON
+            4'hA: oPattern = 8'b0_1_1_1_0_1_1_1;  // A: a,b,c,e,f,g ON
+            4'hB: oPattern = 8'b0_1_1_1_1_1_0_0;  // b: c,d,e,f,g ON
+            4'hC: oPattern = 8'b0_0_1_1_1_0_0_1;  // C: a,d,e,f ON
+            4'hD: oPattern = 8'b0_1_0_1_1_1_1_0;  // d: b,c,d,e,g ON
+            4'hE: oPattern = 8'b0_1_1_1_1_0_0_1;  // E: a,d,e,f,g ON
+            4'hF: oPattern = 8'b0_1_1_1_0_0_0_1;  // F: a,e,f,g ON
+            default: oPattern = 8'b0_0_0_0_0_0_0_0; // 全消灯
         endcase
     end
 

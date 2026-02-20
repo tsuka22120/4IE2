@@ -24,10 +24,14 @@ module alu_top (
     //=========================================================================
     // 信号名マッピング（可読性向上）
     //=========================================================================
-    wire [15:0] w_instruction = iToggleSw[15:0]; // SW1〜SW16: インストラクション
+    // SW1(iToggleSw[0])=MSB(bit15), SW16(iToggleSw[15])=LSB(bit0) に対応
+    wire [15:0] w_instruction = {iToggleSw[0],  iToggleSw[1],  iToggleSw[2],  iToggleSw[3],
+                                  iToggleSw[4],  iToggleSw[5],  iToggleSw[6],  iToggleSw[7],
+                                  iToggleSw[8],  iToggleSw[9],  iToggleSw[10], iToggleSw[11],
+                                  iToggleSw[12], iToggleSw[13], iToggleSw[14], iToggleSw[15]};
     wire        w_sw17        = iToggleSw[16];    // SW17: 実行トリガ
-    wire        w_sw18        = iToggleSw[17];    // SW18: 表示モード切替
-    wire        w_s1          = iPushSw[0];       // S1: 表示モード切替
+    wire        w_sw18        = iToggleSw[17];    // SW18: 表示モード切替（アクティブHIGH: そのまま）
+    wire        w_s1          = ~iPushSw[0];      // S1: 表示モード切替（アクティブLOW: 反転）
 
     //=========================================================================
     // 内部ワイヤ定義
@@ -129,11 +133,11 @@ module alu_top (
     //   oLed[4] = 実行パルス（exec_pulse）
     //   oLed[5] = IX修飾ビット
     //=========================================================================
-    assign oLed[0] = w_sr[3];         // CF
-    assign oLed[1] = w_sr[2];         // ZF
-    assign oLed[2] = w_sr[1];         // SF
-    assign oLed[3] = w_sr[0];         // OF
-    assign oLed[4] = w_exec_pulse;    // 実行パルス
-    assign oLed[5] = w_ix_bit;        // IX修飾ビット
+    assign oLed[0] = ~w_sr[3];        // CF（アクティブLOW: 0=点灯）
+    assign oLed[1] = ~w_sr[2];        // ZF
+    assign oLed[2] = ~w_sr[1];        // SF
+    assign oLed[3] = ~w_sr[0];        // OF
+    assign oLed[4] = ~w_exec_pulse;   // 実行パルス
+    assign oLed[5] = ~w_ix_bit;       // IX修飾ビット
 
 endmodule

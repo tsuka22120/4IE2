@@ -1,0 +1,94 @@
+﻿VCD info: dumpfile tb_alu_top.vcd opened for output.
+================================================================
+  ALU Top Integration Test 窶・Self-Checking
+================================================================
+
+=== Phase A: 蜈ｨ12蜻ｽ莉､繝・せ繝・===
+
+--- [1] MOV 0x0A ---
+PASS [  1] MOV 0x0A                 | CF=0 ZF=0 SF=0 OF=0
+
+--- [2] ADD 0x05 ---
+PASS [  2] ADD 0x05 -> 0x0F         | CF=0 ZF=0 SF=0 OF=0
+
+--- [3] SUB 0x03 ---
+PASS [  3] SUB 0x03 -> 0x0C         | CF=0 ZF=0 SF=0 OF=0
+
+--- [4] AND 0x0F ---
+PASS [  4] AND 0x0F -> 0x0C         | CF=0 ZF=0 SF=0 OF=0
+
+--- [5] OR 0x50 ---
+PASS [  5] OR 0x50 -> 0x5C          | CF=0 ZF=0 SF=0 OF=0
+
+--- [6] XOR 0xFF (NOT逶ｸ蠖・ ---
+PASS [  6] XOR 0xFF -> 0xA3 SF      | CF=0 ZF=0 SF=1 OF=0
+
+--- [7] INC ---
+PASS [  7] INC -> 0xA4 SF           | CF=0 ZF=0 SF=1 OF=0
+
+--- [8] DEC ---
+PASS [  8] DEC -> 0xA3 SF           | CF=0 ZF=0 SF=1 OF=0
+
+--- [9] SHL ---
+PASS [  9] SHL -> 0x46 CF           | CF=1 ZF=0 SF=0 OF=0
+
+--- [10] SHR ---
+PASS [ 10] SHR -> 0x23              | CF=0 ZF=0 SF=0 OF=0
+
+--- [11] MOVIX 0x10 ---
+PASS [ 11] MOVIX 0x10               | CF=0 ZF=0 SF=0 OF=0
+
+--- [12] NOP ---
+PASS [ 12] NOP (ACC=0x23)           | CF=0 ZF=0 SF=0 OF=0
+
+=== Phase B: IX菫ｮ鬟ｾ繝・せ繝・===
+
+--- [B1] ADD with IX ---
+PASS [ 13] ADD IX:0x05 -> 0x38      | CF=0 ZF=0 SF=0 OF=0
+
+--- [B2] SUB with IX ---
+PASS [ 14] SUB IX:0x08 -> 0x20      | CF=0 ZF=0 SF=0 OF=0
+
+--- [B3] AND with IX ---
+PASS [ 15] D IX:0xF0 -> 0x00 ZF     | CF=0 ZF=1 SF=0 OF=0
+
+--- [B4] MOV with IX ---
+PASS [ 16] MOV IX:0x05 -> 0x15      | CF=0 ZF=0 SF=0 OF=0
+
+=== Phase C: 蠅・阜譚｡莉ｶ繝・せ繝・===
+
+--- [C1] ADD overflow ---
+PASS [ 17] 0xFF+0x01 CF ZF          | CF=1 ZF=1 SF=0 OF=0
+
+--- [C2] ADD signed overflow ---
+PASS [ 18] 0x7F+0x01 SF OF          | CF=0 ZF=0 SF=1 OF=1
+
+--- [C3] SUB borrow ---
+PASS [ 19] 0x00-0x01 CF SF          | CF=1 ZF=0 SF=1 OF=0
+
+--- [C4] INC wrap ---
+PASS [ 20] INC 0xFF CF ZF           | CF=1 ZF=1 SF=0 OF=0
+
+--- [C5] DEC to zero ---
+PASS [ 21] DEC 0x01 ZF              | CF=0 ZF=1 SF=0 OF=0
+
+--- [C6] SHL MSB out ---
+PASS [ 22] SHL 0x80 CF ZF           | CF=1 ZF=1 SF=0 OF=0
+
+--- [C7] SHR LSB out ---
+PASS [ 23] SHR 0x01 CF ZF           | CF=1 ZF=1 SF=0 OF=0
+
+=== Phase D: 繧ｨ繝・ず讀懷・繝・せ繝・===
+PASS [ 24] Edge detect 2x INC       | CF=0 ZF=0 SF=0 OF=0
+
+=== Phase E: 陦ｨ遉ｺ繝｢繝ｼ繝牙・譖ｿ ===
+PASS [ 25] Display: Instruction     | (豕｢蠖｢縺ｧ遒ｺ隱・
+PASS [ 26] Display: IX              | (豕｢蠖｢縺ｧ遒ｺ隱・
+PASS [ 27] Display: ACC+SR          | (豕｢蠖｢縺ｧ遒ｺ隱・
+
+================================================================
+  Total: 27 tests,  PASS: 27,  FAIL: 0
+================================================================
+  >>> ALL INTEGRATION TESTS PASSED <<<
+================================================================
+test/tb_alu_top.v:377: $finish called at 37703000 (1ps)

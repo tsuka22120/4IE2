@@ -1,0 +1,83 @@
+﻿VCD info: dumpfile tb_alu_core.vcd opened for output.
+================================================================
+  ALU Core Unit Test 窶・蜈ｨ12蜻ｽ莉､ + 蠅・阜譚｡莉ｶ繝・せ繝・
+================================================================
+
+--- NOP ---
+PASS [  1] NOP basic            | Result=42 Flags=0000 AccWe=0 IxWe=0
+PASS [  2] NOP flag preserve    | Result=00 Flags=1111 AccWe=0 IxWe=0
+
+--- ADD ---
+PASS [  3] ADD 10+20=30         | Result=30 Flags=0000 AccWe=1 IxWe=0
+PASS [  4] ADD FF+01 CF ZF      | Result=00 Flags=1100 AccWe=1 IxWe=0
+PASS [  5] ADD 7F+01 OF         | Result=80 Flags=0011 AccWe=1 IxWe=0
+PASS [  6] ADD 80+80 CF ZF OF   | Result=00 Flags=1101 AccWe=1 IxWe=0
+PASS [  7] ADD 70+70 SF OF      | Result=e0 Flags=0011 AccWe=1 IxWe=0
+PASS [  8] ADD 00+00 ZF         | Result=00 Flags=0100 AccWe=1 IxWe=0
+
+--- SUB ---
+PASS [  9] SUB 30-10=20         | Result=20 Flags=0000 AccWe=1 IxWe=0
+PASS [ 10] SUB 00-01 CF SF      | Result=ff Flags=1010 AccWe=1 IxWe=0
+PASS [ 11] SUB 42-42 ZF         | Result=00 Flags=0100 AccWe=1 IxWe=0
+PASS [ 12] SUB 7F-FF OF CF SF   | Result=80 Flags=1011 AccWe=1 IxWe=0
+PASS [ 13] SUB 80-01 OF         | Result=7f Flags=0001 AccWe=1 IxWe=0
+
+--- AND ---
+PASS [ 14] AND F0&0F ZF         | Result=00 Flags=0100 AccWe=1 IxWe=0
+PASS [ 15] AND FF&80 SF         | Result=80 Flags=0010 AccWe=1 IxWe=0
+PASS [ 16] AND A5&F0=A0 SF      | Result=a0 Flags=0010 AccWe=1 IxWe=0
+PASS [ 17] AND CF OF clear      | Result=ff Flags=0010 AccWe=1 IxWe=0
+
+--- OR ---
+PASS [ 18] OR F0|0F=FF SF       | Result=ff Flags=0010 AccWe=1 IxWe=0
+PASS [ 19] OR 00|00 ZF          | Result=00 Flags=0100 AccWe=1 IxWe=0
+PASS [ 20] OR 0A|50=5A          | Result=5a Flags=0000 AccWe=1 IxWe=0
+
+--- XOR ---
+PASS [ 21] XOR AA^FF=55         | Result=55 Flags=0000 AccWe=1 IxWe=0
+PASS [ 22] XOR 42^42 ZF         | Result=00 Flags=0100 AccWe=1 IxWe=0
+PASS [ 23] XOR 00^FF=FF SF      | Result=ff Flags=0010 AccWe=1 IxWe=0
+
+--- INC ---
+PASS [ 24] INC 09+1=0A          | Result=0a Flags=0000 AccWe=1 IxWe=0
+PASS [ 25] INC FF+1 CF ZF       | Result=00 Flags=1100 AccWe=1 IxWe=0
+PASS [ 26] INC 7F+1 SF OF       | Result=80 Flags=0011 AccWe=1 IxWe=0
+PASS [ 27] INC 00+1=01          | Result=01 Flags=0000 AccWe=1 IxWe=0
+
+--- DEC ---
+PASS [ 28] DEC 0A-1=09          | Result=09 Flags=0000 AccWe=1 IxWe=0
+PASS [ 29] DEC 00-1 CF SF       | Result=ff Flags=1010 AccWe=1 IxWe=0
+PASS [ 30] DEC 80-1 OF          | Result=7f Flags=0001 AccWe=1 IxWe=0
+PASS [ 31] DEC 01-1 ZF          | Result=00 Flags=0100 AccWe=1 IxWe=0
+
+--- MOV ---
+PASS [ 32] MOV 42 CF/OF keep    | Result=42 Flags=1001 AccWe=1 IxWe=0
+PASS [ 33] MOV 00 ZF            | Result=00 Flags=0100 AccWe=1 IxWe=0
+PASS [ 34] MOV 80 SF            | Result=80 Flags=0010 AccWe=1 IxWe=0
+
+--- MOVIX ---
+PASS [ 35] MOVIX AB             | IxResult=ab Flags=1010 AccWe=0 IxWe=1
+PASS [ 36] MOVIX 00             | IxResult=00 Flags=1010 AccWe=0 IxWe=1
+
+--- SHL ---
+PASS [ 37] SHL A5 CF            | Result=4a Flags=1000 AccWe=1 IxWe=0
+PASS [ 38] SHL 01=02            | Result=02 Flags=0000 AccWe=1 IxWe=0
+PASS [ 39] SHL 80 CF ZF         | Result=00 Flags=1100 AccWe=1 IxWe=0
+PASS [ 40] SHL 40=80 SF         | Result=80 Flags=0010 AccWe=1 IxWe=0
+PASS [ 41] SHL 00 ZF            | Result=00 Flags=0100 AccWe=1 IxWe=0
+
+--- SHR ---
+PASS [ 42] SHR A5 CF            | Result=52 Flags=1000 AccWe=1 IxWe=0
+PASS [ 43] SHR 80=40            | Result=40 Flags=0000 AccWe=1 IxWe=0
+PASS [ 44] SHR 01 CF ZF         | Result=00 Flags=1100 AccWe=1 IxWe=0
+PASS [ 45] SHR 00 ZF            | Result=00 Flags=0100 AccWe=1 IxWe=0
+
+--- UNDEFINED OPCODE ---
+PASS [ 46] UNDEF default        | Result=aa Flags=0101 AccWe=0 IxWe=0
+
+================================================================
+  Total: 46 tests,  PASS: 46,  FAIL: 0
+================================================================
+  >>> ALL TESTS PASSED <<<
+================================================================
+test/tb_alu_core.v:400: $finish called at 460000 (1ps)
