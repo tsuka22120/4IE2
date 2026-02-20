@@ -3,6 +3,24 @@
         "/^python -c \"import hydro_selector_v2; print\\('✓ モジュールのインポート成功'\\)\"$/": {
             "approve": true,
             "matchCommandLine": true
+        },
+        "latexmk": true,
+        "lualatex": true,
+        "/^C:/VScode/4IE2/\\.venv/Scripts/python\\.exe c:/VScode/4IE2/\\.tex/rinri/generate_note\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^C:/VScode/4IE2/\\.venv/Scripts/python\\.exe c:/VScode/4IE2/\\.tex/rinri/summarize_source\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^C:/VScode/4IE2/\\.venv/Scripts/python\\.exe c:/VScode/4IE2/tools/extract_slides\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python - <<'PY'\nimport glob, pathlib\nfrom codecs import open\npaths = sorted\\(pathlib\\.Path\\(r'c:\\\\VScode\\\\4IE2\\\\WorkSpaceForJava\\\\nlp\\\\data'\\)\\.glob\\('\\*\\.txt'\\)\\)\nfor p in paths\\[:10\\]:\n    data = p\\.read_bytes\\(\\)\n    text = None\n    for enc in \\('utf-8', 'cp932', 'shift_jis'\\):\n        try:\n            text = data\\.decode\\(enc\\)\n            break\n        except Exception:\n            continue\n    first = text\\.splitlines\\(\\)\\[0\\] if text else '\\?\\?'\n    print\\(p\\.name, first\\)\nPY$/": {
+            "approve": true,
+            "matchCommandLine": true
         }
     }
 }
